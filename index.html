@@ -10,11 +10,16 @@ User:
 <script src="js/socket.io.js"></script>
 <script src="js/geohash.js"></script>
 <script>
-  var socket = io.connect('http://192.168.1.89:8080');
+$("#username").on("focusout", function(e){
+	console.log(this);
+});
+</script>
+<script>
+  /*var socket = io.connect('http://192.168.1.89:8080');
   socket.on('news', function (data) {
     console.log(data);
     socket.emit('my other event', { my: 'data' });
-  });
+  });*/
 </script>
 </body>
 </html>
