@@ -1,18 +1,106 @@
 <html>
 <head>
 	<title>Socket Test</title>
+	<style>
+	#wrapper { width: 960px; margin: 0 auto;}
+	#left {width: 66%; float:left; margin-right: 10px;}
+	#right {width: 33%; float:left; }
+	</style>
 </head>
 <body>
+<div id="wrapper">
 <h1>Node Test</h1>
-User:
-<input id="username" type="text" name="user" />
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<div id="left">
+	<div id="map"></div>
+</div>
+<div id="right">
+	User:<input id="username" type="text" name="user" />
+	<div id="usertest"></div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <script src="js/socket.io.js"></script>
 <script src="js/geohash.js"></script>
+<script src="js/md5.js"></script>
+<script src="js/OpenLayers.js"></script>
 <script>
+function restUser(username, type){
+	this.username = username;
+	this.type;
+	this.view = null;
+	this.img = null;
+	this.init = function(){
+		this.setImg();
+	}
+	
+	this.setImg = function(){
+		var img;
+		if(type == 'fb:')
+		{
+			img = document.createElement('img');
+			img.setAttribute('src', 'https://graph.facebook.com/' + this.username + '/picture');
+		}else{
+			emailhash = md5(this.username.toLowerCase());
+			img = document.createElement('img');
+			img.setAttribute('src', 'http://www.gravatar.com/avatar/' + emailhash + '?d=mm');
+		}
+		this.img = img;
+	}
+	
+	this.render = function(){
+		if(this.view){
+			return this.view;
+		}else{
+			wrapper = document.createElement('div');
+			namediv = document.createElement('div');
+			namediv.innerText = username;
+			console.log(namediv);
+			$(wrapper).append([namediv, this.img]);
+			
+			this.view = wrapper;
+			return wrapper;
+		}
+	};
+	
+	this.init();
+}
+
 $("#username").on("focusout", function(e){
-	console.log(this);
+	username = $(this).val();
+	console.log(username);
+	var re = new RegExp("^(fb:)?");
+	var usersplit = username.split(re);
+	console.log(usersplit);
+	if(usersplit.length > 1)
+	{
+		//we have a match
+		//grab the end piece
+		usertype = usersplit[usersplit.length-2];
+		fbuser = usersplit[usersplit.length-1];
+		console.log(usertype);
+		console.log(fbuser);
+		var user = new restUser(fbuser, usertype);
+		console.log(user.render());
+		$("#usertest").html(user.render());
+		
+	}else{
+		user = new restUser(username);
+		$("#usertest").html(user.render());
+	}
 });
+
+navigator.geolocation.getCurrentPosition(function(location){locSuccess(location)},locError,{timeout:10000});
+
+var locSuccess = function(location){
+	console.log(location);
+};
+
+var locError = function(error){};
+
+var map = new OpenLayers.Map("map");
+layer = new OpenLayers.Layer.OSM();
+map.addLayers([layer]);
+
 </script>
 <script>
   /*var socket = io.connect('http://192.168.1.89:8080');
@@ -21,5 +109,6 @@ $("#username").on("focusout", function(e){
     socket.emit('my other event', { my: 'data' });
   });*/
 </script>
+</div>
 </body>
 </html>
