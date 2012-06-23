@@ -93,11 +93,16 @@ navigator.geolocation.getCurrentPosition(function(location){locSuccess(location)
 
 var locSuccess = function(location){
 	console.log(location);
+	opLonLat = new OpenLayers.LonLat(location.coords.longitude, location.coords.latitude );
+	opLonLat.transform(proj, map.getProjectionObject());opLonLat.transform(this.proj, this.map.getProjectionObject());
+	//point = new OpenLayers.Geometry.Point(opLonLat.lon, opLonLat.lat);
+	map.setCenter(opLonLat, 10);
 };
 
 var locError = function(error){};
 
 var map = new OpenLayers.Map("map");
+var proj = new OpenLayers.Projection("EPSG:4326");
 layer = new OpenLayers.Layer.OSM();
 map.addLayers([layer]);
 
