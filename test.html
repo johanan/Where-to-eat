@@ -34,6 +34,51 @@
   rests.on('rests', function(data){
 	 console.log(data); 
   });
+  
+  
+  fsConfig = {
+			apiKey: 'NQNF2JL2VKJHXETAOND5TPJ23A2SWGZC4TXJEMLGJBXYMIJM',
+			apiSecret: 'TF1CC0HZVBJ0TM50CRNJNTWSOWZMIKQ30V4DEB4GC2UWZ3KM',
+			apiUrl: 'https://api.foursquare.com/'
+		};
+  var locationTest = {
+			coords: {
+				longitude: -86.2423926,
+				latitude: 41.6465882
+			}
+	}
+  
+  
+   var fsurl = fsConfig.apiUrl + 'v2/venues/search?ll=' + locationTest.coords.latitude + ',' + locationTest.coords.longitude + '&client_id=' + fsConfig.apiKey + '&client_secret=' + fsConfig.apiSecret + '&query=restaurant&limit=50';
+  /*load(fsurl, function(xhr) {  
+	    console.log(xhr);  
+	});  */
+	  
+	function load(url, callback) {  
+	        var xhr;  
+	  
+	        xhr = new XMLHttpRequest();  
+	  
+	        xhr.onreadystatechange = ensureReadiness;  
+	  
+	        function ensureReadiness() {  
+	            if(xhr.readyState < 4) {  
+	                return;  
+	            }  
+	  
+	            if(xhr.status !== 200) {  
+	                return;  
+	            }  
+	  
+	            // all is well  
+	            if(xhr.readyState === 4) {  
+	                callback(xhr);  
+	            }  
+	        }  
+	  
+	        xhr.open('GET', url, true);  
+	        xhr.send('');  
+	    }  
 </script>
 </div>
 </body>
