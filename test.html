@@ -24,10 +24,14 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <script src="js/socket.io.js"></script>
 <script>
-  var socket = io.connect('http://192.168.1.89:8080');
+  /*var socket = io.connect('http://192.168.1.89:8080');
   socket.on('news', function (data) {
     console.log(data);
     socket.emit('my other event', { my: 'data' });
+  });*/
+  var rests = io.connect('http://192.168.1.89:8080');
+  rests.emit('rests', function(data){
+	 console.log(data); 
   });
 </script>
 </div>
