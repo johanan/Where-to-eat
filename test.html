@@ -30,7 +30,8 @@
     socket.emit('my other event', { my: 'data' });
   });*/
   var rests = io.connect('http://192.168.1.89:8080');
-  rests.emit('rests', function(data){
+  rests.emit('rests', {query: 'jimmy'});
+  rests.on('rests', function(data){
 	 console.log(data); 
   });
 </script>
