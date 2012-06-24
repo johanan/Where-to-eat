@@ -6,23 +6,27 @@
 	#left {width: 66%; float:left; margin-right: 10px;}
 	#right {width: 33%; float:left; }
 	</style>
+	<link rel="stylesheet" href="leaflet.css" />
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
 </head>
 <body>
-<div id="wrapper">
+<div class="container">
 <h1>Node Test</h1>
 <div id="left">
-	<div id="map"></div>
+	<div id="map" style="height: 400px"></div>
 </div>
 <div id="right">
 	User:<input id="username" type="text" name="user" />
 	<div id="usertest"></div>
+	<ul id="fslist" class="well"></ul>
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <script src="js/socket.io.js"></script>
 <script src="js/geohash.js"></script>
 <script src="js/md5.js"></script>
-<script src="js/OpenLayers.js"></script>
+<!--<script src="js/OpenLayers.js"></script>-->
+<script src="leaflet.js"></script>
 <script>
 function restUser(username, type){
 	this.username = username;
@@ -89,22 +93,99 @@ $("#username").on("focusout", function(e){
 	}
 });
 
-navigator.geolocation.getCurrentPosition(function(location){locSuccess(location)},locError,{timeout:10000});
+//navigator.geolocation.getCurrentPosition(function(location){locSuccess(location)},locError,{timeout:10000});
+
+//fake gelocation point
+var locationTest = {
+		coords: {
+			longitude: -86.2423926,
+			latitude: 41.6465882
+		}
+}
 
 var locSuccess = function(location){
 	console.log(location);
-	opLonLat = new OpenLayers.LonLat(location.coords.longitude, location.coords.latitude );
-	opLonLat.transform(proj, map.getProjectionObject());
-	//point = new OpenLayers.Geometry.Point(opLonLat.lon, opLonLat.lat);
-	map.setCenter(opLonLat, 10);
+	var hull = new L.LatLng(location.coords.latitude, location.coords.longitude);
+	map.setView(hull,11);
 };
+
 
 var locError = function(error){};
 
-var map = new OpenLayers.Map("map");
-var proj = new OpenLayers.Projection("EPSG:4326");
-layer = new OpenLayers.Layer.OSM();
-map.addLayers([layer]);
+var map;
+
+map = new L.Map('map');
+var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+var osmAttrib='Map data © openstreetmap contributors';
+var osm = new L.TileLayer(osmUrl,{minZoom:8,maxZoom:18,attribution:osmAttrib});
+
+
+map.addLayer(osm);
+
+
+//fake call to use the point
+locSuccess(locationTest);
+
+
+
+//foursquare stuff
+
+fsConfig = {
+	apiKey: 'NQNF2JL2VKJHXETAOND5TPJ23A2SWGZC4TXJEMLGJBXYMIJM',
+	apiSecret: 'TF1CC0HZVBJ0TM50CRNJNTWSOWZMIKQ30V4DEB4GC2UWZ3KM',
+	apiUrl: 'https://api.foursquare.com/'
+};
+
+var eats = {};
+
+$.getJSON(fsConfig.apiUrl + 'v2/venues/search?ll=' + locationTest.coords.latitude + ',' + locationTest.coords.longitude + '&client_id=' + fsConfig.apiKey + '&client_secret=' + fsConfig.apiSecret + '&query=restaurant&limit=50' , 
+function(data){
+	console.log(data);
+	rests = data.response.groups[0].items;
+	for(id in rests )
+	{
+		if(rests[id].categories.length > 0)
+		{
+		var restIcon = L.Icon.extend({
+		    iconUrl: rests[id].categories[0].icon,
+		    shadowUrl: null,
+		    iconSize: new L.Point(32, 32)
+		});
+		}else{
+			var restIcon = L.Icon.extend({
+			    iconUrl: 'images/marker.png',
+			});
+		}
+		
+		var markerLocation = new L.LatLng(rests[id].location.lat, rests[id].location.lng);
+
+		var marker = new L.Marker(markerLocation, {icon: new restIcon(), title: rests[id].name});
+		marker.bindPopup(rests[id].name + '<button class="mapVote" data-fsid="' + rests[id].id + '">Vote</button>');
+		marker.fsid = rests[id].id;
+		marker.location = rests[id].location;
+		marker.name = rests[id].name;
+		eats[rests[id].id] = rests[id];
+		console.log(eats);
+		marker.on('click', function(e){console.log(e.target); fsTest(e.target.fsid);});
+		map.addLayer(marker);
+		$('#fslist').append('<li id="fs' + rests[id].id +'" ><button class="btn">Vote</button>' + rests[id].name + '</li>');
+	}
+	
+
+});
+
+var fsTest = function(fsid){
+	console.log($('#fs' + fsid));
+};
+
+
+var collectVote = function(fsobject){
+	votes.push(fsobject);
+};
+
+var votes = [];
+
+
 
 </script>
 <script>
