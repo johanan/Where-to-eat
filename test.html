@@ -19,66 +19,38 @@
 	User:<input id="username" type="text" name="user" />
 	<div id="usertest"></div>
 	<ul id="fslist" class="well"></ul>
+		<button class="dropdown-toggle btn" data-toggle="dropdown" >
+     	 Dropdown
+      	<b class="caret"></b>
+    	</button>
+    	<ul class="dropdown-menu">
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <script src="js/socket.io.js"></script>
+<script src="js/bootstrap-dropdown.js"></script>
 <script>
+$('.dropdown-toggle').dropdown();
   /*var socket = io.connect('http://192.168.1.89:8080');
   socket.on('news', function (data) {
     console.log(data);
     socket.emit('my other event', { my: 'data' });
   });*/
-  var rests = io.connect('http://192.168.1.89:8080');
-  rests.emit('rests', {query: 'jimmy'});
-  rests.on('rests', function(data){
-	 console.log(data); 
-  });
+  var rests = io.connect('http://192.168.1.89:8080/users');
+  //rests.emit('rests', {query: 'jimmy'});
+  //rests.on('test', function(data){
+	// console.log(data); 
+  //});
+  rests.emit('add', 'userhere', 'imghere');
+  rests.on('userAdded', function(d){ console.log(d);});
   
   
-  fsConfig = {
-			apiKey: 'NQNF2JL2VKJHXETAOND5TPJ23A2SWGZC4TXJEMLGJBXYMIJM',
-			apiSecret: 'TF1CC0HZVBJ0TM50CRNJNTWSOWZMIKQ30V4DEB4GC2UWZ3KM',
-			apiUrl: 'https://api.foursquare.com/'
-		};
-  var locationTest = {
-			coords: {
-				longitude: -86.2423926,
-				latitude: 41.6465882
-			}
-	}
-  
-  
-   var fsurl = fsConfig.apiUrl + 'v2/venues/search?ll=' + locationTest.coords.latitude + ',' + locationTest.coords.longitude + '&client_id=' + fsConfig.apiKey + '&client_secret=' + fsConfig.apiSecret + '&query=restaurant&limit=50';
-  /*load(fsurl, function(xhr) {  
-	    console.log(xhr);  
-	});  */
-	  
-	function load(url, callback) {  
-	        var xhr;  
-	  
-	        xhr = new XMLHttpRequest();  
-	  
-	        xhr.onreadystatechange = ensureReadiness;  
-	  
-	        function ensureReadiness() {  
-	            if(xhr.readyState < 4) {  
-	                return;  
-	            }  
-	  
-	            if(xhr.status !== 200) {  
-	                return;  
-	            }  
-	  
-	            // all is well  
-	            if(xhr.readyState === 4) {  
-	                callback(xhr);  
-	            }  
-	        }  
-	  
-	        xhr.open('GET', url, true);  
-	        xhr.send('');  
-	    }  
 </script>
 </div>
 </body>

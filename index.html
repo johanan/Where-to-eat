@@ -2,15 +2,19 @@
 <head>
 	<title>Socket Test</title>
 	<style>
+	body {height:100%;}
 	#wrapper { width: 960px; margin: 0 auto;}
 	#left {width: 66%; float:left; margin-right: 10px;}
 	#right {width: 33%; float:left; }
+	#stuck {position: absolute; z-index: 1000; top: 0; right: 0;}
+	.me {background: white;}
 	</style>
 	<link rel="stylesheet" href="leaflet.css" />
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 </head>
 <body>
 <div class="container">
+<div id="stuck"></div>
 <h1>Node Test</h1>
 <div id="left">
 	<div id="map" style="height: 400px"></div>
@@ -18,6 +22,12 @@
 <div id="right">
 	User:<input id="username" type="text" name="user" />
 	<div id="usertest"></div>
+	<div id="currentUsers" class="well">
+	Currently Connected:
+	<ul id="users">
+	</ul>
+	</div>
+	Search:<input id="search" type="text" name="search" />
 	<ul id="fslist" class="well"></ul>
 </div>
 
@@ -28,6 +38,29 @@
 <!--<script src="js/OpenLayers.js"></script>-->
 <script src="leaflet.js"></script>
 <script>
+
+var users = io.connect('http://192.168.1.89:8080/users');
+
+users.on('users', function(d){
+	console.log(d);
+	usersul = $('#users');
+	console.log(usersul.children('li[data-user="' + d.username + '"]').length);
+	
+	if(usersul.children('li[data-user="' + d.username + '"]' ).length == 0){
+		if(d.me){lic = '<li class="me" ';}else{lic='<li ';}
+		usersul.append( lic + 'data-user="' + d.username + '"><img src="' + d.img + '"/>' + d.username+'</li>');
+	}else{
+		if(d.me){
+			usersul.children('li[data-user="' + d.username + '"]' ).addClass('me');
+		}
+	}
+});
+
+users.on('count', function(d){ $('#stuck').append(d.count+'#');});
+
+users.emit('count');
+users.emit('get');
+
 function restUser(username, type){
 	this.username = username;
 	this.type;
@@ -85,12 +118,15 @@ $("#username").on("focusout", function(e){
 		console.log(fbuser);
 		var user = new restUser(fbuser, usertype);
 		console.log(user.render());
-		$("#usertest").html(user.render());
+		//$("#usertest").html(user.render());
 		
 	}else{
 		user = new restUser(username);
-		$("#usertest").html(user.render());
+		//$("#usertest").html(user.render());
 	}
+	testu = String(user.username);
+	testi = String(user.img.src);
+	users.emit('add', testu, testi);
 });
 
 //navigator.geolocation.getCurrentPosition(function(location){locSuccess(location)},locError,{timeout:10000});
@@ -126,22 +162,24 @@ map.addLayer(osm);
 //fake call to use the point
 locSuccess(locationTest);
 
-
-
-//foursquare stuff
-
-fsConfig = {
-	apiKey: 'NQNF2JL2VKJHXETAOND5TPJ23A2SWGZC4TXJEMLGJBXYMIJM',
-	apiSecret: 'TF1CC0HZVBJ0TM50CRNJNTWSOWZMIKQ30V4DEB4GC2UWZ3KM',
-	apiUrl: 'https://api.foursquare.com/'
-};
-
 var eats = {};
 
-$.getJSON(fsConfig.apiUrl + 'v2/venues/search?ll=' + locationTest.coords.latitude + ',' + locationTest.coords.longitude + '&client_id=' + fsConfig.apiKey + '&client_secret=' + fsConfig.apiSecret + '&query=restaurant&limit=50' , 
+$('#search').on('focusout', function(e){getRests($(this).val())});
+
+function getRests(query){
+	url = 'http://localhost/test/fs.php?ll=' + locationTest.coords.latitude + ',' + locationTest.coords.longitude;
+	if(query != ''){
+		url += '&query=' + encodeURI(query) ;
+	}
+$.getJSON( url , 
 function(data){
+	eats = {};
 	console.log(data);
 	rests = data.response.groups[0].items;
+	if(window.searchl){
+		map.removeLayer(window.searchl);
+	}
+	window.searchl = new L.LayerGroup();
 	for(id in rests )
 	{
 		if(rests[id].categories.length > 0)
@@ -160,19 +198,25 @@ function(data){
 		var markerLocation = new L.LatLng(rests[id].location.lat, rests[id].location.lng);
 
 		var marker = new L.Marker(markerLocation, {icon: new restIcon(), title: rests[id].name});
-		marker.bindPopup(rests[id].name + '<button class="mapVote" data-fsid="' + rests[id].id + '">Vote</button>');
+		//marker.bindPopup('<button class="mapVote btn" data-fsid="' + rests[id].id + '" onclick="test()"><i class="icon-ok"></i>' + rests[id].name + '</button>');
+		butt = document.createElement('button');
+		butt.innerHTML='a';
+		//$(butt).on('click', function(e){console.log(e);});
+		marker.bindPopup(butt);
 		marker.fsid = rests[id].id;
 		marker.location = rests[id].location;
 		marker.name = rests[id].name;
 		eats[rests[id].id] = rests[id];
 		console.log(eats);
 		marker.on('click', function(e){console.log(e.target); fsTest(e.target.fsid);});
-		map.addLayer(marker);
-		$('#fslist').append('<li id="fs' + rests[id].id +'" ><button class="btn">Vote</button>' + rests[id].name + '</li>');
+		window.searchl.addLayer(marker);
+		//$('#fslist').append('<li id="fs' + rests[id].id +'" ><button class="btn">Vote</button>' + rests[id].name + '</li>');
 	}
-	
+	map.addLayer(window.searchl);
+	$('button').on('click', function(e){console.log(e);});
 
 });
+}
 
 var fsTest = function(fsid){
 	console.log($('#fs' + fsid));
@@ -185,6 +229,9 @@ var collectVote = function(fsobject){
 
 var votes = [];
 
+function test(e){console.log(e)};
+
+//$('#map').on('click', function(e){console.log(e);});
 
 
 </script>
