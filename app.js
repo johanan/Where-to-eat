@@ -90,7 +90,7 @@ function removeUser(username){
 };
 
 function checkUserSet(set){
-	client.smembers(set, function(err, data){
+	client.smembers(set + ':timer', function(err, data){
 		 if(data == null){
 			client.del(set);
 		}

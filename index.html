@@ -167,7 +167,7 @@ var eats = {};
 $('#search').on('focusout', function(e){getRests($(this).val())});
 
 function getRests(query){
-	url = 'http://localhost/test/fs.php?ll=' + locationTest.coords.latitude + ',' + locationTest.coords.longitude;
+	url = 'http://192.168.1.89/aaron/nodetest/fs.php?callback=?&ll=' + locationTest.coords.latitude + ',' + locationTest.coords.longitude;
 	if(query != ''){
 		url += '&query=' + encodeURI(query) ;
 	}
