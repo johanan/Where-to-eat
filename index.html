@@ -28,7 +28,7 @@
 	</ul>
 	</div>
 	Search:<input id="search" type="text" name="search" />
-	<ul id="fslist" class="well"></ul>
+	<div id="fsRest" class="well"></div>
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
@@ -167,7 +167,8 @@ var eats = {};
 $('#search').on('focusout', function(e){getRests($(this).val())});
 
 function getRests(query){
-	url = 'http://192.168.1.89/aaron/nodetest/fs.php?callback=?&ll=' + locationTest.coords.latitude + ',' + locationTest.coords.longitude;
+	//url = 'http://192.168.1.89/aaron/nodetest/fs.php?callback=?&ll=' + locationTest.coords.latitude + ',' + locationTest.coords.longitude;
+	url = 'http://localhost/test/fs.php?&ll=' + locationTest.coords.latitude + ',' + locationTest.coords.longitude;
 	if(query != ''){
 		url += '&query=' + encodeURI(query) ;
 	}
@@ -200,15 +201,17 @@ function(data){
 		var marker = new L.Marker(markerLocation, {icon: new restIcon(), title: rests[id].name});
 		//marker.bindPopup('<button class="mapVote btn" data-fsid="' + rests[id].id + '" onclick="test()"><i class="icon-ok"></i>' + rests[id].name + '</button>');
 		butt = document.createElement('button');
-		butt.innerHTML='a';
-		//$(butt).on('click', function(e){console.log(e);});
-		marker.bindPopup(butt);
+		butt.innerHTML='<i class="icon-ok"></i>' + rests[id].name;
+		butt.setAttribute('data-fsid', rests[id].id);
+		//$(butt).on('click', function(e){fsTest(e);});
+		table = '<table><tr><td>Name</td><td>' + rests[id].name + '</td></tr><tr><td>Phone</td><td>' + rests[id].contact.formattedPhone + '</td></tr></table>';
+		//marker.bindPopup(table);
 		marker.fsid = rests[id].id;
 		marker.location = rests[id].location;
 		marker.name = rests[id].name;
 		eats[rests[id].id] = rests[id];
 		console.log(eats);
-		marker.on('click', function(e){console.log(e.target); fsTest(e.target.fsid);});
+		marker.on('click', function(e){ fsTest(e);});
 		window.searchl.addLayer(marker);
 		//$('#fslist').append('<li id="fs' + rests[id].id +'" ><button class="btn">Vote</button>' + rests[id].name + '</li>');
 	}
@@ -218,13 +221,24 @@ function(data){
 });
 }
 
-var fsTest = function(fsid){
-	console.log($('#fs' + fsid));
+var fsTest = function(e){
+	showRest(e.target.fsid);
 };
 
+var showRest = function(fsid){
+	rest = eats[fsid];
+	table = '<h3>' + rest.name + '</h3><table><tr><td>Phone</td><td>' + rest.contact.formattedPhone + '</td></tr><tr><td>Menu</td><td><a href="' + rest.menu.url + '" target="_blank">Menu</a></td></tr></table>';
+	butt = document.createElement('button');
+	butt.innerHTML='<i class="icon-ok"></i> Sign me up';
+	butt.setAttribute('data-fsid', rests[id].id);
+	$('#fsRest').html(table);
+	$('#fsRest').append(butt);
+	$(butt).on('click', function(e){collectVote(rest);});
+}
 
-var collectVote = function(fsobject){
-	votes.push(fsobject);
+var collectVote = function(rest){
+	console.log(rest);
+	users.emit('vote', rest);
 };
 
 var votes = [];

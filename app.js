@@ -67,6 +67,11 @@ var users = io.of('/users').on('connection', function (socket) {
 		});
 	});
 	
+	socket.on('vote', function(fs){
+		socket.get('username', function(err, user){
+			console.log(user + ' voted for : ' + JSON.stringify(fs));
+		})
+	});
 	socket.on('disconnect', function(client){
 		//console.log(socket.get('username', function(err, user){removeUser(user);}) + ' disconnected');
 	});
@@ -90,7 +95,7 @@ function removeUser(username){
 };
 
 function checkUserSet(set){
-	client.smembers(set + ':timer', function(err, data){
+	client.get(set + ':timer', function(err, data){
 		 if(data == null){
 			client.del(set);
 		}
