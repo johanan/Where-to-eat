@@ -46,37 +46,66 @@ var users = io.of('/users').on('connection', function (socket) {
 	
 	
 	socket.on('count', function(){
-		checkUserSet('test:users');
-		client.scard('test:users', function(err, count){
-			socket.broadcast.emit('count', {count: count});
+		checkUserSet('test:users', function(){
+			client.scard('test:users', function(err, count){
+				socket.broadcast.emit('count', {count: count});
+			});
 		});
+		
 	});
 	
 	socket.on('get', function(){
-		checkUserSet('test:users');
-		client.smembers('test:users', function(err, members){
-			if(members != null){
-			members.forEach(function(key){
-				console.log('key ' + key);
-				client.get(key, function(err, data){console.log(data);
-					client.get(key+':img', function(err, imgdata){socket.emit('users', {username: data, img: imgdata});});
-				
+		checkUserSet('test:users', function(){
+			client.smembers('test:users', function(err, members){
+				if(members != null){
+				members.forEach(function(key){
+					console.log('key ' + key);
+					client.get(key, function(err, data){console.log(data);
+						client.get(key+':img', function(err, imgdata){socket.emit('users', {username: data, img: imgdata});});
+					
+					});
 				});
+				}
 			});
-			}
 		});
 	});
 	
 	socket.on('vote', function(fs){
 		socket.get('username', function(err, user){
 			console.log(user + ' voted for : ' + JSON.stringify(fs));
-		})
+			setVote(user, fs, 7200);
+			socket.broadcast.emit('vote', {username: user, fs: fs});
+		});
+	});
+	
+	socket.on('getVotes', function(){
+		checkUserSet('test:votes', function(){
+			client.smembers('test:votes', function(err, votes){
+				if(votes != null){
+					votes.forEach(function(key){
+						client.get(key, function(err, username){
+							client.get(key + ':vote', function(err, vote){
+								socket.emit('vote', {username: username, fs: JSON.parse(vote)});
+							});
+						});
+					});
+				}
+			});
+		});
 	});
 	socket.on('disconnect', function(client){
 		//console.log(socket.get('username', function(err, user){removeUser(user);}) + ' disconnected');
 	});
 	
 });
+
+function setVote(username, fs, expire){
+	client.set('test:users:' + username + ':vote', JSON.stringify(fs), redis.print);
+	client.sadd('test:votes', 'test:users:' + username, redis.print);
+	//set a timer
+	client.set('test:votes:timer', expire, redis.print);
+	client.expire('test:votes:timer', expire, redis.print);
+}
 
 function setUser(username, img, expire){
 	client.set('test:users:' + username, username, redis.print);
@@ -94,10 +123,11 @@ function removeUser(username){
 	client.srem('test:users', 'test:users:' + username);
 };
 
-function checkUserSet(set){
+function checkUserSet(set, callback){
 	client.get(set + ':timer', function(err, data){
 		 if(data == null){
 			client.del(set);
 		}
+		 callback();
 	});
 };
