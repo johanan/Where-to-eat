@@ -34,6 +34,7 @@ var users = io.of('/users').on('connection', function (socket) {
 	if(!usernameExists('test', username)){
 		setUser(username, img, 7200);
 		socket.set('username', username);
+		socket.set('img', img);
 		console.log(socket.id + ' : ' + username);
 
 	}
@@ -72,9 +73,11 @@ var users = io.of('/users').on('connection', function (socket) {
 	
 	socket.on('vote', function(fs){
 		socket.get('username', function(err, user){
-			console.log(user + ' voted for : ' + JSON.stringify(fs));
-			setVote(user, fs, 7200);
-			socket.broadcast.emit('vote', {username: user, fs: fs});
+			socket.get('img', function(err, img){
+				console.log(user + ' voted for : ' + JSON.stringify(fs));
+				setVote(user, fs, 7200);
+				socket.broadcast.emit('vote', {username: user, img: img, fs: fs});
+			});
 		});
 	});
 	
@@ -85,7 +88,9 @@ var users = io.of('/users').on('connection', function (socket) {
 					votes.forEach(function(key){
 						client.get(key, function(err, username){
 							client.get(key + ':vote', function(err, vote){
-								socket.emit('vote', {username: username, fs: JSON.parse(vote)});
+								client.get(key + ':img', function(err, img){
+									socket.emit('vote', {username: username, img: img, fs: JSON.parse(vote)});
+								});
 							});
 						});
 					});
@@ -105,7 +110,7 @@ function setVote(username, fs, expire){
 	//set a timer
 	client.set('test:votes:timer', expire, redis.print);
 	client.expire('test:votes:timer', expire, redis.print);
-}
+};
 
 function setUser(username, img, expire){
 	client.set('test:users:' + username, username, redis.print);
