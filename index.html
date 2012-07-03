@@ -5,74 +5,48 @@
 	body {height:100%;}
 	#wrapper { width: 960px; margin: 0 auto;}
 	#left {width: 66%; float:left; margin-right: 10px;}
-	#right {width: 33%; float:left; }
+	#right {float:left; width: 30%}
 	#stuck {position: absolute; z-index: 1000; top: 0; right: 0;}
-	.me {background: white;}
+	ul#votes li, ul#acts li {list-style: none;}
+	#restaurant {height: 178px; overflow: auto;}
+	.activity {height: 320px; overflow: auto;}
+	.userimg {height: 18px; width: 18px;}
 	</style>
 	<link rel="stylesheet" href="leaflet.css" />
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 </head>
 <body>
 <div class="container">
-
-<div class="navbar">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="brand" href="#">Node Test</a>
-      
-      <ul class="nav  pull-right">
-      
-      	<li class="dropdown">
-		  
-		    <a href="#"
-		          class="dropdown-toggle"
-		          data-toggle="dropdown">
-		          Connected
-		          <b class="caret"></b>
-		    </a>
-		    <ul class="dropdown-menu span4" id="users">
-		    </ul>
-		  </li>
-      
-      	<li class="divider-vertical"></li>
-		  <li class="dropdown">
-		  
-		    <a href="#"
-		          class="dropdown-toggle"
-		          data-toggle="dropdown">
-		          <span id="me">Log in</span>
-		          <b class="caret"></b>
-		    </a>
-		    <ul class="dropdown-menu">
-		    <li><form class="form-inline">
-		  <input id="username" type="text" class="input-small" name="user" />
-		  <button class="btn" id="signin">Sign in</button>
-		  </form></li>
-		  <li><a id="signout" href="#">Sign out</a></li>
-		    </ul>
-		  </li>
-		</ul>
-    </div>
-  </div>
-</div>
+<h1>Node Test</h1>
 
 <div id="stuck"></div>
 
 <div id="left">
-	<div id="map" style="height: 400px"></div>
+	<div id="map" style="height: 620px"></div>
 </div>
 <div id="right">
-	
-	<div class="well">
+	<div id="loginArea"><input id="login" type="text" placeholder="email"></div>
+	<div id="restaurant" class="well">
 		<form class="form-search">
   			<input type="text" id="search" class="input-medium search-query">
   			<button type="submit" class="btn">Search</button>
 		</form>
 		<div id="fsRest"></div>
 	</div>
-	<div  class="well">
-		<ul id="votes">
+	<div id="tabs" class="tabbable">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#tab1" data-toggle="tab">Votes</a></li>
+    		<li><a href="#tab2" data-toggle="tab">Activity</a></li>
 		</ul>
+		<div class="tab-content">
+		    <div class="tab-pane active activity" id="tab1">
+		      <ul id="votes"></ul>
+		    </div>
+		    <div class="tab-pane activity" id="tab2">
+		      <ul id="acts"></ul>
+		    </div>
+		  </div>
+		
 	</div>
 </div>
 
@@ -82,7 +56,7 @@
 <script src="js/md5.js"></script>
 <!--<script src="js/OpenLayers.js"></script>-->
 <script src="leaflet.js"></script>
-<script src="js/bootstrap-dropdown.js"></script>
+<script src="js/bootstrap-tab.js"></script>
 <script>
 function createCookie(name,value,days) {
 	if (days) {
@@ -109,7 +83,10 @@ function eraseCookie(name) {
 	createCookie(name,"",-1);
 }
 
-$('.dropdown-toggle').dropdown();
+$('#mtabs a').click(function (e) {
+	  e.preventDefault();
+	  $(this).tab('show');
+	});
 
 (function(Josh, $){
 	var sock;
@@ -121,6 +98,10 @@ $('.dropdown-toggle').dropdown();
 	
 	var init = function(url){
 		sock = io.connect(url);
+		//test remove from prod
+		sock.on('test', function(d){
+			console.log(d);
+		});
 	};
 	
 	Josh.Socket.prototype.addEvent = function(name, obj){
@@ -137,12 +118,16 @@ $('.dropdown-toggle').dropdown();
 		sock.emit('get');
 	};
 	
-	Josh.Socket.prototype.addUser = function(username, img){
-		sock.emit('add', username, img);
+	Josh.Socket.prototype.addUser = function(username, img, area){
+		console.log(username + ' ' + img);
+		sock.emit('add', username, img, area);
 	};
 	
 	Josh.Socket.prototype.addVote = function(fs){
-		sock.emit('vote', fs);
+		var fsSend = $.extend(true, {}, fs);
+		delete fsSend.marker, fsSend.user;
+		sock.emit('addVote', fsSend);
+		delete fsSend;
 	}
 	
 	return Josh.Socket;
@@ -152,6 +137,7 @@ $('.dropdown-toggle').dropdown();
 	Josh.User = function(username, img){
 		this.username = username;
 		this.img = img;
+		this.imgHTML = '<img src="' + img + '" class="userimg" title="' + username + '">';
 	};
 })(window.Josh = window.Josh || {},  window.jQuery);
 
@@ -162,6 +148,10 @@ $('.dropdown-toggle').dropdown();
 	var searchLayer;
 	var restIcon;
 	var markerDiv;
+	var votesUl;
+	var actsUl;
+	var loginDiv;
+	var area;
 	
 	Josh.Map = function(id){
 		id = id;
@@ -178,39 +168,75 @@ $('.dropdown-toggle').dropdown();
 		});
 		
 		markerDiv = document.getElementById('fsRest');
+		actsUl = document.getElementById('acts');
+		votesUl = document.getElementById('votes');
+		loginDiv = document.getElementById('loginArea');
+		
 		This = this;
 		$(markerDiv).on('click', 'button', function(e){
-			target = $(e.target);
-			fsid = target.attr('data-fsid');
-			vt.addVote(This.findFs(fsid));
-			console.log(This.findFs(fsid));
+			var target = $(e.target);
+				if(This.currentUser != null){
+				var fsid = target.attr('data-fsid');
+				var fs = This.findFs(fsid);
+				socket.addVote(fs);
+				console.log(This.findFs(fsid));
+			}else{
+				alert('you must be logged in!');
+			}
+		});
+		
+		$(votesUl).on('click', 'li a', function(e){
+			e.preventDefault();
+			This.showRest($(e.target).attr('data-fsid'));
+		});
+		
+		$(actsUl).on('click', 'li a', function(e){
+			e.preventDefault();
+			This.showRest($(e.target).attr('data-fsid'));
+		});
+		
+		$(loginDiv).on('focusout', 'input', function(e){
+			var username = $(e.target).val();
+			This.addUser(username);
+		});
+		
+		$(loginDiv).on('click', 'a', function(e){
+			e.preventDefault();
+			This.removeUser();
 		});
 		
 		this.searchFs = {};
-		this.voteFs = {};
-	};
-	
-	var shortFs = function(fs){
-		var  phone, menu, img;
+		this.voteFs = new Josh.Votes();
+		this.currentUser = null;
 		
-		if(typeof fs.contact.formattedPhone !== 'undefined'){
-			phone = fs.contact.formattedPhone;
+		$(this).on('vote', function(e, d){
+			
+			console.log(this);
+			//first check to see if it exists in the vote db
+			if(this.voteFs.votes[d.fs.id] == undefined){
+				marker = this.addMarker(d.fs);
+				d.fs.marker = marker;
+			}
+			d.fs.user = [new Josh.User(d.username, d.img)];
+			this.addActivity(d.fs.user[0], d.fs.name, d.fs.id);
+			this.voteFs.addVote(d.fs);
+			this.showVotes();
+			console.log(d);
+		});
+		
+		//see if we have a hash area
+		if(window.location.hash) {
+			area = String(window.location.hash).slice(1);
+		} else {
+		  //set to default
+		  area = 'default';
 		}
 		
-		if(typeof fs.menu !== 'undefined'){
-			menu = fs.menu.url;
+		//check the cookies for a current user
+		myusername = readCookie('username');
+		if(myusername != null){
+			this.addUser(myusername);
 		}
-		
-		if(fs.categories.length > 0){
-			img = fs.categories[0].icon;
-		}else{
-			img = 'images/marker.png';
-		}
-		
-		distance = fs.location.distance * .00062;
-		
-		delete fs;
-		return {id: fs.id, name: fs.name, phone: phone, menu: menu, img: img, distance: distance};
 		
 	};
 	
@@ -232,9 +258,10 @@ $('.dropdown-toggle').dropdown();
 			
 			var markerLocation = new L.LatLng(fs.location.lat, fs.location.lng);
 			var marker = new L.Marker(markerLocation, {icon: icon, title: fs.name});
-			marker.fs = shortFs(fs);
+			marker.fsid = fs.id;
+			marker.img = icon.iconUrl;
 			var This = this;
-			marker.on('click', function(e){ This.showRest(e.target);});
+			marker.on('click', function(e){ This.showRest(e.target.fsid);});
 			if(layeradd){
 				map.addLayer(marker);
 			}
@@ -255,7 +282,7 @@ $('.dropdown-toggle').dropdown();
 			
 			for(id in rests){
 				this.addSearchFs(rests[id]);
-				marker = this.addMarker(rests[id], false);
+				var marker = this.addMarker(rests[id], false);
 				eats[rests[id].id] = rests[id];
 				searchLayer.addLayer(marker);
 			}
@@ -264,28 +291,35 @@ $('.dropdown-toggle').dropdown();
 			
 		},
 		
-		showRest: function(target){
-			fs = target.fs;
-			htmld = '<h3><img src="' + fs.img + '">' + fs.name + '</h3>';
+		showRest: function(fsid){
+			var fs = this.findFs(fsid);
+			
+			var img;
+			if(fs.categories.length > 0){
+				img = fs.categories[0].icon;
+			}else{
+				img = 'images/marker.png';
+			}
+			
+			htmld = '<h3><img src="' + img + '">' + fs.name + '</h3>';
 			
 			if(fs.phone != undefined)
 				htmld += '<div>Phone: ' + fs.phone + '</div>';
 			
 			if(fs.menu != undefined)
-				htmld += '<div><a href="' + fs.menu + '" target="_blank">Menu</a></div>';
+				htmld += '<div><a href="' + fs.menu.url + '" target="_blank">Menu</a></div>';
 			
 			htmld += '<div>Distance: ' + fs.distance + '</div>';
+			if(fs.user != undefined){
+				htmld += '<div>Votes: ' + fs.user.length + '</div>';
+				htmld += '<div>';
+				for(var i = 0; i < fs.user.length; i++){
+					htmld += fs.user[i].imgHTML;
+				} 
+				htmld += '</div>';
+			}
 			htmld += '<button class="btn" data-fsid="' + fs.id + '">Vote for Me</button>';
 			$(markerDiv).html(htmld);
-		},
-		
-		addVoteFs: function(fs){
-			this.voteFs[fs.id] = fs;
-			console.log(this);
-		},
-		
-		removeVoteFs: function(fs){
-			delete this.voteFs[fs.id];
 		},
 		
 		addSearchFs: function(fs){
@@ -298,12 +332,84 @@ $('.dropdown-toggle').dropdown();
 		},
 		
 		findFs: function(fsid){
-			if(this.searchFs[fsid]){
-				return this.searchFs[fsid];
+			if(this.voteFs.votes[fsid]){
+				return this.voteFs.votes[fsid];
 			}else{
-				return this.voteFs[fsid];
+				return this.searchFs[fsid];
 			}
 		},
+		
+		addUser: function(username){
+			if(username == '')
+				return;
+			
+			var re = new RegExp("^(fb:)?");
+			var usersplit = username.split(re);
+			if(usersplit.length > 1)
+			{
+				//we have a match
+				//grab the end piece
+				type = usersplit[usersplit.length-2];
+				username = usersplit[usersplit.length-1];
+			}else{
+				type = 'gravatar';
+			}
+			
+			var img;
+			if(type && type == 'fb:')
+			{
+				img = document.createElement('img');
+				img.setAttribute('src', 'https://graph.facebook.com/' + username + '/picture?type=square');
+			}else if(readCookie('img') != null){
+				img = document.createElement('img');
+				img.setAttribute('src', readCookie('img'));
+			}else{
+				emailhash = md5(username.toLowerCase());
+				img = document.createElement('img');
+				img.setAttribute('src', 'http://www.gravatar.com/avatar/' + emailhash + '?d=retro&s=18');
+			}
+			
+			this.currentUser = new Josh.User(username, img.src);
+			socket.addUser(String(username), String(img.src), area);
+			
+			userhtml = this.currentUser.imgHTML + username + ' : <a href="#">Sign out</a>';
+			$(loginDiv).html(userhtml);
+			
+			//add cookie for use
+			createCookie('username', username);
+			createCookie('img', img.src)
+		},
+		
+		removeUser: function(){
+			eraseCookie('username');
+			eraseCookie('img');
+			this.currentUser = null;
+			//send message to server?
+			$(loginDiv).html('<input id="login" type="text" placeholder="email">');
+		},
+		
+		addActivity: function(user, fsName, fsid){
+			var lihtml = '<li>' + user.imgHTML + user.username + ' voted for <a href="#" data-fsid="' + fsid + '">' + fsName + '</li><hr/>';
+			
+			$(actsUl).append(lihtml);
+		},
+		
+		showVotes: function(){
+			var voteArray = [];
+			for(var i in this.voteFs.votes){
+				voteArray.push([this.voteFs.votes[i].name, this.voteFs.votes[i].user.length, this.voteFs.votes[i].id, this.voteFs.votes[i].user]);
+			}
+			voteArray.sort(function(a, b){return b[1] - a[1]});
+			var lihtml = '';
+			for(var i =0; i < voteArray.length; i++){
+				lihtml += '<li>' + voteArray[i][1] + ' for <a href="#" data-fsid="' + voteArray[i][2] + '">' + voteArray[i][0] + '</a></li>';
+				for(var u=0; u < voteArray[i][3].length; u++){
+					lihtml += voteArray[i][3][u].imgHTML;
+				}
+			}
+			
+			$(votesUl).html(lihtml);
+		}
 	};
 	
 })(window.Josh = window.Josh || {},  window.jQuery);
@@ -311,21 +417,13 @@ $('.dropdown-toggle').dropdown();
 
 (function(Josh, $){
 	Josh.Votes = function(){
-		var votes = {};
-		
-		this.votes = votes;
-		$(this).on('vote', function(e, d){
-			marker = map.addMarker(d.fs);
-			map.addVoteFs(d.fs);
-			this.addVote({user: [new Josh.User(d.username, d.img)], marker: marker, fsid: d.fs.id});
-		});
-		
+		this.votes = {};
 	};
 	
 	Josh.Votes.prototype = {
 		addVote: function(vote){
 			//first check to see if this person has voted already
-			userVote = this.findByUser(vote.user[0].username);
+			var userVote = this.findByUser(vote.user[0].username);
 			if(userVote != undefined){
 				 //this person voted, now check to see if this is the only vote
 				 if(userVote.user.length == 1){
@@ -338,26 +436,26 @@ $('.dropdown-toggle').dropdown();
 					 for(var i=0; i < userVote.user.length; i++){
 						 if(userVote.user[i].username == vote.user[0].username){
 							 //we found it! Remove only this user
-							 prevVote = userVote.user.splice(i, 1);
+							 var prevVote = userVote.user.splice(i, 1);
 							 delete prevVote;
 							 //put the vote back in
-							 this.votes[userVote.fsid] = userVote;
+							 this.votes[userVote.id] = userVote;
 						 }
 					 }
 				 }
 			}
 			
 			//now check to see if the restaurant exists
-			restVote = this.findByFs(vote.fsid);
+			var restVote = this.findByFs(vote.id);
 			if(restVote != undefined){
 				//add the user to the user list
 				restVote.user.push(vote.user[0]);
 				//put the vote back in
-				this.votes[restVote.fsid] = restVote;
+				this.votes[restVote.id] = restVote;
 			}else{
 				//nothing else is true
 				//add it to the object
-				this.votes[vote.fsid] = vote;
+				this.votes[vote.id] = vote;
 			}
 			
 		},
@@ -366,7 +464,7 @@ $('.dropdown-toggle').dropdown();
 			for(var i in this.votes){
 				for(var u=0; u < this.votes[i].user.length; u++){
 					if(this.votes[i].user[u].username == username){
-						retEl = this.votes[i];
+						var retEl = this.votes[i];
 						delete this.votes[i];
 						return retEl;
 					}
@@ -375,7 +473,7 @@ $('.dropdown-toggle').dropdown();
 		},
 		
 		findByFs: function(fsid){
-			retEl = this.votes[fsid];
+			var retEl = this.votes[fsid];
 			delete this.votes[fsid];
 			return retEl;
 		},
@@ -389,25 +487,19 @@ $('.dropdown-toggle').dropdown();
 socket = new Josh.Socket('http://192.168.1.89:8080/users');
 //console.log(socket);
 
+var map;
+
+map = new Josh.Map('map');
+
 socket.getVotes();
 
-vt = new Josh.Votes();
+//vt = new Josh.Votes();
 
-socket.addEvent('vote', vt);
+socket.addEvent('vote', map);
 //$(vt).on('vote', function(e, d){ console.log(d);});
 
-$(document).on('vote', function(e, d){console.log('This was a custom trigger that received this data'); });
-
- users = io.connect('http://192.168.1.89:8080/users');
-
- 
-myusername = readCookie('username');
-if(myusername != null){
-	//users.emit('add', myusername, readCookie('img'));
-	socket.addUser(myusername, readCookie('img'));
-}
-
-
+ //users = io.connect('http://192.168.1.89:8080/users');
+ /*
 users.on('users', function(d){
 	console.log(d);
 	myusername = readCookie('username');
@@ -428,35 +520,14 @@ users.on('users', function(d){
 			usersul.children('li[data-user="' + d.username + '"]' ).addClass('me');
 		}
 	}
-});
-
-users.on('count', function(d){ $('#stuck').append(d.count+'#');});
-$(document).on('vote', function(e, d){
-//users.on('vote', function(d){
-	//console.log(e);
-	//console.log(d);
-	$('#votes').append('<li>' + d.username + ' voted for ' + d.fs.name + '</li>');
-	var restIcon = L.Icon.extend({
-	    iconUrl: d.fs.categories[0].icon,
-	    shadowUrl: null,
-	    iconSize: new L.Point(32, 32)
-	});
-	var markerLocation = new L.LatLng(d.fs.location.lat, d.fs.location.lng);
-
-	var marker = new L.Marker(markerLocation, {icon: new restIcon(), title: d.fs.name});
-	map.addLayer(marker);
-	vt.addVote({user: [new Josh.User(d.username, d.img)], marker: marker, fsid: d.fs.id}); 
-	//console.log(vt.findByUser('josh359@gmail.com'));
-	//console.log(vt.findByFs("4ba541f0f964a520a1f238e3"));
-	console.log(vt);
-	
-});
+});*/
 
 //users.emit('getVotes');
-users.emit('count');
+//users.emit('count');
 //users.emit('get');
-socket.getUsers();
+//socket.getUsers();
 
+/*
 function restUser(username, type){
 	this.username = username;
 	this.type;
@@ -497,13 +568,12 @@ function restUser(username, type){
 	
 	this.init();
 }
-$('#signout').on('click', function(e){ eraseCookie('username');});
 
 $("#signin").on("click", function(e){
 	e.preventDefault();
 	username = $(this).siblings('input').val();
 	console.log(username);
-	var re = new RegExp("^(fb:)?");
+	/*var re = new RegExp("^(fb:)?");
 	var usersplit = username.split(re);
 	console.log(usersplit);
 	if(usersplit.length > 1)
@@ -525,10 +595,11 @@ $("#signin").on("click", function(e){
 	testu = String(user.username);
 	testi = String(user.img.src);
 	//users.emit('add', testu, testi);
-	socket.addUser(testu, testi);
+	socket.addUser(testu, testi);*//*
+	map.addUser(username);
 	document.cookie = 'username=' + user.username;
 	document.cookie = 'img=' + user.img.src;
-});
+});*/
 
 //navigator.geolocation.getCurrentPosition(function(location){locSuccess(location)},locError,{timeout:10000});
 
@@ -548,14 +619,10 @@ var locSuccess = function(location){
 
 var locError = function(error){};
 
-var map;
 
-map = new Josh.Map('map');
 
 //fake call to use the point
 locSuccess(locationTest);
-
-var eats = {};
 
 $('#search').on('focusout', function(e){getRests($(this).val())});
 
@@ -574,30 +641,6 @@ function(data){
 });
 }
 
-var fsTest = function(e){
-	showRest(e.target.fsid);
-	
-};
-
-var showRest = function(fsid){
-	rest = eats[fsid];
-	table = '<h3>' + rest.name + '</h3><table><tr><td>Phone</td><td>' + rest.contact.formattedPhone + '</td></tr></table>';
-	butt = document.createElement('button');
-	butt.innerHTML='<i class="icon-ok"></i> Sign me up';
-	butt.setAttribute('data-fsid', fsid);
-	$('#fsRest').html(table);
-	$('#fsRest').append(butt);
-	$(butt).on('click', function(e){collectVote(rest);});
-}
-
-var collectVote = function(rest){
-	console.log(rest);
-	users.emit('vote', rest);
-};
-
-var votes = [];
-
-function test(e){console.log(e)};
 
 //$('#map').on('click', function(e){console.log(e);});
 
