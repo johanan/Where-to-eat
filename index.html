@@ -17,7 +17,7 @@
 </head>
 <body>
 <div class="container">
-<h1>Node Test</h1>
+<h1 id="title">Where do you want to eat?</h1>
 
 <div id="stuck"></div>
 
@@ -25,11 +25,11 @@
 	<div id="map" style="height: 620px"></div>
 </div>
 <div id="right">
-	<div id="loginArea"><input id="login" type="text" placeholder="email"></div>
+	<div id="loginArea"><input id="login" type="text" placeholder="fb:username or gravatar"></div>
 	<div id="restaurant" class="well">
 		<form class="form-search">
-  			<input type="text"  class="input-medium search-query" placeholder="search or leave blank">
-  			<button type="submit"  id="search" class="btn">Search</button><button id="clear" class="btn">Clear</button>
+  			<input type="text"  class="input-medium search-query" placeholder="search or leave blank" id="searchText">
+  			<button type="submit"  id="search" class="btn"><i class="icon-search"></i></button><button id="clear" class="btn"><i class="icon-remove"></i></button>
 		</form>
 		<div id="fsRest"></div>
 	</div>
@@ -125,8 +125,14 @@ $('#mtabs a').click(function (e) {
 	};
 	
 	Josh.Socket.prototype.addVote = function(fs){
+		//make a copy of the object to send to the server
+		//we only need basic info as the rest will be
+		//built client side
 		var fsSend = $.extend(true, {}, fs);
+		//delete what we don't need
 		delete fsSend.marker, fsSend.user;
+		console.log(fs);
+		console.log(fsSend);
 		sock.emit('addVote', fsSend);
 		delete fsSend;
 	}
@@ -153,14 +159,16 @@ $('#mtabs a').click(function (e) {
 	var actsUl;
 	var loginDiv;
 	var search;
+	var searchText;
 	var clearButt;
+	var titleh;
 	var area;
 	var location;
 	var socket;
 	
 	Josh.Map = function(id){
 		id = id;
-		socket = new Josh.Socket('http://192.168.1.89:8080/users');
+		socket = new Josh.Socket('http://ejosh.co:8080/users');
 		map = new L.Map(id);
 		console.log(map);
 		osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -181,7 +189,9 @@ $('#mtabs a').click(function (e) {
 		votesUl = document.getElementById('votes');
 		loginDiv = document.getElementById('loginArea');
 		search = document.getElementById('search');
+		searchText = $('#searchText');
 		clearButt = document.getElementById('clear');
+		titleh = $('#title');
 		
 		This = this;
 		
@@ -221,13 +231,13 @@ $('#mtabs a').click(function (e) {
 		
 		$(search).on('click', function(e){
 			e.preventDefault();
-			target = $(e.target);
-			This.findRests(target.siblings('input').val());
+			This.findRests(searchText.val());
 		});
 		
 		$(clearButt).on('click', function(e){
 			e.preventDefault();
 			//add a blank search layer
+			searchText.val('');
 			This.addSearchLayer({});
 		});
 		
@@ -261,6 +271,7 @@ $('#mtabs a').click(function (e) {
 		//see if we have a hash area
 		if(window.location.hash) {
 			area = String(window.location.hash).slice(1);
+			titleh.html(area);
 		} else {
 		  //set to default
 		  area = 'default';
@@ -448,14 +459,18 @@ $('#mtabs a').click(function (e) {
 		
 		findRests: function(query){
 			console.log(location);
-			var url = 'http://localhost:85/test/fs.php?&ll=' + location.coords.latitude + ',' + location.coords.longitude;
+			//var url = 'http://localhost:85/test/fs.php?&ll=' + location.coords.latitude + ',' + location.coords.longitude;
+			var url = 'https://api.foursquare.com/v2/venues/search?ll=' + location.coords.latitude + ',' + location.coords.longitude + '&client_id=NQNF2JL2VKJHXETAOND5TPJ23A2SWGZC4TXJEMLGJBXYMIJM&client_secret=TF1CC0HZVBJ0TM50CRNJNTWSOWZMIKQ30V4DEB4GC2UWZ3KM';
 			if(query != ''){
 				url += '&query=' + encodeURI(query) ;
+			}else{
+				url += '&query=' + encodeURI('restaurant') ;
 			}
 			var This = this;
+			console.log(url);
 			$.getJSON( url , 
 			function(data){
-				//console.log(data);
+				console.log(data);
 				rests = data.response.groups[0].items;
 				This.addSearchLayer(rests);
 			});

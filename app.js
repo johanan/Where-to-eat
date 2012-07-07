@@ -5,12 +5,10 @@ var app = require('http').createServer(handler)
 var redis = require("redis");
 client = redis.createClient();
 
-//client.set("test", "test", redis.print);
-
-
 app.listen(8080);
 
 function handler (req, res) {
+	//I don't know if I need this
     res.writeHead(200);
     res.end("Hello Socket");
   
@@ -27,6 +25,7 @@ usernameExists = function(area, username){
 };
 
 setInterval(checkExpires, 600000  );//ten minute check
+checkExpires(); //run it once to clear everything out if it is restarting
 
 var User = function(username, img, area, socketid){
 	this.username = username;
@@ -36,7 +35,6 @@ var User = function(username, img, area, socketid){
 };
 
 var users = io.of('/users').on('connection', function (socket) {
-	//socket.set('username', socket.id);
 	var user;
 	
 	socket.on('add', function(username, img, area){
@@ -44,63 +42,27 @@ var users = io.of('/users').on('connection', function (socket) {
 	if(!usernameExists(area, username)){
 		setUser(username, img, area, 7200);
 	}
-		var test = new User(username, img, area, socket.id);
+		//var test = new User(username, img, area, socket.id);
 		socket.join(area);
-		console.log(test);
-		user = test;
-		socket.set('user', test);
-		//socket.set('img', img);
+		//console.log(test);
+		user = new User(username, img, area, socket.id);
+		socket.set('user', user);
+		
 		console.log(socket.id + ' : ' + username);
 		console.log(io.of('/users').clients());
-		
-		//add the user to redis here
-		//put all the users here
-		
-		//socket.broadcast.emit('users', {username: username, img: img});
-		//socket.emit('users', {username: username, img: img, me: true});
-		//io.of('/users').sockets[user.socketid].emit('test', 'hello');
 		});
-	
-	
-	socket.on('count', function(){
-		checkUserSet('test:users', function(){
-			client.scard('test:users', function(err, count){
-				socket.broadcast.emit('count', {count: count});
-			});
-		});
-		
-	});
-	
-	socket.on('get', function(){
-		//checkUserSet('test:users', function(){
-			client.smembers('test:users', function(err, members){
-				if(members != null){
-				members.forEach(function(key){
-					console.log('key ' + key);
-					client.get(key, function(err, data){console.log(data);
-						client.get(key+':img', function(err, imgdata){socket.emit('users', {username: data, img: imgdata});});
-					
-					});
-				});
-				}
-			});
-		//});
-	});
 	
 	socket.on('addVote', function(fs){
-		socket.get('user', function(err, user){
-			//socket.get('img', function(err, img){
+		if(user !== null){
 				console.log(user.username + ' voted for : ' + JSON.stringify(fs));
 				setVote(user.username, user.area, fs, 7200);
 				io.of('/users').in(user.area).emit('vote', {username: user.username, img: user.img, fs: fs});
 				//socket.emit('vote', {username: user.username, img: user.img, fs: fs});
-			//});
-		});
+		}
 	});
 	
 	socket.on('getVotes', function(){
 		var area = user.area;
-		//checkUserSet(area+':votes', function(){
 			client.smembers(area+':votes', function(err, votes){
 				if(votes != null){
 					votes.forEach(function(key){
@@ -114,12 +76,11 @@ var users = io.of('/users').on('connection', function (socket) {
 					});
 				}
 			});
-		//});
 	});
 	
 	socket.on('disconnect', function(client){
 		//console.log(socket.get('username', function(err, user){removeUser(user);}) + ' disconnected');
-		if(user != null){
+		if(user !== null){
 			socket.leave(user.area);
 			removeUser(user.username, user.area, function(){
 				console.log('user left:' + user.username );
@@ -132,6 +93,7 @@ var users = io.of('/users').on('connection', function (socket) {
 function setVote(username, area, fs, expire){
 	client.set(area+':users:' + username + ':vote', JSON.stringify(fs), redis.print);
 	client.sadd(area+':votes', area+':users:' + username, redis.print);
+	//add the set to the expire set
 	client.sadd('expireKeys', area+':votes', redis.print);
 	//set a timer
 	client.set(area+':votes:timer', expire, redis.print);
@@ -143,36 +105,30 @@ function setUser(username, img, area, expire){
 	client.expire(area+':users:' + username, expire, redis.print);
 	client.set(area+':users:' + username + ':img', img, redis.print);
 	client.expire(area+':users:' + username + ':img', expire, redis.print);
+	//set a timer
 	client.set(area+':users:timer', expire, redis.print);
 	client.expire(area+':users:timer', expire, redis.print);
 	client.sadd(area+':users', area+':users:' + username, redis.print);
+	//add the set to the expire set
 	client.sadd('expireKeys', area+':users', redis.print);
 };
 
 function removeUser(username, area, callback){
-	client.del(area+':users:' + username);
-	client.del(area+':users:' + username + ':img');
+	//this doesn't do anything right now
 	client.srem(area+':users', area+':users:' + username);
 	callback();
 };
 
-function checkUserSet(set, callback){
-	client.get(set + ':timer', function(err, data){
-		 if(data == null){
-			client.del(set);
-		}
-		 callback();
-	});
-};
-
 function checkExpires(){console.log('check expires');
-	
+	//grab the expire set
 	client.smembers('expireKeys', function(err, keys){
 		if(keys != null){
 			keys.forEach(function(key){
 				console.log(key);
 				client.get(key+':timer', function(err, timer){
+					//grab the timer
 					if(timer != null){
+						//timer exists check the ttl on it
 						client.ttl(key+':timer', function(err, ttl){
 							//the ttl is two hours and if it is under an hour
 							//and a half we delete it
