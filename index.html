@@ -29,7 +29,7 @@
 	<div id="restaurant" class="well">
 		<form class="form-search">
   			<input type="text"  class="input-medium search-query" placeholder="search or leave blank">
-  			<button type="submit"  id="search" class="btn">Search</button>
+  			<button type="submit"  id="search" class="btn">Search</button><button id="clear" class="btn">Clear</button>
 		</form>
 		<div id="fsRest"></div>
 	</div>
@@ -58,7 +58,8 @@
 <script src="leaflet.js"></script>
 <script src="js/bootstrap-tab.js"></script>
 <script>
-function createCookie(name,value,days) {
+//cookie 
+function createCookie(name, value, days) {
 	if (days) {
 		var date = new Date();
 		date.setTime(date.getTime()+(days*24*60*60*1000));
@@ -152,6 +153,7 @@ $('#mtabs a').click(function (e) {
 	var actsUl;
 	var loginDiv;
 	var search;
+	var clearButt;
 	var area;
 	var location;
 	var socket;
@@ -179,6 +181,7 @@ $('#mtabs a').click(function (e) {
 		votesUl = document.getElementById('votes');
 		loginDiv = document.getElementById('loginArea');
 		search = document.getElementById('search');
+		clearButt = document.getElementById('clear');
 		
 		This = this;
 		
@@ -220,6 +223,12 @@ $('#mtabs a').click(function (e) {
 			e.preventDefault();
 			target = $(e.target);
 			This.findRests(target.siblings('input').val());
+		});
+		
+		$(clearButt).on('click', function(e){
+			e.preventDefault();
+			//add a blank search layer
+			This.addSearchLayer({});
 		});
 		
 		this.searchFs = {};
@@ -523,171 +532,13 @@ $('#mtabs a').click(function (e) {
 	};
 })(window.Josh = window.Josh || {},  window.jQuery);
 
-//socket = new Josh.Socket('http://192.168.1.89:8080/users');
-//console.log(socket);
-
 window.jQuery(document).ready(function() {
 var map;
 
 map = new Josh.Map('map');
 });
 
-//socket.getVotes();
-
-//vt = new Josh.Votes();
-
-//socket.addEvent('vote', map);
-//$(vt).on('vote', function(e, d){ console.log(d);});
-
- //users = io.connect('http://192.168.1.89:8080/users');
- /*
-users.on('users', function(d){
-	console.log(d);
-	myusername = readCookie('username');
-	if(myusername == d.username){
-		d.me = true;
-	}
-	usersul = $('#users');
-	console.log(usersul.children('li[data-user="' + d.username + '"]').length);
-	if(d.me){
-		$('#me').html('<img src="' + d.img + '"/>' + d.username);
-		return;
-	}
-	if(usersul.children('li[data-user="' + d.username + '"]' ).length == 0){
-		if(d.me){lic = '<li class="me" ';}else{lic='<li ';}
-		usersul.append( lic + 'data-user="' + d.username + '"><img src="' + d.img + '"/>' + d.username+'</li>');
-	}else{
-		if(d.me){
-			usersul.children('li[data-user="' + d.username + '"]' ).addClass('me');
-		}
-	}
-});*/
-
-//users.emit('getVotes');
-//users.emit('count');
-//users.emit('get');
-//socket.getUsers();
-
-/*
-function restUser(username, type){
-	this.username = username;
-	this.type;
-	this.view = null;
-	this.img = null;
-	this.init = function(){
-		this.setImg();
-	}
-	
-	this.setImg = function(){
-		var img;
-		if(type == 'fb:')
-		{
-			img = document.createElement('img');
-			img.setAttribute('src', 'https://graph.facebook.com/' + this.username + '/picture?type=square');
-		}else{
-			emailhash = md5(this.username.toLowerCase());
-			img = document.createElement('img');
-			img.setAttribute('src', 'http://www.gravatar.com/avatar/' + emailhash + '?d=mm&s=18');
-		}
-		this.img = img;
-	}
-	
-	this.render = function(){
-		if(this.view){
-			return this.view;
-		}else{
-			wrapper = document.createElement('div');
-			namediv = document.createElement('div');
-			namediv.innerText = username;
-			console.log(namediv);
-			$(wrapper).append([namediv, this.img]);
-			
-			this.view = wrapper;
-			return wrapper;
-		}
-	};
-	
-	this.init();
-}
-
-$("#signin").on("click", function(e){
-	e.preventDefault();
-	username = $(this).siblings('input').val();
-	console.log(username);
-	/*var re = new RegExp("^(fb:)?");
-	var usersplit = username.split(re);
-	console.log(usersplit);
-	if(usersplit.length > 1)
-	{
-		//we have a match
-		//grab the end piece
-		usertype = usersplit[usersplit.length-2];
-		fbuser = usersplit[usersplit.length-1];
-		console.log(usertype);
-		console.log(fbuser);
-		var user = new restUser(fbuser, usertype);
-		console.log(user.render());
-		//$("#usertest").html(user.render());
-		
-	}else{
-		user = new restUser(username);
-		//$("#usertest").html(user.render());
-	}
-	testu = String(user.username);
-	testi = String(user.img.src);
-	//users.emit('add', testu, testi);
-	socket.addUser(testu, testi);*//*
-	map.addUser(username);
-	document.cookie = 'username=' + user.username;
-	document.cookie = 'img=' + user.img.src;
-});*/
-
-//navigator.geolocation.getCurrentPosition(function(location){locSuccess(location)},locError,{timeout:10000});
-
-//fake gelocation point
-/*
-var locationTest = {
-		coords: {
-			longitude: -86.2423926,
-			latitude: 41.6465882
-		}
-}*/
-
-/*var locSuccess = function(location){
-	console.log(location);
-	map.centerLoc(location);
-};*/
-
-
 var locError = function(error){};
-
-
-
-//fake call to use the point
-//locSuccess(locationTest);
-
-//$('#search').on('focusout', function(e){getRests($(this).val())});
-
-/*
-function getRests(query){
-	//url = 'http://192.168.1.89/aaron/nodetest/fs.php?callback=?&ll=' + locationTest.coords.latitude + ',' + locationTest.coords.longitude;
-	url = 'http://localhost:85/test/fs.php?&ll=' + locationTest.coords.latitude + ',' + locationTest.coords.longitude;
-	if(query != ''){
-		url += '&query=' + encodeURI(query) ;
-	}
-$.getJSON( url , 
-function(data){
-	eats = {};
-	//console.log(data);
-	rests = data.response.groups[0].items;
-	map.addSearchLayer(rests);
-});
-}*/
-
-
-//$('#map').on('click', function(e){console.log(e);});
-
-
 </script>
 </div>
 </body>
