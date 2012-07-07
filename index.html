@@ -28,8 +28,8 @@
 	<div id="loginArea"><input id="login" type="text" placeholder="email"></div>
 	<div id="restaurant" class="well">
 		<form class="form-search">
-  			<input type="text" id="search" class="input-medium search-query">
-  			<button type="submit" class="btn">Search</button>
+  			<input type="text"  class="input-medium search-query" placeholder="search or leave blank">
+  			<button type="submit"  id="search" class="btn">Search</button>
 		</form>
 		<div id="fsRest"></div>
 	</div>
@@ -151,14 +151,20 @@ $('#mtabs a').click(function (e) {
 	var votesUl;
 	var actsUl;
 	var loginDiv;
+	var search;
 	var area;
+	var location;
+	var socket;
 	
 	Josh.Map = function(id){
 		id = id;
+		socket = new Josh.Socket('http://192.168.1.89:8080/users');
 		map = new L.Map(id);
+		console.log(map);
 		osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 		osmAttrib='Map data © openstreetmap contributors';
 		osm = new L.TileLayer(osmUrl,{minZoom:8,maxZoom:18,attribution:osmAttrib});
+		
 		
 		map.addLayer(osm);
 		
@@ -167,12 +173,17 @@ $('#mtabs a').click(function (e) {
 		    iconSize: new L.Point(32, 32)
 		});
 		
+		
 		markerDiv = document.getElementById('fsRest');
 		actsUl = document.getElementById('acts');
 		votesUl = document.getElementById('votes');
 		loginDiv = document.getElementById('loginArea');
+		search = document.getElementById('search');
 		
 		This = this;
+		
+		navigator.geolocation.getCurrentPosition(function(location){This.centerLoc(location)},locError,{timeout:10000});
+		
 		$(markerDiv).on('click', 'button', function(e){
 			var target = $(e.target);
 				if(This.currentUser != null){
@@ -205,9 +216,17 @@ $('#mtabs a').click(function (e) {
 			This.removeUser();
 		});
 		
+		$(search).on('click', function(e){
+			e.preventDefault();
+			target = $(e.target);
+			This.findRests(target.siblings('input').val());
+		});
+		
 		this.searchFs = {};
 		this.voteFs = new Josh.Votes();
 		this.currentUser = null;
+		
+		socket.addEvent('vote', this);
 		
 		$(this).on('vote', function(e, d){
 			
@@ -224,6 +243,12 @@ $('#mtabs a').click(function (e) {
 			console.log(d);
 		});
 		
+		$(this.voteFs).on('removeLayer', function(e,d){
+			This.removeLayer(d);
+		});
+		
+		//listen for a hash change
+		window.addEventListener("hashchange", function(){window.location.reload();});
 		//see if we have a hash area
 		if(window.location.hash) {
 			area = String(window.location.hash).slice(1);
@@ -241,7 +266,8 @@ $('#mtabs a').click(function (e) {
 	};
 	
 	Josh.Map.prototype = {
-		centerLoc: function(location){
+		centerLoc: function(loc){
+			location = loc;
 			var hull = new L.LatLng(location.coords.latitude, location.coords.longitude);
 			map.setView(hull, 11);
 		},
@@ -283,7 +309,6 @@ $('#mtabs a').click(function (e) {
 			for(id in rests){
 				this.addSearchFs(rests[id]);
 				var marker = this.addMarker(rests[id], false);
-				eats[rests[id].id] = rests[id];
 				searchLayer.addLayer(marker);
 			}
 			
@@ -377,7 +402,8 @@ $('#mtabs a').click(function (e) {
 			
 			//add cookie for use
 			createCookie('username', username);
-			createCookie('img', img.src)
+			createCookie('img', img.src);
+			socket.getVotes();
 		},
 		
 		removeUser: function(){
@@ -409,7 +435,22 @@ $('#mtabs a').click(function (e) {
 			}
 			
 			$(votesUl).html(lihtml);
-		}
+		},
+		
+		findRests: function(query){
+			console.log(location);
+			var url = 'http://localhost:85/test/fs.php?&ll=' + location.coords.latitude + ',' + location.coords.longitude;
+			if(query != ''){
+				url += '&query=' + encodeURI(query) ;
+			}
+			var This = this;
+			$.getJSON( url , 
+			function(data){
+				//console.log(data);
+				rests = data.response.groups[0].items;
+				This.addSearchLayer(rests);
+			});
+		},
 	};
 	
 })(window.Josh = window.Josh || {},  window.jQuery);
@@ -422,6 +463,7 @@ $('#mtabs a').click(function (e) {
 	
 	Josh.Votes.prototype = {
 		addVote: function(vote){
+			console.log(map);
 			//first check to see if this person has voted already
 			var userVote = this.findByUser(vote.user[0].username);
 			if(userVote != undefined){
@@ -429,7 +471,7 @@ $('#mtabs a').click(function (e) {
 				 if(userVote.user.length == 1){
 					 //only this person voted for this restaurant delete it
 					 //but first take the marker off the map
-					 map.removeLayer(userVote.marker);
+					 $(this).trigger('removeLayer', userVote.marker);
 					 delete userVote;
 				 }else{
 					 //multiple people voted for it, just remove their vote
@@ -477,25 +519,24 @@ $('#mtabs a').click(function (e) {
 			delete this.votes[fsid];
 			return retEl;
 		},
-		
-		addEvent: function(name){
-			
-		}
+
 	};
 })(window.Josh = window.Josh || {},  window.jQuery);
 
-socket = new Josh.Socket('http://192.168.1.89:8080/users');
+//socket = new Josh.Socket('http://192.168.1.89:8080/users');
 //console.log(socket);
 
+window.jQuery(document).ready(function() {
 var map;
 
 map = new Josh.Map('map');
+});
 
-socket.getVotes();
+//socket.getVotes();
 
 //vt = new Josh.Votes();
 
-socket.addEvent('vote', map);
+//socket.addEvent('vote', map);
 //$(vt).on('vote', function(e, d){ console.log(d);});
 
  //users = io.connect('http://192.168.1.89:8080/users');
@@ -604,17 +645,18 @@ $("#signin").on("click", function(e){
 //navigator.geolocation.getCurrentPosition(function(location){locSuccess(location)},locError,{timeout:10000});
 
 //fake gelocation point
+/*
 var locationTest = {
 		coords: {
 			longitude: -86.2423926,
 			latitude: 41.6465882
 		}
-}
+}*/
 
-var locSuccess = function(location){
+/*var locSuccess = function(location){
 	console.log(location);
 	map.centerLoc(location);
-};
+};*/
 
 
 var locError = function(error){};
@@ -622,10 +664,11 @@ var locError = function(error){};
 
 
 //fake call to use the point
-locSuccess(locationTest);
+//locSuccess(locationTest);
 
-$('#search').on('focusout', function(e){getRests($(this).val())});
+//$('#search').on('focusout', function(e){getRests($(this).val())});
 
+/*
 function getRests(query){
 	//url = 'http://192.168.1.89/aaron/nodetest/fs.php?callback=?&ll=' + locationTest.coords.latitude + ',' + locationTest.coords.longitude;
 	url = 'http://localhost:85/test/fs.php?&ll=' + locationTest.coords.latitude + ',' + locationTest.coords.longitude;
@@ -639,7 +682,7 @@ function(data){
 	rests = data.response.groups[0].items;
 	map.addSearchLayer(rests);
 });
-}
+}*/
 
 
 //$('#map').on('click', function(e){console.log(e);});
