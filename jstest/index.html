@@ -1,0 +1,137 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>QUnit Test Suite</title>  
+    <link rel="stylesheet" href="http://github.com/jquery/qunit/raw/master/qunit/qunit.css" type="text/css" media="screen">  
+    <script type="text/javascript" src="http://github.com/jquery/qunit/raw/master/qunit/qunit.js"></script>  
+    <!-- I need all of these  -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+	<script src="../js/socket.io.js"></script>
+	<script src="../js/geohash.js"></script>
+	<script src="../js/md5.js"></script>
+	<script src="../leaflet.js"></script>
+	<script src="../js/bootstrap-tab.js"></script>
+	<script src="../js/joshNS.js"></script>
+    <!-- Your tests file goes here -->  
+    <!--  <script type="text/javascript" src="myTests.js"></script>-->
+    <script>
+ 	module('Josh.User', {
+ 		setup: function(){
+ 			this.testUser = new Josh.User('testname', 'testimg');
+ 		}
+ 	});
+ 	test('User creation', function(){
+ 		strictEqual(this.testUser.username, 'testname', 'name property is set');
+ 		strictEqual(this.testUser.img, 'testimg', 'img property is set');
+ 		strictEqual(this.testUser.imgHTML, '<img src="testimg" class="userimg" title="testname">', 'imgHTML is set correctly');
+ 	});
+ 	
+ 	module('Josh.Cookie');
+ 	test('Cookie Creation', function(){
+ 		Josh.Cookie.createCookie('testCookie', 'test');
+ 		strictEqual(Josh.Cookie.readCookie('testCookie'), 'test', 'Cookie was set and read');
+ 	});
+ 	test('Cookie Deletion', function(){
+ 		Josh.Cookie.eraseCookie('testCookie');
+ 		strictEqual(Josh.Cookie.readCookie('testCookie'), null, 'Cookie was deleted');
+ 	});
+ 	
+ 	module('Josh.Map', {
+ 		setup: function(){
+ 			Josh.Cookie.eraseCookie('username');
+ 	 		window.location.hash = '#qunitTesting';
+ 			this.map = new Josh.Map('map');
+ 			this.location = {coords:{latitude:41.6465843, longitude: -86.24236479999999}};
+ 		}
+ 	});
+ 	test('Map Creation', function(){
+ 		equal($('#map').children('.leaflet-map-pane').length, 1, 'The map should have a child with leaflet-map-pane class');
+ 		ok(this.map.map instanceof L.Map, 'The map object should be a Leaflet Map object');
+ 		equal(this.map.currentUser, null, 'The current User object should be blank');
+ 		equal(this.map.searchLayer, null, 'The searchLayer object should be blank');
+ 		equal(this.map.location, null, 'Location should be null');
+ 		this.map.centerLoc(this.location);
+ 		notEqual(this.map.location, null, 'Location should not be null after centering');
+ 		
+ 	});
+ 	test('Add a User', function(){
+ 		this.map.addUser('');
+ 		equal(this.map.currentUser, null, 'A blank username should not set the user');
+ 		equal($('#loginArea').children('input').length, 1, 'The input text box should still be present');
+ 		
+ 		this.map.addUser('test');
+ 		equal(this.map.currentUser.img.substring(0, 12), 'http://www.g', 'Should return a gravatar URL' );
+ 		equal($('#loginArea').children('input').length, 0, 'The input text box should be gone');
+ 		equal(Josh.Cookie.readCookie('username'), 'test', 'A cookie should have been set with the correct username');
+ 		
+ 		this.map.addUser('fb:test');
+ 		equal(this.map.currentUser.img.substring(0, 12), 'https://grap', 'Should return a Facebook URL' );
+ 		equal($('#loginArea').children('input').length, 0, 'The input text box should be gone');
+ 		equal(Josh.Cookie.readCookie('username'), 'test', 'A cookie should have been set with the correct username');
+ 	});
+ 	test('Remove a User', function(){
+ 		this.map.addUser('test');
+ 		this.map.removeUser();
+ 		equal(this.map.currentUser, null, 'Current user should be null');
+ 		equal(Josh.Cookie.readCookie('username'), null, 'Cookie was deleted');
+ 		equal($('#loginArea').children('input').length, 1, 'The input text box should be present');
+ 	});
+ 	test('Searching for Restaurants', function(){
+ 		this.map.centerLoc(this.location);
+ 		stop();
+ 		this.map.findRests('');
+
+ 		setTimeout(function(){
+ 			notEqual(this.map.searchFs, null, 'The returned data should create the searchLayer');
+ 			start();
+ 		}, 3000);
+ 		
+ 		
+ 		
+ 		
+ 	});
+    </script> 
+</head>  
+<body>  
+    <h1 id="qunit-header">Where to Eat Tests</h1>
+  <h2 id="qunit-banner"></h2>
+  <div id="qunit-testrunner-toolbar"></div>
+  <h2 id="qunit-userAgent"></h2>
+  <ol id="qunit-tests"></ol>
+  <div id="qunit-fixture">
+  	<h1 id="title">Where do you want to eat?</h1>
+
+<div id="stuck"></div>
+
+<div id="left">
+	<div id="map" style="height: 620px"></div>
+</div>
+<div id="right">
+	<div id="loginArea"><input id="login" type="text" placeholder="fb:username or gravatar"></div>
+	<div id="restaurant" class="well">
+		<form class="form-search">
+  			<input type="text"  class="input-medium search-query" placeholder="search or leave blank" id="searchText">
+  			<button type="submit"  id="search" class="btn"><i class="icon-search"></i></button><button id="clear" class="btn"><i class="icon-remove"></i></button>
+		</form>
+		<div id="fsRest"></div>
+	</div>
+	<div id="tabs" class="tabbable">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#tab1" data-toggle="tab">Votes</a></li>
+    		<li><a href="#tab2" data-toggle="tab">Activity</a></li>
+		</ul>
+		<div class="tab-content">
+		    <div class="tab-pane active activity" id="tab1">
+		      <ul id="votes"></ul>
+		    </div>
+		    <div class="tab-pane activity" id="tab2">
+		      <ul id="acts"></ul>
+		    </div>
+		  </div>
+		
+	</div>
+</div>
+  </div>
+     
+</body>  
+</html>  
