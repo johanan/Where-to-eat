@@ -73,7 +73,7 @@
 		//built client side
 		var fsSend = $.extend(true, {}, fs);
 		//delete what we don't need
-		delete fsSend.marker, fsSend.user;
+		//delete fsSend.marker, fsSend.user;
 		console.log(fs);
 		console.log(fsSend);
 		sock.emit('addVote', fsSend);
@@ -199,6 +199,7 @@
 				var marker = this.addMarker(d.fs);
 				d.fs.marker = marker;
 			}
+			
 			d.fs.user = [new Josh.User(d.username, d.img)];
 			this.addActivity(d.fs.user[0], d.fs.name, d.fs.id);
 			this.voteFs.addVote(d.fs);
@@ -444,7 +445,14 @@
 				if(userVote.user.length === 1){
 					//only this person voted for this restaurant delete it
 					//but first take the marker off the map
-					$(this).trigger('removeLayer', userVote.marker);
+					//after checking to see if the new vote has a marker
+					if(vote.marker !== undefined){
+						//it does so delete it
+						$(this).trigger('removeLayer', userVote.marker);
+					}else{
+						//it doesn't so pass the marker
+						vote.marker = userVote.marker;
+					}
 					//delete userVote;
 				}else{
 					//multiple people voted for it, just remove their vote

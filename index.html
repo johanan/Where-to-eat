@@ -1,52 +1,49 @@
 <html>
 <head>
-	<title>Socket Test</title>
+	<title>Where do you want to eat?</title>
 	<style>
 	body {height:100%;}
-	#wrapper { width: 960px; margin: 0 auto;}
-	#left {width: 66%; float:left; margin-right: 10px;}
-	#right {float:left; width: 30%}
-	#stuck {position: absolute; z-index: 1000; top: 0; right: 0;}
 	ul#votes li, ul#acts li {list-style: none;}
 	#restaurant {height: 178px; overflow: auto;}
 	.activity {height: 320px; overflow: auto;}
 	.userimg {height: 18px; width: 18px;}
 	</style>
 	<link rel="stylesheet" href="leaflet.css" />
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
 <h1 id="title">Where do you want to eat?</h1>
 
-<div id="stuck"></div>
-
-<div id="left">
-	<div id="map" style="height: 620px"></div>
-</div>
-<div id="right">
-	<div id="loginArea"><input id="login" type="text" placeholder="fb:username or gravatar"></div>
-	<div id="restaurant" class="well">
-		<form class="form-search">
-  			<input type="text"  class="input-medium search-query" placeholder="search or leave blank" id="searchText">
-  			<button type="submit"  id="search" class="btn"><i class="icon-search"></i></button><button id="clear" class="btn"><i class="icon-remove"></i></button>
-		</form>
-		<div id="fsRest"></div>
+<div class="row-fluid">
+	<div class="span8">
+		<div id="map" style="height: 620px"></div>
 	</div>
-	<div id="tabs" class="tabbable">
-		<ul class="nav nav-tabs">
-			<li class="active"><a href="#tab1" data-toggle="tab">Votes</a></li>
-    		<li><a href="#tab2" data-toggle="tab">Activity</a></li>
-		</ul>
-		<div class="tab-content">
-		    <div class="tab-pane active activity" id="tab1">
-		      <ul id="votes"></ul>
-		    </div>
-		    <div class="tab-pane activity" id="tab2">
-		      <ul id="acts"></ul>
-		    </div>
-		  </div>
-		
+	<div class="span4">
+		<div id="loginArea"><input id="login" type="text" placeholder="fb:username or gravatar"></div>
+		<div id="restaurant" class="well">
+			<form class="form-search">
+	  			<input type="text"  class="input-medium search-query" placeholder="search or leave blank" id="searchText">
+	  			<button type="submit"  id="search" class="btn"><i class="icon-search"></i></button><button id="clear" class="btn"><i class="icon-remove"></i></button>
+			</form>
+			<div id="fsRest"></div>
+		</div>
+		<div id="tabs" class="tabbable">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#tab1" data-toggle="tab">Votes</a></li>
+	    		<li><a href="#tab2" data-toggle="tab">Activity</a></li>
+			</ul>
+			<div class="tab-content">
+			    <div class="tab-pane active activity" id="tab1">
+			      <ul id="votes"></ul>
+			    </div>
+			    <div class="tab-pane activity" id="tab2">
+			      <ul id="acts"></ul>
+			    </div>
+			  </div>
+			
+		</div>
 	</div>
 </div>
 
