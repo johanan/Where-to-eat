@@ -80,12 +80,14 @@ var users = io.of('/users').on('connection', function (socket) {
 	
 	socket.on('disconnect', function(client){
 		//console.log(socket.get('username', function(err, user){removeUser(user);}) + ' disconnected');
-		if(user !== null){
-			socket.leave(user.area);
-			removeUser(user.username, user.area, function(){
-				console.log('user left:' + user.username );
-			});
-		}
+		socket.get('user', function(err, suser){
+			if(suser !== null){
+				socket.leave(suser.area);
+				removeUser(suser.username, suser.area, function(){
+					console.log('user left:' + suser.username );
+				});
+			}
+		});
 	});
 	
 });
