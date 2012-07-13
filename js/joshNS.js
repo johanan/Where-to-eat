@@ -73,7 +73,7 @@
 		//built client side
 		var fsSend = $.extend(true, {}, fs);
 		//delete what we don't need
-		//delete fsSend.marker, fsSend.user;
+		delete fsSend.marker, fsSend.user;
 		console.log(fs);
 		console.log(fsSend);
 		sock.emit('addVote', fsSend);
