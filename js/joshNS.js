@@ -463,14 +463,14 @@
 					//only this person voted for this restaurant delete it
 					//but first take the marker off the map
 					//after checking to see if the new vote has a marker
-					if(userVote.marker !== undefined){
-						//it does so delete it
-						$(this).trigger('removeLayer', userVote.marker);
-					}else{
+					if(vote.marker === undefined){
 						//it doesn't so pass the marker
 						vote.marker = userVote.marker;
 					}
-					//delete userVote;
+					if(vote.id !== userVote.id){
+						//delete the marker only if the two rests are not the same
+						$(this).trigger('removeLayer', userVote.marker);
+					}
 				}else{
 					//multiple people voted for it, just remove their vote
 					for(var i=0; i < userVote.user.length; i++){
