@@ -7,6 +7,9 @@
 	#restaurant {height: 178px; overflow: auto;}
 	.activity {height: 320px; overflow: auto;}
 	.userimg {height: 18px; width: 18px;}
+	.container {position: relative;}
+	#alert {position: absolute; top:0; right: 0; color: #fff; background: #08C; padding: 5px;}
+	.none {display: none;}
 	</style>
 	<link rel="stylesheet" href="leaflet.css" />
 	<link rel="stylesheet" href="css/bootstrap.css" />
@@ -16,7 +19,7 @@
 <body>
 <div class="container">
 <h1 id="title">Where do you want to eat?</h1>
-
+<div id="alert">alert</div>
 <div class="row-fluid">
 	<div class="span8">
 		<div id="map" style="height: 620px"></div>

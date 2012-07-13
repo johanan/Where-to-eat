@@ -77,7 +77,6 @@
 		console.log(fs);
 		console.log(fsSend);
 		sock.emit('addVote', fsSend);
-		//delete fsSend;
 	};
 	
 	return Josh.Socket;
@@ -107,6 +106,7 @@
 	var titleh;
 	var area;
 	var socket;
+	var alertDiv;
 	
 	Josh.Map = function(id){
 		id = id;
@@ -134,6 +134,7 @@
 		searchText = $('#searchText');
 		clearButt = document.getElementById('clear');
 		titleh = $('#title');
+		alertDiv = $('#alert');
 		
 		var This = this;
 		
@@ -147,7 +148,7 @@
 				socket.addVote(fs);
 				console.log(This.findFs(fsid));
 			}else{
-				alert('you must be logged in!');
+				This.addAlert('You must be logged in!');
 			}
 		});
 		
@@ -172,8 +173,10 @@
 		});
 		
 		$(search).on('click', function(e){
+			This.addAlert('Searching for Restaurants');
 			e.preventDefault();
 			This.findRests(searchText.val());
+			This.removeAlert();
 		});
 		
 		$(clearButt).on('click', function(e){
@@ -182,6 +185,11 @@
 			searchText.val('');
 			This.addSearchLayer({});
 		});
+		
+		alertDiv.on('click', function(e){
+			This.removeAlert();
+		});
+		
 		
 		this.searchFs = {};
 		this.voteFs = new Josh.Votes();
@@ -424,6 +432,15 @@
 				var rests = data.response.groups[0].items;
 				This.addSearchLayer(rests);
 			});
+		},
+		
+		addAlert: function(message){
+			alertDiv.removeClass('none');
+			alertDiv.html(message);
+		},
+		
+		removeAlert: function(){
+			alertDiv.addClass('none');
 		}
 	};
 	
@@ -446,7 +463,7 @@
 					//only this person voted for this restaurant delete it
 					//but first take the marker off the map
 					//after checking to see if the new vote has a marker
-					if(vote.marker !== undefined){
+					if(userVote.marker !== undefined){
 						//it does so delete it
 						$(this).trigger('removeLayer', userVote.marker);
 					}else{
