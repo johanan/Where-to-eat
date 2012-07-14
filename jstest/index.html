@@ -6,12 +6,11 @@
     <script type="text/javascript" src="http://github.com/jquery/qunit/raw/master/qunit/qunit.js"></script>  
     <!-- I need all of these  -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-	<script src="../js/socket.io.js"></script>
-	<script src="../js/geohash.js"></script>
+	<script src="../js/socket.io.min.js"></script>
 	<script src="../js/md5.js"></script>
 	<script src="../leaflet.js"></script>
 	<script src="../js/bootstrap-tab.js"></script>
-	<script src="../js/joshNS.js"></script>
+	<script src="./js_instrument/joshNS.js"></script>
     <!-- Your tests file goes here -->  
     <!--  <script type="text/javascript" src="myTests.js"></script>-->
     <script>
@@ -41,7 +40,7 @@
 	 		window.location.hash = '#qunitTesting';
  			Josh.Cookie.eraseCookie('username');
  			this.map = new Josh.Map('map');
- 			this.location = {coords:{latitude:41.6465843, longitude: -86.24236479999999}};
+ 			this.location = {coords:{latitude:41.6, longitude: -86.2}};
  			this.fsobjects = [{id:"4ba541f0f964a520a1f238e3", name:"Texas Roadhouse", 
  							location:{lat:41.62753698363018, lng:-86.2516450881958}, 
  							menu:{url:"https://foursquare.com/v/texas-roadhouse/4ba541f0f964a520a1f238e3/menu"},
@@ -105,7 +104,6 @@
  		deepEqual(this.map.searchFs[this.fsobjects[0].id], this.fsobjects[0], 'The fsobject should be in the searchFs object');
  		equal(Object.keys(this.map.searchLayer._layers).length, 2, 'There should be two layers in the layer object of the searchLayer');
  		this.map.showRest(this.fsobjects[0].id);
- 		console.log($('#fsRest').children());
  		equal($('#fsRest').find('img').attr('src'), this.fsobjects[0].categories[0].icon, 'The img should be set to the icon of the category from FourSquare');
  		equal($('#fsRest').find('a').attr('href'), this.fsobjects[0].menu.url, 'The menu url should be the same as the one from FourSquare');
  		equal($('#fsRest').find('button').attr('data-fsid'), this.fsobjects[0].id, 'The data-fsid of the button should equal the FourSquare id');
@@ -180,7 +178,6 @@
  	 			//fake a new vote
  	 			This.oldVote.user[0].username = 'newUser';
  	 			This.map.voteFs.addVote(This.oldVote);
- 	 			console.log(This.map);
  	 			notEqual(This.map.voteFs.votes[This.fsobjects[0].id], undefined, 'The recycled vote should be in the vote object');
  	 			notEqual(This.map.voteFs.votes[This.fsobjects[1].id], undefined, 'The current vote should still be in the object');
  	 			equal(This.map.voteFs.votes[This.fsobjects[0].id].user[0].username, 'newUser', 'The new vote should have the newUser username');

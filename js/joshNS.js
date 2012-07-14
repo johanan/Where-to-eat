@@ -63,7 +63,6 @@
 	};
 	
 	Josh.Socket.prototype.addUser = function(username, img, area){
-		console.log(username + ' ' + img);
 		sock.emit('add', username, img, area);
 	};
 	
@@ -74,8 +73,6 @@
 		var fsSend = $.extend(true, {}, fs);
 		//delete what we don't need
 		delete fsSend.marker, fsSend.user;
-		console.log(fs);
-		console.log(fsSend);
 		sock.emit('addVote', fsSend);
 	};
 	
@@ -112,7 +109,6 @@
 		id = id;
 		socket = new Josh.Socket('http://ejosh.co:8080/users');
 		this.map = new L.Map(id);
-		console.log(this.map);
 		var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 		var osmAttrib='Map data © openstreetmap contributors';
 		var osm = new L.TileLayer(osmUrl,{minZoom:8,maxZoom:18,attribution:osmAttrib});
@@ -146,7 +142,6 @@
 				var fsid = target.attr('data-fsid');
 				var fs = This.findFs(fsid);
 				socket.addVote(fs);
-				console.log(This.findFs(fsid));
 			}else{
 				This.addAlert('You must be logged in!');
 			}
@@ -200,8 +195,6 @@
 		socket.addEvent('vote', this);
 		
 		$(this).on('vote', function(e, d){
-			
-			console.log(this);
 			//first check to see if it exists in the vote db
 			if(this.voteFs.votes[d.fs.id] === undefined){
 				var marker = this.addMarker(d.fs);
@@ -212,7 +205,6 @@
 			this.addActivity(d.fs.user[0], d.fs.name, d.fs.id);
 			this.voteFs.addVote(d.fs);
 			this.showVotes();
-			console.log(d);
 		});
 		
 		$(this.voteFs).on('removeLayer', function(e,d){
@@ -235,8 +227,6 @@
 		if(myusername !== null){
 			this.addUser(myusername);
 		}
-		console.log(this);
-		console.log(this.map instanceof L.Map);
 	};
 	
 	Josh.Map.prototype = {
@@ -287,7 +277,6 @@
 			}
 			
 			this.map.addLayer(this.searchLayer);
-			console.log(this);
 			
 		},
 		
@@ -416,7 +405,6 @@
 		},
 		
 		findRests: function(query){
-			console.log(this.location);
 			//var url = 'http://localhost:85/test/fs.php?&ll=' + location.coords.latitude + ',' + location.coords.longitude;
 			var url = 'https://api.foursquare.com/v2/venues/search?ll=' + this.location.coords.latitude + ',' + this.location.coords.longitude + '&client_id=NQNF2JL2VKJHXETAOND5TPJ23A2SWGZC4TXJEMLGJBXYMIJM&client_secret=TF1CC0HZVBJ0TM50CRNJNTWSOWZMIKQ30V4DEB4GC2UWZ3KM';
 			if(query !== ''){
@@ -425,10 +413,8 @@
 				url += '&query=' + encodeURI('restaurant') ;
 			}
 			var This = this;
-			console.log(url);
 			$.getJSON( url , 
 			function(data){
-				console.log(data);
 				var rests = data.response.groups[0].items;
 				This.addSearchLayer(rests);
 			});

@@ -80,16 +80,18 @@ if (! _$jscoverage['joshNS.js']) {
   _$jscoverage['joshNS.js'][67] = 0;
   _$jscoverage['joshNS.js'][70] = 0;
   _$jscoverage['joshNS.js'][74] = 0;
+  _$jscoverage['joshNS.js'][76] = 0;
   _$jscoverage['joshNS.js'][77] = 0;
   _$jscoverage['joshNS.js'][78] = 0;
   _$jscoverage['joshNS.js'][79] = 0;
-  _$jscoverage['joshNS.js'][83] = 0;
+  _$jscoverage['joshNS.js'][82] = 0;
+  _$jscoverage['joshNS.js'][85] = 0;
   _$jscoverage['joshNS.js'][86] = 0;
   _$jscoverage['joshNS.js'][87] = 0;
   _$jscoverage['joshNS.js'][88] = 0;
   _$jscoverage['joshNS.js'][89] = 0;
   _$jscoverage['joshNS.js'][90] = 0;
-  _$jscoverage['joshNS.js'][91] = 0;
+  _$jscoverage['joshNS.js'][94] = 0;
   _$jscoverage['joshNS.js'][95] = 0;
   _$jscoverage['joshNS.js'][96] = 0;
   _$jscoverage['joshNS.js'][97] = 0;
@@ -123,199 +125,208 @@ if (! _$jscoverage['joshNS.js']) {
   _$jscoverage['joshNS.js'][134] = 0;
   _$jscoverage['joshNS.js'][135] = 0;
   _$jscoverage['joshNS.js'][136] = 0;
-  _$jscoverage['joshNS.js'][138] = 0;
-  _$jscoverage['joshNS.js'][140] = 0;
-  _$jscoverage['joshNS.js'][142] = 0;
+  _$jscoverage['joshNS.js'][137] = 0;
+  _$jscoverage['joshNS.js'][139] = 0;
+  _$jscoverage['joshNS.js'][141] = 0;
   _$jscoverage['joshNS.js'][143] = 0;
   _$jscoverage['joshNS.js'][144] = 0;
   _$jscoverage['joshNS.js'][145] = 0;
   _$jscoverage['joshNS.js'][146] = 0;
   _$jscoverage['joshNS.js'][147] = 0;
   _$jscoverage['joshNS.js'][148] = 0;
-  _$jscoverage['joshNS.js'][150] = 0;
-  _$jscoverage['joshNS.js'][154] = 0;
+  _$jscoverage['joshNS.js'][149] = 0;
+  _$jscoverage['joshNS.js'][151] = 0;
   _$jscoverage['joshNS.js'][155] = 0;
   _$jscoverage['joshNS.js'][156] = 0;
-  _$jscoverage['joshNS.js'][159] = 0;
+  _$jscoverage['joshNS.js'][157] = 0;
   _$jscoverage['joshNS.js'][160] = 0;
   _$jscoverage['joshNS.js'][161] = 0;
-  _$jscoverage['joshNS.js'][164] = 0;
+  _$jscoverage['joshNS.js'][162] = 0;
   _$jscoverage['joshNS.js'][165] = 0;
   _$jscoverage['joshNS.js'][166] = 0;
-  _$jscoverage['joshNS.js'][169] = 0;
+  _$jscoverage['joshNS.js'][167] = 0;
   _$jscoverage['joshNS.js'][170] = 0;
   _$jscoverage['joshNS.js'][171] = 0;
-  _$jscoverage['joshNS.js'][174] = 0;
+  _$jscoverage['joshNS.js'][172] = 0;
   _$jscoverage['joshNS.js'][175] = 0;
   _$jscoverage['joshNS.js'][176] = 0;
+  _$jscoverage['joshNS.js'][177] = 0;
+  _$jscoverage['joshNS.js'][178] = 0;
   _$jscoverage['joshNS.js'][179] = 0;
-  _$jscoverage['joshNS.js'][180] = 0;
   _$jscoverage['joshNS.js'][182] = 0;
   _$jscoverage['joshNS.js'][183] = 0;
+  _$jscoverage['joshNS.js'][185] = 0;
   _$jscoverage['joshNS.js'][186] = 0;
-  _$jscoverage['joshNS.js'][187] = 0;
-  _$jscoverage['joshNS.js'][188] = 0;
   _$jscoverage['joshNS.js'][189] = 0;
   _$jscoverage['joshNS.js'][190] = 0;
-  _$jscoverage['joshNS.js'][192] = 0;
   _$jscoverage['joshNS.js'][194] = 0;
+  _$jscoverage['joshNS.js'][195] = 0;
   _$jscoverage['joshNS.js'][196] = 0;
+  _$jscoverage['joshNS.js'][197] = 0;
   _$jscoverage['joshNS.js'][198] = 0;
-  _$jscoverage['joshNS.js'][199] = 0;
   _$jscoverage['joshNS.js'][200] = 0;
-  _$jscoverage['joshNS.js'][203] = 0;
+  _$jscoverage['joshNS.js'][202] = 0;
   _$jscoverage['joshNS.js'][204] = 0;
-  _$jscoverage['joshNS.js'][205] = 0;
   _$jscoverage['joshNS.js'][206] = 0;
   _$jscoverage['joshNS.js'][207] = 0;
-  _$jscoverage['joshNS.js'][210] = 0;
+  _$jscoverage['joshNS.js'][208] = 0;
   _$jscoverage['joshNS.js'][211] = 0;
+  _$jscoverage['joshNS.js'][212] = 0;
+  _$jscoverage['joshNS.js'][213] = 0;
+  _$jscoverage['joshNS.js'][214] = 0;
   _$jscoverage['joshNS.js'][215] = 0;
-  _$jscoverage['joshNS.js'][217] = 0;
   _$jscoverage['joshNS.js'][218] = 0;
   _$jscoverage['joshNS.js'][219] = 0;
-  _$jscoverage['joshNS.js'][222] = 0;
+  _$jscoverage['joshNS.js'][223] = 0;
+  _$jscoverage['joshNS.js'][225] = 0;
   _$jscoverage['joshNS.js'][226] = 0;
   _$jscoverage['joshNS.js'][227] = 0;
-  _$jscoverage['joshNS.js'][228] = 0;
   _$jscoverage['joshNS.js'][230] = 0;
-  _$jscoverage['joshNS.js'][231] = 0;
   _$jscoverage['joshNS.js'][234] = 0;
+  _$jscoverage['joshNS.js'][235] = 0;
   _$jscoverage['joshNS.js'][236] = 0;
-  _$jscoverage['joshNS.js'][237] = 0;
   _$jscoverage['joshNS.js'][238] = 0;
+  _$jscoverage['joshNS.js'][239] = 0;
   _$jscoverage['joshNS.js'][242] = 0;
   _$jscoverage['joshNS.js'][244] = 0;
   _$jscoverage['joshNS.js'][245] = 0;
   _$jscoverage['joshNS.js'][246] = 0;
-  _$jscoverage['joshNS.js'][248] = 0;
-  _$jscoverage['joshNS.js'][251] = 0;
+  _$jscoverage['joshNS.js'][250] = 0;
   _$jscoverage['joshNS.js'][252] = 0;
   _$jscoverage['joshNS.js'][253] = 0;
   _$jscoverage['joshNS.js'][254] = 0;
-  _$jscoverage['joshNS.js'][255] = 0;
   _$jscoverage['joshNS.js'][256] = 0;
-  _$jscoverage['joshNS.js'][257] = 0;
-  _$jscoverage['joshNS.js'][258] = 0;
+  _$jscoverage['joshNS.js'][259] = 0;
+  _$jscoverage['joshNS.js'][260] = 0;
   _$jscoverage['joshNS.js'][261] = 0;
+  _$jscoverage['joshNS.js'][262] = 0;
+  _$jscoverage['joshNS.js'][263] = 0;
+  _$jscoverage['joshNS.js'][264] = 0;
   _$jscoverage['joshNS.js'][265] = 0;
+  _$jscoverage['joshNS.js'][266] = 0;
   _$jscoverage['joshNS.js'][269] = 0;
-  _$jscoverage['joshNS.js'][271] = 0;
   _$jscoverage['joshNS.js'][273] = 0;
-  _$jscoverage['joshNS.js'][275] = 0;
-  _$jscoverage['joshNS.js'][276] = 0;
   _$jscoverage['joshNS.js'][277] = 0;
-  _$jscoverage['joshNS.js'][278] = 0;
+  _$jscoverage['joshNS.js'][279] = 0;
   _$jscoverage['joshNS.js'][281] = 0;
-  _$jscoverage['joshNS.js'][282] = 0;
-  _$jscoverage['joshNS.js'][287] = 0;
+  _$jscoverage['joshNS.js'][283] = 0;
+  _$jscoverage['joshNS.js'][284] = 0;
+  _$jscoverage['joshNS.js'][285] = 0;
+  _$jscoverage['joshNS.js'][286] = 0;
   _$jscoverage['joshNS.js'][289] = 0;
   _$jscoverage['joshNS.js'][290] = 0;
-  _$jscoverage['joshNS.js'][291] = 0;
-  _$jscoverage['joshNS.js'][293] = 0;
-  _$jscoverage['joshNS.js'][296] = 0;
+  _$jscoverage['joshNS.js'][295] = 0;
+  _$jscoverage['joshNS.js'][297] = 0;
   _$jscoverage['joshNS.js'][298] = 0;
   _$jscoverage['joshNS.js'][299] = 0;
-  _$jscoverage['joshNS.js'][302] = 0;
-  _$jscoverage['joshNS.js'][303] = 0;
+  _$jscoverage['joshNS.js'][301] = 0;
+  _$jscoverage['joshNS.js'][304] = 0;
+  _$jscoverage['joshNS.js'][306] = 0;
   _$jscoverage['joshNS.js'][307] = 0;
-  _$jscoverage['joshNS.js'][308] = 0;
-  _$jscoverage['joshNS.js'][309] = 0;
   _$jscoverage['joshNS.js'][310] = 0;
   _$jscoverage['joshNS.js'][311] = 0;
-  _$jscoverage['joshNS.js'][313] = 0;
   _$jscoverage['joshNS.js'][315] = 0;
   _$jscoverage['joshNS.js'][316] = 0;
-  _$jscoverage['joshNS.js'][320] = 0;
-  _$jscoverage['joshNS.js'][325] = 0;
-  _$jscoverage['joshNS.js'][329] = 0;
-  _$jscoverage['joshNS.js'][330] = 0;
-  _$jscoverage['joshNS.js'][332] = 0;
+  _$jscoverage['joshNS.js'][317] = 0;
+  _$jscoverage['joshNS.js'][318] = 0;
+  _$jscoverage['joshNS.js'][319] = 0;
+  _$jscoverage['joshNS.js'][321] = 0;
+  _$jscoverage['joshNS.js'][323] = 0;
+  _$jscoverage['joshNS.js'][324] = 0;
+  _$jscoverage['joshNS.js'][328] = 0;
+  _$jscoverage['joshNS.js'][333] = 0;
   _$jscoverage['joshNS.js'][337] = 0;
   _$jscoverage['joshNS.js'][338] = 0;
   _$jscoverage['joshNS.js'][340] = 0;
-  _$jscoverage['joshNS.js'][341] = 0;
-  _$jscoverage['joshNS.js'][342] = 0;
-  _$jscoverage['joshNS.js'][343] = 0;
-  _$jscoverage['joshNS.js'][347] = 0;
+  _$jscoverage['joshNS.js'][345] = 0;
+  _$jscoverage['joshNS.js'][346] = 0;
   _$jscoverage['joshNS.js'][348] = 0;
+  _$jscoverage['joshNS.js'][349] = 0;
   _$jscoverage['joshNS.js'][350] = 0;
-  _$jscoverage['joshNS.js'][353] = 0;
-  _$jscoverage['joshNS.js'][354] = 0;
+  _$jscoverage['joshNS.js'][351] = 0;
+  _$jscoverage['joshNS.js'][355] = 0;
   _$jscoverage['joshNS.js'][356] = 0;
-  _$jscoverage['joshNS.js'][357] = 0;
   _$jscoverage['joshNS.js'][358] = 0;
-  _$jscoverage['joshNS.js'][359] = 0;
-  _$jscoverage['joshNS.js'][360] = 0;
+  _$jscoverage['joshNS.js'][361] = 0;
   _$jscoverage['joshNS.js'][362] = 0;
-  _$jscoverage['joshNS.js'][363] = 0;
   _$jscoverage['joshNS.js'][364] = 0;
+  _$jscoverage['joshNS.js'][365] = 0;
+  _$jscoverage['joshNS.js'][366] = 0;
   _$jscoverage['joshNS.js'][367] = 0;
   _$jscoverage['joshNS.js'][368] = 0;
   _$jscoverage['joshNS.js'][370] = 0;
   _$jscoverage['joshNS.js'][371] = 0;
-  _$jscoverage['joshNS.js'][374] = 0;
+  _$jscoverage['joshNS.js'][372] = 0;
   _$jscoverage['joshNS.js'][375] = 0;
   _$jscoverage['joshNS.js'][376] = 0;
-  _$jscoverage['joshNS.js'][380] = 0;
-  _$jscoverage['joshNS.js'][381] = 0;
+  _$jscoverage['joshNS.js'][378] = 0;
+  _$jscoverage['joshNS.js'][379] = 0;
   _$jscoverage['joshNS.js'][382] = 0;
+  _$jscoverage['joshNS.js'][383] = 0;
   _$jscoverage['joshNS.js'][384] = 0;
   _$jscoverage['joshNS.js'][388] = 0;
+  _$jscoverage['joshNS.js'][389] = 0;
   _$jscoverage['joshNS.js'][390] = 0;
-  _$jscoverage['joshNS.js'][394] = 0;
-  _$jscoverage['joshNS.js'][395] = 0;
+  _$jscoverage['joshNS.js'][392] = 0;
   _$jscoverage['joshNS.js'][396] = 0;
   _$jscoverage['joshNS.js'][398] = 0;
-  _$jscoverage['joshNS.js'][399] = 0;
-  _$jscoverage['joshNS.js'][400] = 0;
-  _$jscoverage['joshNS.js'][401] = 0;
   _$jscoverage['joshNS.js'][402] = 0;
   _$jscoverage['joshNS.js'][403] = 0;
+  _$jscoverage['joshNS.js'][404] = 0;
+  _$jscoverage['joshNS.js'][406] = 0;
   _$jscoverage['joshNS.js'][407] = 0;
+  _$jscoverage['joshNS.js'][408] = 0;
+  _$jscoverage['joshNS.js'][409] = 0;
+  _$jscoverage['joshNS.js'][410] = 0;
   _$jscoverage['joshNS.js'][411] = 0;
-  _$jscoverage['joshNS.js'][413] = 0;
-  _$jscoverage['joshNS.js'][414] = 0;
   _$jscoverage['joshNS.js'][415] = 0;
-  _$jscoverage['joshNS.js'][417] = 0;
   _$jscoverage['joshNS.js'][419] = 0;
-  _$jscoverage['joshNS.js'][420] = 0;
   _$jscoverage['joshNS.js'][421] = 0;
+  _$jscoverage['joshNS.js'][422] = 0;
   _$jscoverage['joshNS.js'][423] = 0;
-  _$jscoverage['joshNS.js'][424] = 0;
   _$jscoverage['joshNS.js'][425] = 0;
+  _$jscoverage['joshNS.js'][427] = 0;
+  _$jscoverage['joshNS.js'][428] = 0;
+  _$jscoverage['joshNS.js'][429] = 0;
+  _$jscoverage['joshNS.js'][431] = 0;
+  _$jscoverage['joshNS.js'][432] = 0;
   _$jscoverage['joshNS.js'][433] = 0;
-  _$jscoverage['joshNS.js'][434] = 0;
-  _$jscoverage['joshNS.js'][435] = 0;
-  _$jscoverage['joshNS.js'][436] = 0;
+  _$jscoverage['joshNS.js'][438] = 0;
   _$jscoverage['joshNS.js'][439] = 0;
-  _$jscoverage['joshNS.js'][442] = 0;
   _$jscoverage['joshNS.js'][443] = 0;
-  _$jscoverage['joshNS.js'][445] = 0;
-  _$jscoverage['joshNS.js'][449] = 0;
+  _$jscoverage['joshNS.js'][450] = 0;
   _$jscoverage['joshNS.js'][451] = 0;
-  _$jscoverage['joshNS.js'][454] = 0;
+  _$jscoverage['joshNS.js'][452] = 0;
+  _$jscoverage['joshNS.js'][453] = 0;
+  _$jscoverage['joshNS.js'][456] = 0;
   _$jscoverage['joshNS.js'][459] = 0;
   _$jscoverage['joshNS.js'][460] = 0;
   _$jscoverage['joshNS.js'][462] = 0;
-  _$jscoverage['joshNS.js'][465] = 0;
+  _$jscoverage['joshNS.js'][466] = 0;
+  _$jscoverage['joshNS.js'][468] = 0;
+  _$jscoverage['joshNS.js'][470] = 0;
   _$jscoverage['joshNS.js'][472] = 0;
-  _$jscoverage['joshNS.js'][473] = 0;
-  _$jscoverage['joshNS.js'][475] = 0;
+  _$jscoverage['joshNS.js'][476] = 0;
   _$jscoverage['joshNS.js'][477] = 0;
-  _$jscoverage['joshNS.js'][481] = 0;
-  _$jscoverage['joshNS.js'][487] = 0;
-  _$jscoverage['joshNS.js'][488] = 0;
+  _$jscoverage['joshNS.js'][479] = 0;
+  _$jscoverage['joshNS.js'][482] = 0;
   _$jscoverage['joshNS.js'][489] = 0;
   _$jscoverage['joshNS.js'][490] = 0;
-  _$jscoverage['joshNS.js'][491] = 0;
   _$jscoverage['joshNS.js'][492] = 0;
-  _$jscoverage['joshNS.js'][499] = 0;
-  _$jscoverage['joshNS.js'][500] = 0;
-  _$jscoverage['joshNS.js'][501] = 0;
+  _$jscoverage['joshNS.js'][494] = 0;
+  _$jscoverage['joshNS.js'][498] = 0;
+  _$jscoverage['joshNS.js'][504] = 0;
+  _$jscoverage['joshNS.js'][505] = 0;
+  _$jscoverage['joshNS.js'][506] = 0;
   _$jscoverage['joshNS.js'][507] = 0;
+  _$jscoverage['joshNS.js'][508] = 0;
+  _$jscoverage['joshNS.js'][509] = 0;
+  _$jscoverage['joshNS.js'][516] = 0;
+  _$jscoverage['joshNS.js'][517] = 0;
+  _$jscoverage['joshNS.js'][518] = 0;
+  _$jscoverage['joshNS.js'][524] = 0;
 }
-_$jscoverage['joshNS.js'].source = ["<span class=\"c\">//for jsLint these are defined in other files</span>","<span class=\"c\">//except Josh that is here in the self executing functions</span>","","<span class=\"c\">/*global L:true Josh:true md5:true io: true */</span>","","<span class=\"k\">(</span><span class=\"k\">function</span><span class=\"k\">(</span>Josh<span class=\"k\">)</span><span class=\"k\">{</span>","\t<span class=\"s\">\"use strict\"</span><span class=\"k\">;</span>","\tJosh<span class=\"k\">.</span>Cookie <span class=\"k\">=</span> <span class=\"k\">{}</span><span class=\"k\">;</span>","\tJosh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>createCookie <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>name<span class=\"k\">,</span> value<span class=\"k\">,</span> days<span class=\"k\">)</span> <span class=\"k\">{</span>","\t\t\t<span class=\"k\">var</span> expires<span class=\"k\">;</span>","\t\t\t<span class=\"k\">if</span> <span class=\"k\">(</span>days<span class=\"k\">)</span> <span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">var</span> date <span class=\"k\">=</span> <span class=\"k\">new</span> Date<span class=\"k\">();</span>","\t\t\t\tdate<span class=\"k\">.</span>setTime<span class=\"k\">(</span>date<span class=\"k\">.</span>getTime<span class=\"k\">()+(</span>days<span class=\"k\">*</span><span class=\"s\">24</span><span class=\"k\">*</span><span class=\"s\">60</span><span class=\"k\">*</span><span class=\"s\">60</span><span class=\"k\">*</span><span class=\"s\">1000</span><span class=\"k\">));</span>","\t\t\t\texpires <span class=\"k\">=</span> <span class=\"s\">\"; expires=\"</span><span class=\"k\">+</span>date<span class=\"k\">.</span>toGMTString<span class=\"k\">();</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t<span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\texpires <span class=\"k\">=</span> <span class=\"s\">\"\"</span><span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\tdocument<span class=\"k\">.</span>cookie <span class=\"k\">=</span> name<span class=\"k\">+</span><span class=\"s\">\"=\"</span><span class=\"k\">+</span>value<span class=\"k\">+</span>expires<span class=\"k\">+</span><span class=\"s\">\"; path=/\"</span><span class=\"k\">;</span>","\t\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>readCookie <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>name<span class=\"k\">)</span> <span class=\"k\">{</span>","\t\t<span class=\"k\">var</span> nameEQ <span class=\"k\">=</span> name <span class=\"k\">+</span> <span class=\"s\">\"=\"</span><span class=\"k\">;</span>","\t\t<span class=\"k\">var</span> ca <span class=\"k\">=</span> document<span class=\"k\">.</span>cookie<span class=\"k\">.</span>split<span class=\"k\">(</span><span class=\"s\">';'</span><span class=\"k\">);</span>","\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> i<span class=\"k\">=</span><span class=\"s\">0</span><span class=\"k\">;</span>i <span class=\"k\">&lt;</span> ca<span class=\"k\">.</span>length<span class=\"k\">;</span>i<span class=\"k\">++)</span> <span class=\"k\">{</span>","\t\t\t<span class=\"k\">var</span> c <span class=\"k\">=</span> ca<span class=\"k\">[</span>i<span class=\"k\">];</span>","\t\t\t<span class=\"k\">while</span> <span class=\"k\">(</span>c<span class=\"k\">.</span>charAt<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">)===</span><span class=\"s\">' '</span><span class=\"k\">)</span> <span class=\"k\">{</span>c <span class=\"k\">=</span> c<span class=\"k\">.</span>substring<span class=\"k\">(</span><span class=\"s\">1</span><span class=\"k\">,</span>c<span class=\"k\">.</span>length<span class=\"k\">);</span><span class=\"k\">}</span>","\t\t\t<span class=\"k\">if</span> <span class=\"k\">(</span>c<span class=\"k\">.</span>indexOf<span class=\"k\">(</span>nameEQ<span class=\"k\">)</span> <span class=\"k\">===</span> <span class=\"s\">0</span><span class=\"k\">)</span><span class=\"k\">{</span> <span class=\"k\">return</span> c<span class=\"k\">.</span>substring<span class=\"k\">(</span>nameEQ<span class=\"k\">.</span>length<span class=\"k\">,</span>c<span class=\"k\">.</span>length<span class=\"k\">);</span><span class=\"k\">}</span>","\t\t<span class=\"k\">}</span>","\t\t<span class=\"k\">return</span> <span class=\"k\">null</span><span class=\"k\">;</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>eraseCookie <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>name<span class=\"k\">)</span> <span class=\"k\">{</span>","\t\tJosh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>createCookie<span class=\"k\">(</span>name<span class=\"k\">,</span><span class=\"s\">\"\"</span><span class=\"k\">,-</span><span class=\"s\">1</span><span class=\"k\">);</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","<span class=\"k\">}</span><span class=\"k\">)(</span>window<span class=\"k\">.</span>Josh <span class=\"k\">=</span> window<span class=\"k\">.</span>Josh <span class=\"k\">||</span> <span class=\"k\">{}</span><span class=\"k\">);</span>","","<span class=\"k\">(</span><span class=\"k\">function</span><span class=\"k\">(</span>Josh<span class=\"k\">,</span> $<span class=\"k\">)</span><span class=\"k\">{</span>","\t<span class=\"s\">\"use strict\"</span><span class=\"k\">;</span>","\t<span class=\"k\">var</span> sock<span class=\"k\">;</span>","\t<span class=\"k\">var</span> url<span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Socket <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>url<span class=\"k\">)</span><span class=\"k\">{</span>","\t\tinit<span class=\"k\">(</span>url<span class=\"k\">);</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\t<span class=\"k\">var</span> init <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>url<span class=\"k\">)</span><span class=\"k\">{</span>","\t\tsock <span class=\"k\">=</span> io<span class=\"k\">.</span>connect<span class=\"k\">(</span>url<span class=\"k\">);</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Socket<span class=\"k\">.</span>prototype<span class=\"k\">.</span>addEvent <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>name<span class=\"k\">,</span> obj<span class=\"k\">)</span><span class=\"k\">{</span>","\t\tsock<span class=\"k\">.</span>on<span class=\"k\">(</span>name<span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>d<span class=\"k\">)</span><span class=\"k\">{</span> ","\t\t\t$<span class=\"k\">(</span>obj<span class=\"k\">).</span>trigger<span class=\"k\">(</span>name<span class=\"k\">,</span> d<span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Socket<span class=\"k\">.</span>prototype<span class=\"k\">.</span>getVotes <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">()</span><span class=\"k\">{</span>","\t\tsock<span class=\"k\">.</span>emit<span class=\"k\">(</span><span class=\"s\">'getVotes'</span><span class=\"k\">);</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Socket<span class=\"k\">.</span>prototype<span class=\"k\">.</span>getUsers <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">()</span><span class=\"k\">{</span>","\t\tsock<span class=\"k\">.</span>emit<span class=\"k\">(</span><span class=\"s\">'get'</span><span class=\"k\">);</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Socket<span class=\"k\">.</span>prototype<span class=\"k\">.</span>addUser <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>username<span class=\"k\">,</span> img<span class=\"k\">,</span> area<span class=\"k\">)</span><span class=\"k\">{</span>","\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span>username <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> img<span class=\"k\">);</span>","\t\tsock<span class=\"k\">.</span>emit<span class=\"k\">(</span><span class=\"s\">'add'</span><span class=\"k\">,</span> username<span class=\"k\">,</span> img<span class=\"k\">,</span> area<span class=\"k\">);</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Socket<span class=\"k\">.</span>prototype<span class=\"k\">.</span>addVote <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>fs<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t<span class=\"c\">//make a copy of the object to send to the server</span>","\t\t<span class=\"c\">//we only need basic info as the rest will be</span>","\t\t<span class=\"c\">//built client side</span>","\t\t<span class=\"k\">var</span> fsSend <span class=\"k\">=</span> $<span class=\"k\">.</span>extend<span class=\"k\">(</span><span class=\"k\">true</span><span class=\"k\">,</span> <span class=\"k\">{}</span><span class=\"k\">,</span> fs<span class=\"k\">);</span>","\t\t<span class=\"c\">//delete what we don't need</span>","\t\t<span class=\"c\">//delete fsSend.marker, fsSend.user;</span>","\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span>fs<span class=\"k\">);</span>","\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span>fsSend<span class=\"k\">);</span>","\t\tsock<span class=\"k\">.</span>emit<span class=\"k\">(</span><span class=\"s\">'addVote'</span><span class=\"k\">,</span> fsSend<span class=\"k\">);</span>","\t\t<span class=\"c\">//delete fsSend;</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\t<span class=\"k\">return</span> Josh<span class=\"k\">.</span>Socket<span class=\"k\">;</span>","<span class=\"k\">}</span><span class=\"k\">)(</span>window<span class=\"k\">.</span>Josh <span class=\"k\">=</span> window<span class=\"k\">.</span>Josh <span class=\"k\">||</span> <span class=\"k\">{}</span><span class=\"k\">,</span>  window<span class=\"k\">.</span>jQuery<span class=\"k\">);</span>","","<span class=\"k\">(</span><span class=\"k\">function</span><span class=\"k\">(</span>Josh<span class=\"k\">,</span> $<span class=\"k\">)</span><span class=\"k\">{</span>","\t<span class=\"s\">\"use strict\"</span><span class=\"k\">;</span>","\tJosh<span class=\"k\">.</span>User <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>username<span class=\"k\">,</span> img<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>username <span class=\"k\">=</span> username<span class=\"k\">;</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>img <span class=\"k\">=</span> img<span class=\"k\">;</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>imgHTML <span class=\"k\">=</span> <span class=\"s\">'&lt;img src=\"'</span> <span class=\"k\">+</span> img <span class=\"k\">+</span> <span class=\"s\">'\" class=\"userimg\" title=\"'</span> <span class=\"k\">+</span> username <span class=\"k\">+</span> <span class=\"s\">'\"&gt;'</span><span class=\"k\">;</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","<span class=\"k\">}</span><span class=\"k\">)(</span>window<span class=\"k\">.</span>Josh <span class=\"k\">=</span> window<span class=\"k\">.</span>Josh <span class=\"k\">||</span> <span class=\"k\">{}</span><span class=\"k\">,</span>  window<span class=\"k\">.</span>jQuery<span class=\"k\">);</span>","","<span class=\"k\">(</span><span class=\"k\">function</span><span class=\"k\">(</span>Josh<span class=\"k\">,</span> $<span class=\"k\">)</span><span class=\"k\">{</span>","\t<span class=\"s\">\"use strict\"</span><span class=\"k\">;</span>","\t<span class=\"k\">var</span> id<span class=\"k\">;</span>","\t<span class=\"k\">var</span> osm<span class=\"k\">;</span>","\t<span class=\"k\">var</span> RestIcon<span class=\"k\">;</span>","\t<span class=\"k\">var</span> markerDiv<span class=\"k\">;</span>","\t<span class=\"k\">var</span> votesUl<span class=\"k\">;</span>","\t<span class=\"k\">var</span> actsUl<span class=\"k\">;</span>","\t<span class=\"k\">var</span> loginDiv<span class=\"k\">;</span>","\t<span class=\"k\">var</span> search<span class=\"k\">;</span>","\t<span class=\"k\">var</span> searchText<span class=\"k\">;</span>","\t<span class=\"k\">var</span> clearButt<span class=\"k\">;</span>","\t<span class=\"k\">var</span> titleh<span class=\"k\">;</span>","\t<span class=\"k\">var</span> area<span class=\"k\">;</span>","\t<span class=\"k\">var</span> socket<span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Map <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>id<span class=\"k\">)</span><span class=\"k\">{</span>","\t\tid <span class=\"k\">=</span> id<span class=\"k\">;</span>","\t\tsocket <span class=\"k\">=</span> <span class=\"k\">new</span> Josh<span class=\"k\">.</span>Socket<span class=\"k\">(</span><span class=\"s\">'http://ejosh.co:8080/users'</span><span class=\"k\">);</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>map <span class=\"k\">=</span> <span class=\"k\">new</span> L<span class=\"k\">.</span>Map<span class=\"k\">(</span>id<span class=\"k\">);</span>","\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>map<span class=\"k\">);</span>","\t\t<span class=\"k\">var</span> osmUrl<span class=\"k\">=</span><span class=\"s\">'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'</span><span class=\"k\">;</span>","\t\t<span class=\"k\">var</span> osmAttrib<span class=\"k\">=</span><span class=\"s\">'Map data &#169; openstreetmap contributors'</span><span class=\"k\">;</span>","\t\t<span class=\"k\">var</span> osm <span class=\"k\">=</span> <span class=\"k\">new</span> L<span class=\"k\">.</span>TileLayer<span class=\"k\">(</span>osmUrl<span class=\"k\">,</span><span class=\"k\">{</span>minZoom<span class=\"k\">:</span><span class=\"s\">8</span><span class=\"k\">,</span>maxZoom<span class=\"k\">:</span><span class=\"s\">18</span><span class=\"k\">,</span>attribution<span class=\"k\">:</span>osmAttrib<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>map<span class=\"k\">.</span>addLayer<span class=\"k\">(</span>osm<span class=\"k\">);</span>","\t\t","\t\tRestIcon <span class=\"k\">=</span> L<span class=\"k\">.</span>Icon<span class=\"k\">.</span>extend<span class=\"k\">(</span><span class=\"k\">{</span>","\t\t\tshadowUrl<span class=\"k\">:</span> <span class=\"k\">null</span><span class=\"k\">,</span>","\t\t\ticonSize<span class=\"k\">:</span> <span class=\"k\">new</span> L<span class=\"k\">.</span>Point<span class=\"k\">(</span><span class=\"s\">32</span><span class=\"k\">,</span> <span class=\"s\">32</span><span class=\"k\">)</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t","\t\tmarkerDiv <span class=\"k\">=</span> document<span class=\"k\">.</span>getElementById<span class=\"k\">(</span><span class=\"s\">'fsRest'</span><span class=\"k\">);</span>","\t\tactsUl <span class=\"k\">=</span> document<span class=\"k\">.</span>getElementById<span class=\"k\">(</span><span class=\"s\">'acts'</span><span class=\"k\">);</span>","\t\tvotesUl <span class=\"k\">=</span> document<span class=\"k\">.</span>getElementById<span class=\"k\">(</span><span class=\"s\">'votes'</span><span class=\"k\">);</span>","\t\tloginDiv <span class=\"k\">=</span> document<span class=\"k\">.</span>getElementById<span class=\"k\">(</span><span class=\"s\">'loginArea'</span><span class=\"k\">);</span>","\t\tsearch <span class=\"k\">=</span> document<span class=\"k\">.</span>getElementById<span class=\"k\">(</span><span class=\"s\">'search'</span><span class=\"k\">);</span>","\t\tsearchText <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'#searchText'</span><span class=\"k\">);</span>","\t\tclearButt <span class=\"k\">=</span> document<span class=\"k\">.</span>getElementById<span class=\"k\">(</span><span class=\"s\">'clear'</span><span class=\"k\">);</span>","\t\ttitleh <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'#title'</span><span class=\"k\">);</span>","\t\t","\t\t<span class=\"k\">var</span> This <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">;</span>","\t\t","\t\tnavigator<span class=\"k\">.</span>geolocation<span class=\"k\">.</span>getCurrentPosition<span class=\"k\">(</span><span class=\"k\">function</span><span class=\"k\">(</span>location<span class=\"k\">)</span><span class=\"k\">{</span>This<span class=\"k\">.</span>centerLoc<span class=\"k\">(</span>location<span class=\"k\">);</span><span class=\"k\">}</span><span class=\"k\">,</span>locError<span class=\"k\">,</span><span class=\"k\">{</span>timeout<span class=\"k\">:</span><span class=\"s\">10000</span><span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span>markerDiv<span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'click'</span><span class=\"k\">,</span> <span class=\"s\">'button'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">var</span> target <span class=\"k\">=</span> $<span class=\"k\">(</span>e<span class=\"k\">.</span>target<span class=\"k\">);</span>","\t\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>This<span class=\"k\">.</span>currentUser <span class=\"k\">!==</span> <span class=\"k\">null</span><span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">var</span> fsid <span class=\"k\">=</span> target<span class=\"k\">.</span>attr<span class=\"k\">(</span><span class=\"s\">'data-fsid'</span><span class=\"k\">);</span>","\t\t\t\t<span class=\"k\">var</span> fs <span class=\"k\">=</span> This<span class=\"k\">.</span>findFs<span class=\"k\">(</span>fsid<span class=\"k\">);</span>","\t\t\t\tsocket<span class=\"k\">.</span>addVote<span class=\"k\">(</span>fs<span class=\"k\">);</span>","\t\t\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span>This<span class=\"k\">.</span>findFs<span class=\"k\">(</span>fsid<span class=\"k\">));</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\talert<span class=\"k\">(</span><span class=\"s\">'you must be logged in!'</span><span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span>votesUl<span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'click'</span><span class=\"k\">,</span> <span class=\"s\">'li a'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\te<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","\t\t\tThis<span class=\"k\">.</span>showRest<span class=\"k\">(</span>$<span class=\"k\">(</span>e<span class=\"k\">.</span>target<span class=\"k\">).</span>attr<span class=\"k\">(</span><span class=\"s\">'data-fsid'</span><span class=\"k\">));</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span>actsUl<span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'click'</span><span class=\"k\">,</span> <span class=\"s\">'li a'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\te<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","\t\t\tThis<span class=\"k\">.</span>showRest<span class=\"k\">(</span>$<span class=\"k\">(</span>e<span class=\"k\">.</span>target<span class=\"k\">).</span>attr<span class=\"k\">(</span><span class=\"s\">'data-fsid'</span><span class=\"k\">));</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span>loginDiv<span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'focusout'</span><span class=\"k\">,</span> <span class=\"s\">'input'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">var</span> username <span class=\"k\">=</span> $<span class=\"k\">(</span>e<span class=\"k\">.</span>target<span class=\"k\">).</span>val<span class=\"k\">();</span>","\t\t\tThis<span class=\"k\">.</span>addUser<span class=\"k\">(</span>username<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span>loginDiv<span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'click'</span><span class=\"k\">,</span> <span class=\"s\">'a'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\te<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","\t\t\tThis<span class=\"k\">.</span>removeUser<span class=\"k\">();</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span>search<span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'click'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\te<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","\t\t\tThis<span class=\"k\">.</span>findRests<span class=\"k\">(</span>searchText<span class=\"k\">.</span>val<span class=\"k\">());</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span>clearButt<span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'click'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\te<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","\t\t\t<span class=\"c\">//add a blank search layer</span>","\t\t\tsearchText<span class=\"k\">.</span>val<span class=\"k\">(</span><span class=\"s\">''</span><span class=\"k\">);</span>","\t\t\tThis<span class=\"k\">.</span>addSearchLayer<span class=\"k\">(</span><span class=\"k\">{}</span><span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>searchFs <span class=\"k\">=</span> <span class=\"k\">{}</span><span class=\"k\">;</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>voteFs <span class=\"k\">=</span> <span class=\"k\">new</span> Josh<span class=\"k\">.</span>Votes<span class=\"k\">();</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>currentUser <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>searchLayer <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>location <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","\t\t","\t\tsocket<span class=\"k\">.</span>addEvent<span class=\"k\">(</span><span class=\"s\">'vote'</span><span class=\"k\">,</span> <span class=\"k\">this</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'vote'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">,</span> d<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t","\t\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">);</span>","\t\t\t<span class=\"c\">//first check to see if it exists in the vote db</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>votes<span class=\"k\">[</span>d<span class=\"k\">.</span>fs<span class=\"k\">.</span>id<span class=\"k\">]</span> <span class=\"k\">===</span> undefined<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">var</span> marker <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">.</span>addMarker<span class=\"k\">(</span>d<span class=\"k\">.</span>fs<span class=\"k\">);</span>","\t\t\t\td<span class=\"k\">.</span>fs<span class=\"k\">.</span>marker <span class=\"k\">=</span> marker<span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\td<span class=\"k\">.</span>fs<span class=\"k\">.</span>user <span class=\"k\">=</span> <span class=\"k\">[</span><span class=\"k\">new</span> Josh<span class=\"k\">.</span>User<span class=\"k\">(</span>d<span class=\"k\">.</span>username<span class=\"k\">,</span> d<span class=\"k\">.</span>img<span class=\"k\">)];</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>addActivity<span class=\"k\">(</span>d<span class=\"k\">.</span>fs<span class=\"k\">.</span>user<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">],</span> d<span class=\"k\">.</span>fs<span class=\"k\">.</span>name<span class=\"k\">,</span> d<span class=\"k\">.</span>fs<span class=\"k\">.</span>id<span class=\"k\">);</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>addVote<span class=\"k\">(</span>d<span class=\"k\">.</span>fs<span class=\"k\">);</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>showVotes<span class=\"k\">();</span>","\t\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span>d<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'removeLayer'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">,</span>d<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\tThis<span class=\"k\">.</span>removeLayer<span class=\"k\">(</span>d<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t<span class=\"c\">//listen for a hash change</span>","\t\twindow<span class=\"k\">.</span>addEventListener<span class=\"k\">(</span><span class=\"s\">\"hashchange\"</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">()</span><span class=\"k\">{</span>window<span class=\"k\">.</span>location<span class=\"k\">.</span>reload<span class=\"k\">();</span><span class=\"k\">}</span><span class=\"k\">);</span>","\t\t<span class=\"c\">//see if we have a hash area</span>","\t\t<span class=\"k\">if</span><span class=\"k\">(</span>window<span class=\"k\">.</span>location<span class=\"k\">.</span>hash<span class=\"k\">)</span> <span class=\"k\">{</span>","\t\t\tarea <span class=\"k\">=</span> String<span class=\"k\">(</span>window<span class=\"k\">.</span>location<span class=\"k\">.</span>hash<span class=\"k\">).</span>slice<span class=\"k\">(</span><span class=\"s\">1</span><span class=\"k\">);</span>","\t\t\ttitleh<span class=\"k\">.</span>html<span class=\"k\">(</span>area<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","\t\t\t<span class=\"c\">//set to default</span>","\t\t\tarea <span class=\"k\">=</span> <span class=\"s\">'default'</span><span class=\"k\">;</span>","\t\t<span class=\"k\">}</span>","\t\t","\t\t<span class=\"c\">//check the cookies for a current user</span>","\t\t<span class=\"k\">var</span> myusername <span class=\"k\">=</span> Josh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>readCookie<span class=\"k\">(</span><span class=\"s\">'username'</span><span class=\"k\">);</span>","\t\t<span class=\"k\">if</span><span class=\"k\">(</span>myusername <span class=\"k\">!==</span> <span class=\"k\">null</span><span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>addUser<span class=\"k\">(</span>myusername<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span>","\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">);</span>","\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>map <span class=\"k\">instanceof</span> L<span class=\"k\">.</span>Map<span class=\"k\">);</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Map<span class=\"k\">.</span>prototype <span class=\"k\">=</span> <span class=\"k\">{</span>","\t\tcenterLoc<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>loc<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>location <span class=\"k\">=</span> loc<span class=\"k\">;</span>","\t\t\t<span class=\"k\">var</span> hull <span class=\"k\">=</span> <span class=\"k\">new</span> L<span class=\"k\">.</span>LatLng<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>location<span class=\"k\">.</span>coords<span class=\"k\">.</span>latitude<span class=\"k\">,</span> <span class=\"k\">this</span><span class=\"k\">.</span>location<span class=\"k\">.</span>coords<span class=\"k\">.</span>longitude<span class=\"k\">);</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>map<span class=\"k\">.</span>setView<span class=\"k\">(</span>hull<span class=\"k\">,</span> <span class=\"s\">11</span><span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\taddMarker<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>fs<span class=\"k\">,</span> layeradd<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\tlayeradd <span class=\"k\">=</span> <span class=\"k\">typeof</span> layeradd <span class=\"k\">!==</span> <span class=\"s\">'undefined'</span> <span class=\"k\">?</span> layeradd <span class=\"k\">:</span> <span class=\"k\">true</span><span class=\"k\">;</span>","\t\t\t","\t\t\t<span class=\"k\">var</span> icon<span class=\"k\">;</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>fs<span class=\"k\">.</span>categories<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> <span class=\"s\">0</span><span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\ticon <span class=\"k\">=</span> <span class=\"k\">new</span> RestIcon<span class=\"k\">(</span> fs<span class=\"k\">.</span>categories<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">].</span>icon<span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\ticon <span class=\"k\">=</span> <span class=\"k\">new</span> L<span class=\"k\">.</span>Icon<span class=\"k\">(</span><span class=\"s\">'images/marker.png'</span><span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"k\">var</span> markerLocation <span class=\"k\">=</span> <span class=\"k\">new</span> L<span class=\"k\">.</span>LatLng<span class=\"k\">(</span>fs<span class=\"k\">.</span>location<span class=\"k\">.</span>lat<span class=\"k\">,</span> fs<span class=\"k\">.</span>location<span class=\"k\">.</span>lng<span class=\"k\">);</span>","\t\t\t<span class=\"k\">var</span> marker <span class=\"k\">=</span> <span class=\"k\">new</span> L<span class=\"k\">.</span>Marker<span class=\"k\">(</span>markerLocation<span class=\"k\">,</span> <span class=\"k\">{</span>icon<span class=\"k\">:</span> icon<span class=\"k\">,</span> title<span class=\"k\">:</span> fs<span class=\"k\">.</span>name<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t\tmarker<span class=\"k\">.</span>fsid <span class=\"k\">=</span> fs<span class=\"k\">.</span>id<span class=\"k\">;</span>","\t\t\tmarker<span class=\"k\">.</span>img <span class=\"k\">=</span> icon<span class=\"k\">.</span>iconUrl<span class=\"k\">;</span>","\t\t\t<span class=\"k\">var</span> This <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">;</span>","\t\t\tmarker<span class=\"k\">.</span>on<span class=\"k\">(</span><span class=\"s\">'click'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">)</span><span class=\"k\">{</span> This<span class=\"k\">.</span>showRest<span class=\"k\">(</span>e<span class=\"k\">.</span>target<span class=\"k\">.</span>fsid<span class=\"k\">);</span><span class=\"k\">}</span><span class=\"k\">);</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>layeradd<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>map<span class=\"k\">.</span>addLayer<span class=\"k\">(</span>marker<span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"k\">return</span> marker<span class=\"k\">;</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tremoveLayer<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>arg<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>map<span class=\"k\">.</span>removeLayer<span class=\"k\">(</span>arg<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\taddSearchLayer<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>rests<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>searchLayer <span class=\"k\">!==</span> <span class=\"k\">null</span><span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"c\">//remove all the current restaurants</span>","\t\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>map<span class=\"k\">.</span>removeLayer<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>searchLayer<span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>searchLayer <span class=\"k\">=</span> <span class=\"k\">new</span> L<span class=\"k\">.</span>LayerGroup<span class=\"k\">();</span>","\t\t\t","\t\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> id <span class=\"k\">in</span> rests<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>addSearchFs<span class=\"k\">(</span>rests<span class=\"k\">[</span>id<span class=\"k\">]);</span>","\t\t\t\t<span class=\"k\">var</span> marker <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">.</span>addMarker<span class=\"k\">(</span>rests<span class=\"k\">[</span>id<span class=\"k\">],</span> <span class=\"k\">false</span><span class=\"k\">);</span>","\t\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>searchLayer<span class=\"k\">.</span>addLayer<span class=\"k\">(</span>marker<span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>map<span class=\"k\">.</span>addLayer<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>searchLayer<span class=\"k\">);</span>","\t\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">);</span>","\t\t\t","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tshowRest<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>fsid<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">var</span> fs <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">.</span>findFs<span class=\"k\">(</span>fsid<span class=\"k\">);</span>","\t\t\t","\t\t\t<span class=\"k\">var</span> img<span class=\"k\">;</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>fs<span class=\"k\">.</span>categories<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> <span class=\"s\">0</span><span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\timg <span class=\"k\">=</span> fs<span class=\"k\">.</span>categories<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">].</span>icon<span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\timg <span class=\"k\">=</span> <span class=\"s\">'images/marker.png'</span><span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"k\">var</span> htmld <span class=\"k\">=</span> <span class=\"s\">'&lt;h3&gt;&lt;img src=\"'</span> <span class=\"k\">+</span> img <span class=\"k\">+</span> <span class=\"s\">'\"&gt;'</span> <span class=\"k\">+</span> fs<span class=\"k\">.</span>name <span class=\"k\">+</span> <span class=\"s\">'&lt;/h3&gt;'</span><span class=\"k\">;</span>","\t\t\t","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>fs<span class=\"k\">.</span>phone <span class=\"k\">!==</span> undefined<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\thtmld <span class=\"k\">+=</span> <span class=\"s\">'&lt;div&gt;Phone: '</span> <span class=\"k\">+</span> fs<span class=\"k\">.</span>phone <span class=\"k\">+</span> <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>fs<span class=\"k\">.</span>menu <span class=\"k\">!==</span> undefined<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\thtmld <span class=\"k\">+=</span> <span class=\"s\">'&lt;div&gt;&lt;a href=\"'</span> <span class=\"k\">+</span> fs<span class=\"k\">.</span>menu<span class=\"k\">.</span>url <span class=\"k\">+</span> <span class=\"s\">'\" target=\"_blank\"&gt;Menu&lt;/a&gt;&lt;/div&gt;'</span><span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"c\">//htmld += '&lt;div&gt;Distance: ' + fs.distance + '&lt;/div&gt;';</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>fs<span class=\"k\">.</span>user <span class=\"k\">!==</span> undefined<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\thtmld <span class=\"k\">+=</span> <span class=\"s\">'&lt;div&gt;Votes: '</span> <span class=\"k\">+</span> fs<span class=\"k\">.</span>user<span class=\"k\">.</span>length <span class=\"k\">+</span> <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">;</span>","\t\t\t\thtmld <span class=\"k\">+=</span> <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">;</span>","\t\t\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> i <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> i <span class=\"k\">&lt;</span> fs<span class=\"k\">.</span>user<span class=\"k\">.</span>length<span class=\"k\">;</span> i<span class=\"k\">++)</span><span class=\"k\">{</span>","\t\t\t\t\thtmld <span class=\"k\">+=</span> fs<span class=\"k\">.</span>user<span class=\"k\">[</span>i<span class=\"k\">].</span>imgHTML<span class=\"k\">;</span>","\t\t\t\t<span class=\"k\">}</span> ","\t\t\t\thtmld <span class=\"k\">+=</span> <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\thtmld <span class=\"k\">+=</span> <span class=\"s\">'&lt;button class=\"btn\" data-fsid=\"'</span> <span class=\"k\">+</span> fs<span class=\"k\">.</span>id <span class=\"k\">+</span> <span class=\"s\">'\"&gt;Vote for Me&lt;/button&gt;'</span><span class=\"k\">;</span>","\t\t\t$<span class=\"k\">(</span>markerDiv<span class=\"k\">).</span>html<span class=\"k\">(</span>htmld<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\taddSearchFs<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>fs<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>searchFs<span class=\"k\">[</span>fs<span class=\"k\">.</span>id<span class=\"k\">]</span> <span class=\"k\">=</span> fs<span class=\"k\">;</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tremoveSearchFs<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>fs<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"c\">//this is removed as a group</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>searchFs <span class=\"k\">=</span> <span class=\"k\">{}</span><span class=\"k\">;</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tfindFs<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>fsid<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>votes<span class=\"k\">[</span>fsid<span class=\"k\">])</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">return</span> <span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>votes<span class=\"k\">[</span>fsid<span class=\"k\">];</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">return</span> <span class=\"k\">this</span><span class=\"k\">.</span>searchFs<span class=\"k\">[</span>fsid<span class=\"k\">];</span>","\t\t\t<span class=\"k\">}</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\taddUser<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>username<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>username <span class=\"k\">===</span> <span class=\"s\">''</span><span class=\"k\">)</span>","\t\t\t\t<span class=\"k\">return</span><span class=\"k\">;</span>","\t\t\t","\t\t\t<span class=\"k\">var</span> re <span class=\"k\">=</span> <span class=\"k\">new</span> RegExp<span class=\"k\">(</span><span class=\"s\">\"^(fb:)?\"</span><span class=\"k\">);</span>","\t\t\t<span class=\"k\">var</span> usersplit <span class=\"k\">=</span> username<span class=\"k\">.</span>split<span class=\"k\">(</span>re<span class=\"k\">);</span>","\t\t\t<span class=\"k\">var</span> type<span class=\"k\">;</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>usersplit<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> <span class=\"s\">1</span><span class=\"k\">)</span>","\t\t\t<span class=\"k\">{</span>","\t\t\t\t<span class=\"c\">//we have a match</span>","\t\t\t\t<span class=\"c\">//grab the end piece</span>","\t\t\t\ttype <span class=\"k\">=</span> usersplit<span class=\"k\">[</span>usersplit<span class=\"k\">.</span>length<span class=\"k\">-</span><span class=\"s\">2</span><span class=\"k\">];</span>","\t\t\t\tusername <span class=\"k\">=</span> usersplit<span class=\"k\">[</span>usersplit<span class=\"k\">.</span>length<span class=\"k\">-</span><span class=\"s\">1</span><span class=\"k\">];</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\ttype <span class=\"k\">=</span> <span class=\"s\">'gravatar'</span><span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"k\">var</span> img<span class=\"k\">;</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>type <span class=\"k\">&amp;&amp;</span> type <span class=\"k\">===</span> <span class=\"s\">'fb:'</span><span class=\"k\">)</span>","\t\t\t<span class=\"k\">{</span>","\t\t\t\timg <span class=\"k\">=</span> document<span class=\"k\">.</span>createElement<span class=\"k\">(</span><span class=\"s\">'img'</span><span class=\"k\">);</span>","\t\t\t\timg<span class=\"k\">.</span>setAttribute<span class=\"k\">(</span><span class=\"s\">'src'</span><span class=\"k\">,</span> <span class=\"s\">'https://graph.facebook.com/'</span> <span class=\"k\">+</span> username <span class=\"k\">+</span> <span class=\"s\">'/picture?type=square'</span><span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span> <span class=\"k\">if</span><span class=\"k\">(</span>Josh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>readCookie<span class=\"k\">(</span><span class=\"s\">'img'</span><span class=\"k\">)</span> <span class=\"k\">!==</span> <span class=\"k\">null</span><span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\timg <span class=\"k\">=</span> document<span class=\"k\">.</span>createElement<span class=\"k\">(</span><span class=\"s\">'img'</span><span class=\"k\">);</span>","\t\t\t\timg<span class=\"k\">.</span>setAttribute<span class=\"k\">(</span><span class=\"s\">'src'</span><span class=\"k\">,</span> Josh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>readCookie<span class=\"k\">(</span><span class=\"s\">'img'</span><span class=\"k\">));</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">var</span> emailhash <span class=\"k\">=</span> md5<span class=\"k\">(</span>username<span class=\"k\">.</span>toLowerCase<span class=\"k\">());</span>","\t\t\t\timg <span class=\"k\">=</span> document<span class=\"k\">.</span>createElement<span class=\"k\">(</span><span class=\"s\">'img'</span><span class=\"k\">);</span>","\t\t\t\timg<span class=\"k\">.</span>setAttribute<span class=\"k\">(</span><span class=\"s\">'src'</span><span class=\"k\">,</span> <span class=\"s\">'http://www.gravatar.com/avatar/'</span> <span class=\"k\">+</span> emailhash <span class=\"k\">+</span> <span class=\"s\">'?d=retro&amp;s=18'</span><span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>currentUser <span class=\"k\">=</span> <span class=\"k\">new</span> Josh<span class=\"k\">.</span>User<span class=\"k\">(</span>username<span class=\"k\">,</span> img<span class=\"k\">.</span>src<span class=\"k\">);</span>","\t\t\tsocket<span class=\"k\">.</span>addUser<span class=\"k\">(</span>String<span class=\"k\">(</span>username<span class=\"k\">),</span> String<span class=\"k\">(</span>img<span class=\"k\">.</span>src<span class=\"k\">),</span> area<span class=\"k\">);</span>","\t\t\t","\t\t\t<span class=\"k\">var</span> userhtml <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">.</span>currentUser<span class=\"k\">.</span>imgHTML <span class=\"k\">+</span> username <span class=\"k\">+</span> <span class=\"s\">' : &lt;a href=\"#\"&gt;Sign out&lt;/a&gt;'</span><span class=\"k\">;</span>","\t\t\t$<span class=\"k\">(</span>loginDiv<span class=\"k\">).</span>html<span class=\"k\">(</span>userhtml<span class=\"k\">);</span>","\t\t\t","\t\t\t<span class=\"c\">//add cookie for use</span>","\t\t\tJosh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>createCookie<span class=\"k\">(</span><span class=\"s\">'username'</span><span class=\"k\">,</span> username<span class=\"k\">);</span>","\t\t\tJosh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>createCookie<span class=\"k\">(</span><span class=\"s\">'img'</span><span class=\"k\">,</span> img<span class=\"k\">.</span>src<span class=\"k\">);</span>","\t\t\tsocket<span class=\"k\">.</span>getVotes<span class=\"k\">();</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tremoveUser<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">()</span><span class=\"k\">{</span>","\t\t\tJosh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>eraseCookie<span class=\"k\">(</span><span class=\"s\">'username'</span><span class=\"k\">);</span>","\t\t\tJosh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>eraseCookie<span class=\"k\">(</span><span class=\"s\">'img'</span><span class=\"k\">);</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>currentUser <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","\t\t\t<span class=\"c\">//send message to server?</span>","\t\t\t$<span class=\"k\">(</span>loginDiv<span class=\"k\">).</span>html<span class=\"k\">(</span><span class=\"s\">'&lt;input id=\"login\" type=\"text\" placeholder=\"email\"&gt;'</span><span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\taddActivity<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>user<span class=\"k\">,</span> fsName<span class=\"k\">,</span> fsid<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">var</span> lihtml <span class=\"k\">=</span> <span class=\"s\">'&lt;li&gt;'</span> <span class=\"k\">+</span> user<span class=\"k\">.</span>imgHTML <span class=\"k\">+</span> user<span class=\"k\">.</span>username <span class=\"k\">+</span> <span class=\"s\">' voted for &lt;a href=\"#\" data-fsid=\"'</span> <span class=\"k\">+</span> fsid <span class=\"k\">+</span> <span class=\"s\">'\"&gt;'</span> <span class=\"k\">+</span> fsName <span class=\"k\">+</span> <span class=\"s\">'&lt;/li&gt;&lt;hr/&gt;'</span><span class=\"k\">;</span>","\t\t\t","\t\t\t$<span class=\"k\">(</span>actsUl<span class=\"k\">).</span>append<span class=\"k\">(</span>lihtml<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tshowVotes<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">()</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">var</span> voteArray <span class=\"k\">=</span> <span class=\"k\">[];</span>","\t\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> r <span class=\"k\">in</span> <span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>votes<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\tvoteArray<span class=\"k\">.</span>push<span class=\"k\">([</span><span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>votes<span class=\"k\">[</span>r<span class=\"k\">].</span>name<span class=\"k\">,</span> <span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>votes<span class=\"k\">[</span>r<span class=\"k\">].</span>user<span class=\"k\">.</span>length<span class=\"k\">,</span> <span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>votes<span class=\"k\">[</span>r<span class=\"k\">].</span>id<span class=\"k\">,</span> <span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>votes<span class=\"k\">[</span>r<span class=\"k\">].</span>user<span class=\"k\">]);</span>","\t\t\t<span class=\"k\">}</span>","\t\t\tvoteArray<span class=\"k\">.</span>sort<span class=\"k\">(</span><span class=\"k\">function</span><span class=\"k\">(</span>a<span class=\"k\">,</span> b<span class=\"k\">)</span><span class=\"k\">{</span><span class=\"k\">return</span> b<span class=\"k\">[</span><span class=\"s\">1</span><span class=\"k\">]</span> <span class=\"k\">-</span> a<span class=\"k\">[</span><span class=\"s\">1</span><span class=\"k\">];</span><span class=\"k\">}</span><span class=\"k\">);</span>","\t\t\t<span class=\"k\">var</span> lihtml <span class=\"k\">=</span> <span class=\"s\">''</span><span class=\"k\">;</span>","\t\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> i <span class=\"k\">=</span><span class=\"s\">0</span><span class=\"k\">;</span> i <span class=\"k\">&lt;</span> voteArray<span class=\"k\">.</span>length<span class=\"k\">;</span> i<span class=\"k\">++)</span><span class=\"k\">{</span>","\t\t\t\tlihtml <span class=\"k\">+=</span> <span class=\"s\">'&lt;li&gt;'</span> <span class=\"k\">+</span> voteArray<span class=\"k\">[</span>i<span class=\"k\">][</span><span class=\"s\">1</span><span class=\"k\">]</span> <span class=\"k\">+</span> <span class=\"s\">' for &lt;a href=\"#\" data-fsid=\"'</span> <span class=\"k\">+</span> voteArray<span class=\"k\">[</span>i<span class=\"k\">][</span><span class=\"s\">2</span><span class=\"k\">]</span> <span class=\"k\">+</span> <span class=\"s\">'\"&gt;'</span> <span class=\"k\">+</span> voteArray<span class=\"k\">[</span>i<span class=\"k\">][</span><span class=\"s\">0</span><span class=\"k\">]</span> <span class=\"k\">+</span> <span class=\"s\">'&lt;/a&gt;&lt;/li&gt;'</span><span class=\"k\">;</span>","\t\t\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> u<span class=\"k\">=</span><span class=\"s\">0</span><span class=\"k\">;</span> u <span class=\"k\">&lt;</span> voteArray<span class=\"k\">[</span>i<span class=\"k\">][</span><span class=\"s\">3</span><span class=\"k\">].</span>length<span class=\"k\">;</span> u<span class=\"k\">++)</span><span class=\"k\">{</span>","\t\t\t\t\tlihtml <span class=\"k\">+=</span> voteArray<span class=\"k\">[</span>i<span class=\"k\">][</span><span class=\"s\">3</span><span class=\"k\">][</span>u<span class=\"k\">].</span>imgHTML<span class=\"k\">;</span>","\t\t\t\t<span class=\"k\">}</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t$<span class=\"k\">(</span>votesUl<span class=\"k\">).</span>html<span class=\"k\">(</span>lihtml<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tfindRests<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>query<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>location<span class=\"k\">);</span>","\t\t\t<span class=\"c\">//var url = 'http://localhost:85/test/fs.php?&amp;ll=' + location.coords.latitude + ',' + location.coords.longitude;</span>","\t\t\t<span class=\"k\">var</span> url <span class=\"k\">=</span> <span class=\"s\">'https://api.foursquare.com/v2/venues/search?ll='</span> <span class=\"k\">+</span> <span class=\"k\">this</span><span class=\"k\">.</span>location<span class=\"k\">.</span>coords<span class=\"k\">.</span>latitude <span class=\"k\">+</span> <span class=\"s\">','</span> <span class=\"k\">+</span> <span class=\"k\">this</span><span class=\"k\">.</span>location<span class=\"k\">.</span>coords<span class=\"k\">.</span>longitude <span class=\"k\">+</span> <span class=\"s\">'&amp;client_id=NQNF2JL2VKJHXETAOND5TPJ23A2SWGZC4TXJEMLGJBXYMIJM&amp;client_secret=TF1CC0HZVBJ0TM50CRNJNTWSOWZMIKQ30V4DEB4GC2UWZ3KM'</span><span class=\"k\">;</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>query <span class=\"k\">!==</span> <span class=\"s\">''</span><span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\turl <span class=\"k\">+=</span> <span class=\"s\">'&amp;query='</span> <span class=\"k\">+</span> encodeURI<span class=\"k\">(</span>query<span class=\"k\">)</span> <span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\turl <span class=\"k\">+=</span> <span class=\"s\">'&amp;query='</span> <span class=\"k\">+</span> encodeURI<span class=\"k\">(</span><span class=\"s\">'restaurant'</span><span class=\"k\">)</span> <span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t<span class=\"k\">var</span> This <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">;</span>","\t\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span>url<span class=\"k\">);</span>","\t\t\t$<span class=\"k\">.</span>getJSON<span class=\"k\">(</span> url <span class=\"k\">,</span> ","\t\t\t<span class=\"k\">function</span><span class=\"k\">(</span>data<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span>data<span class=\"k\">);</span>","\t\t\t\t<span class=\"k\">var</span> rests <span class=\"k\">=</span> data<span class=\"k\">.</span>response<span class=\"k\">.</span>groups<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">].</span>items<span class=\"k\">;</span>","\t\t\t\tThis<span class=\"k\">.</span>addSearchLayer<span class=\"k\">(</span>rests<span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t<span class=\"k\">}</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","<span class=\"k\">}</span><span class=\"k\">)(</span>window<span class=\"k\">.</span>Josh <span class=\"k\">=</span> window<span class=\"k\">.</span>Josh <span class=\"k\">||</span> <span class=\"k\">{}</span><span class=\"k\">,</span>  window<span class=\"k\">.</span>jQuery<span class=\"k\">);</span>","","","<span class=\"k\">(</span><span class=\"k\">function</span><span class=\"k\">(</span>Josh<span class=\"k\">,</span> $<span class=\"k\">)</span><span class=\"k\">{</span>","\t<span class=\"s\">\"use strict\"</span><span class=\"k\">;</span>","\tJosh<span class=\"k\">.</span>Votes <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">()</span><span class=\"k\">{</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>votes <span class=\"k\">=</span> <span class=\"k\">{}</span><span class=\"k\">;</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Votes<span class=\"k\">.</span>prototype <span class=\"k\">=</span> <span class=\"k\">{</span>","\t\taddVote<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>vote<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"c\">//first check to see if this person has voted already</span>","\t\t\t<span class=\"k\">var</span> userVote <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">.</span>findByUser<span class=\"k\">(</span>vote<span class=\"k\">.</span>user<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">].</span>username<span class=\"k\">);</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>userVote <span class=\"k\">!==</span> undefined<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"c\">//this person voted, now check to see if this is the only vote</span>","\t\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>userVote<span class=\"k\">.</span>user<span class=\"k\">.</span>length <span class=\"k\">===</span> <span class=\"s\">1</span><span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t\t<span class=\"c\">//only this person voted for this restaurant delete it</span>","\t\t\t\t\t<span class=\"c\">//but first take the marker off the map</span>","\t\t\t\t\t<span class=\"c\">//after checking to see if the new vote has a marker</span>","\t\t\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>vote<span class=\"k\">.</span>marker <span class=\"k\">!==</span> undefined<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t\t\t<span class=\"c\">//it does so delete it</span>","\t\t\t\t\t\t$<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">).</span>trigger<span class=\"k\">(</span><span class=\"s\">'removeLayer'</span><span class=\"k\">,</span> userVote<span class=\"k\">.</span>marker<span class=\"k\">);</span>","\t\t\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\t\t\t<span class=\"c\">//it doesn't so pass the marker</span>","\t\t\t\t\t\tvote<span class=\"k\">.</span>marker <span class=\"k\">=</span> userVote<span class=\"k\">.</span>marker<span class=\"k\">;</span>","\t\t\t\t\t<span class=\"k\">}</span>","\t\t\t\t\t<span class=\"c\">//delete userVote;</span>","\t\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\t\t<span class=\"c\">//multiple people voted for it, just remove their vote</span>","\t\t\t\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> i<span class=\"k\">=</span><span class=\"s\">0</span><span class=\"k\">;</span> i <span class=\"k\">&lt;</span> userVote<span class=\"k\">.</span>user<span class=\"k\">.</span>length<span class=\"k\">;</span> i<span class=\"k\">++)</span><span class=\"k\">{</span>","\t\t\t\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>userVote<span class=\"k\">.</span>user<span class=\"k\">[</span>i<span class=\"k\">].</span>username <span class=\"k\">===</span> vote<span class=\"k\">.</span>user<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">].</span>username<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t\t\t\t<span class=\"c\">//we found it! Remove only this user</span>","\t\t\t\t\t\t\t<span class=\"k\">var</span> prevVote <span class=\"k\">=</span> userVote<span class=\"k\">.</span>user<span class=\"k\">.</span>splice<span class=\"k\">(</span>i<span class=\"k\">,</span> <span class=\"s\">1</span><span class=\"k\">);</span>","\t\t\t\t\t\t\t<span class=\"c\">//delete prevVote;</span>","\t\t\t\t\t\t\t<span class=\"c\">//put the vote back in</span>","\t\t\t\t\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>userVote<span class=\"k\">.</span>id<span class=\"k\">]</span> <span class=\"k\">=</span> userVote<span class=\"k\">;</span>","\t\t\t\t\t\t<span class=\"k\">}</span>","\t\t\t\t\t<span class=\"k\">}</span>","\t\t\t\t<span class=\"k\">}</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"c\">//now check to see if the restaurant exists</span>","\t\t\t<span class=\"k\">var</span> restVote <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">.</span>findByFs<span class=\"k\">(</span>vote<span class=\"k\">.</span>id<span class=\"k\">);</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>restVote <span class=\"k\">!==</span> undefined<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"c\">//add the user to the user list</span>","\t\t\t\trestVote<span class=\"k\">.</span>user<span class=\"k\">.</span>push<span class=\"k\">(</span>vote<span class=\"k\">.</span>user<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">]);</span>","\t\t\t\t<span class=\"c\">//put the vote back in</span>","\t\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>restVote<span class=\"k\">.</span>id<span class=\"k\">]</span> <span class=\"k\">=</span> restVote<span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"c\">//nothing else is true</span>","\t\t\t\t<span class=\"c\">//add it to the object</span>","\t\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>vote<span class=\"k\">.</span>id<span class=\"k\">]</span> <span class=\"k\">=</span> vote<span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tfindByUser<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>username<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> i <span class=\"k\">in</span> <span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> u<span class=\"k\">=</span><span class=\"s\">0</span><span class=\"k\">;</span> u <span class=\"k\">&lt;</span> <span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>i<span class=\"k\">].</span>user<span class=\"k\">.</span>length<span class=\"k\">;</span> u<span class=\"k\">++)</span><span class=\"k\">{</span>","\t\t\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>i<span class=\"k\">].</span>user<span class=\"k\">[</span>u<span class=\"k\">].</span>username <span class=\"k\">===</span> username<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t\t\t<span class=\"k\">var</span> retEl <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>i<span class=\"k\">];</span>","\t\t\t\t\t\t<span class=\"k\">delete</span> <span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>i<span class=\"k\">];</span>","\t\t\t\t\t\t<span class=\"k\">return</span> retEl<span class=\"k\">;</span>","\t\t\t\t\t<span class=\"k\">}</span>","\t\t\t\t<span class=\"k\">}</span>","\t\t\t<span class=\"k\">}</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tfindByFs<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>fsid<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">var</span> retEl <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>fsid<span class=\"k\">];</span>","\t\t\t<span class=\"k\">delete</span> <span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>fsid<span class=\"k\">];</span>","\t\t\t<span class=\"k\">return</span> retEl<span class=\"k\">;</span>","\t\t<span class=\"k\">}</span>","","\t<span class=\"k\">}</span><span class=\"k\">;</span>","<span class=\"k\">}</span><span class=\"k\">)(</span>window<span class=\"k\">.</span>Josh <span class=\"k\">=</span> window<span class=\"k\">.</span>Josh <span class=\"k\">||</span> <span class=\"k\">{}</span><span class=\"k\">,</span>  window<span class=\"k\">.</span>jQuery<span class=\"k\">);</span>","","<span class=\"k\">var</span> locError <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>error<span class=\"k\">)</span><span class=\"k\">{}</span><span class=\"k\">;</span>"];
+_$jscoverage['joshNS.js'].source = ["<span class=\"c\">//for jsLint these are defined in other files</span>","<span class=\"c\">//except Josh that is here in the self executing functions</span>","","<span class=\"c\">/*global L:true Josh:true md5:true io: true */</span>","","<span class=\"k\">(</span><span class=\"k\">function</span><span class=\"k\">(</span>Josh<span class=\"k\">)</span><span class=\"k\">{</span>","\t<span class=\"s\">\"use strict\"</span><span class=\"k\">;</span>","\tJosh<span class=\"k\">.</span>Cookie <span class=\"k\">=</span> <span class=\"k\">{}</span><span class=\"k\">;</span>","\tJosh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>createCookie <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>name<span class=\"k\">,</span> value<span class=\"k\">,</span> days<span class=\"k\">)</span> <span class=\"k\">{</span>","\t\t\t<span class=\"k\">var</span> expires<span class=\"k\">;</span>","\t\t\t<span class=\"k\">if</span> <span class=\"k\">(</span>days<span class=\"k\">)</span> <span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">var</span> date <span class=\"k\">=</span> <span class=\"k\">new</span> Date<span class=\"k\">();</span>","\t\t\t\tdate<span class=\"k\">.</span>setTime<span class=\"k\">(</span>date<span class=\"k\">.</span>getTime<span class=\"k\">()+(</span>days<span class=\"k\">*</span><span class=\"s\">24</span><span class=\"k\">*</span><span class=\"s\">60</span><span class=\"k\">*</span><span class=\"s\">60</span><span class=\"k\">*</span><span class=\"s\">1000</span><span class=\"k\">));</span>","\t\t\t\texpires <span class=\"k\">=</span> <span class=\"s\">\"; expires=\"</span><span class=\"k\">+</span>date<span class=\"k\">.</span>toGMTString<span class=\"k\">();</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t<span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\texpires <span class=\"k\">=</span> <span class=\"s\">\"\"</span><span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\tdocument<span class=\"k\">.</span>cookie <span class=\"k\">=</span> name<span class=\"k\">+</span><span class=\"s\">\"=\"</span><span class=\"k\">+</span>value<span class=\"k\">+</span>expires<span class=\"k\">+</span><span class=\"s\">\"; path=/\"</span><span class=\"k\">;</span>","\t\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>readCookie <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>name<span class=\"k\">)</span> <span class=\"k\">{</span>","\t\t<span class=\"k\">var</span> nameEQ <span class=\"k\">=</span> name <span class=\"k\">+</span> <span class=\"s\">\"=\"</span><span class=\"k\">;</span>","\t\t<span class=\"k\">var</span> ca <span class=\"k\">=</span> document<span class=\"k\">.</span>cookie<span class=\"k\">.</span>split<span class=\"k\">(</span><span class=\"s\">';'</span><span class=\"k\">);</span>","\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> i<span class=\"k\">=</span><span class=\"s\">0</span><span class=\"k\">;</span>i <span class=\"k\">&lt;</span> ca<span class=\"k\">.</span>length<span class=\"k\">;</span>i<span class=\"k\">++)</span> <span class=\"k\">{</span>","\t\t\t<span class=\"k\">var</span> c <span class=\"k\">=</span> ca<span class=\"k\">[</span>i<span class=\"k\">];</span>","\t\t\t<span class=\"k\">while</span> <span class=\"k\">(</span>c<span class=\"k\">.</span>charAt<span class=\"k\">(</span><span class=\"s\">0</span><span class=\"k\">)===</span><span class=\"s\">' '</span><span class=\"k\">)</span> <span class=\"k\">{</span>c <span class=\"k\">=</span> c<span class=\"k\">.</span>substring<span class=\"k\">(</span><span class=\"s\">1</span><span class=\"k\">,</span>c<span class=\"k\">.</span>length<span class=\"k\">);</span><span class=\"k\">}</span>","\t\t\t<span class=\"k\">if</span> <span class=\"k\">(</span>c<span class=\"k\">.</span>indexOf<span class=\"k\">(</span>nameEQ<span class=\"k\">)</span> <span class=\"k\">===</span> <span class=\"s\">0</span><span class=\"k\">)</span><span class=\"k\">{</span> <span class=\"k\">return</span> c<span class=\"k\">.</span>substring<span class=\"k\">(</span>nameEQ<span class=\"k\">.</span>length<span class=\"k\">,</span>c<span class=\"k\">.</span>length<span class=\"k\">);</span><span class=\"k\">}</span>","\t\t<span class=\"k\">}</span>","\t\t<span class=\"k\">return</span> <span class=\"k\">null</span><span class=\"k\">;</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>eraseCookie <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>name<span class=\"k\">)</span> <span class=\"k\">{</span>","\t\tJosh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>createCookie<span class=\"k\">(</span>name<span class=\"k\">,</span><span class=\"s\">\"\"</span><span class=\"k\">,-</span><span class=\"s\">1</span><span class=\"k\">);</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","<span class=\"k\">}</span><span class=\"k\">)(</span>window<span class=\"k\">.</span>Josh <span class=\"k\">=</span> window<span class=\"k\">.</span>Josh <span class=\"k\">||</span> <span class=\"k\">{}</span><span class=\"k\">);</span>","","<span class=\"k\">(</span><span class=\"k\">function</span><span class=\"k\">(</span>Josh<span class=\"k\">,</span> $<span class=\"k\">)</span><span class=\"k\">{</span>","\t<span class=\"s\">\"use strict\"</span><span class=\"k\">;</span>","\t<span class=\"k\">var</span> sock<span class=\"k\">;</span>","\t<span class=\"k\">var</span> url<span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Socket <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>url<span class=\"k\">)</span><span class=\"k\">{</span>","\t\tinit<span class=\"k\">(</span>url<span class=\"k\">);</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\t<span class=\"k\">var</span> init <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>url<span class=\"k\">)</span><span class=\"k\">{</span>","\t\tsock <span class=\"k\">=</span> io<span class=\"k\">.</span>connect<span class=\"k\">(</span>url<span class=\"k\">);</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Socket<span class=\"k\">.</span>prototype<span class=\"k\">.</span>addEvent <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>name<span class=\"k\">,</span> obj<span class=\"k\">)</span><span class=\"k\">{</span>","\t\tsock<span class=\"k\">.</span>on<span class=\"k\">(</span>name<span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>d<span class=\"k\">)</span><span class=\"k\">{</span> ","\t\t\t$<span class=\"k\">(</span>obj<span class=\"k\">).</span>trigger<span class=\"k\">(</span>name<span class=\"k\">,</span> d<span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Socket<span class=\"k\">.</span>prototype<span class=\"k\">.</span>getVotes <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">()</span><span class=\"k\">{</span>","\t\tsock<span class=\"k\">.</span>emit<span class=\"k\">(</span><span class=\"s\">'getVotes'</span><span class=\"k\">);</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Socket<span class=\"k\">.</span>prototype<span class=\"k\">.</span>getUsers <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">()</span><span class=\"k\">{</span>","\t\tsock<span class=\"k\">.</span>emit<span class=\"k\">(</span><span class=\"s\">'get'</span><span class=\"k\">);</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Socket<span class=\"k\">.</span>prototype<span class=\"k\">.</span>addUser <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>username<span class=\"k\">,</span> img<span class=\"k\">,</span> area<span class=\"k\">)</span><span class=\"k\">{</span>","\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span>username <span class=\"k\">+</span> <span class=\"s\">' '</span> <span class=\"k\">+</span> img<span class=\"k\">);</span>","\t\tsock<span class=\"k\">.</span>emit<span class=\"k\">(</span><span class=\"s\">'add'</span><span class=\"k\">,</span> username<span class=\"k\">,</span> img<span class=\"k\">,</span> area<span class=\"k\">);</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Socket<span class=\"k\">.</span>prototype<span class=\"k\">.</span>addVote <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>fs<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t<span class=\"c\">//make a copy of the object to send to the server</span>","\t\t<span class=\"c\">//we only need basic info as the rest will be</span>","\t\t<span class=\"c\">//built client side</span>","\t\t<span class=\"k\">var</span> fsSend <span class=\"k\">=</span> $<span class=\"k\">.</span>extend<span class=\"k\">(</span><span class=\"k\">true</span><span class=\"k\">,</span> <span class=\"k\">{}</span><span class=\"k\">,</span> fs<span class=\"k\">);</span>","\t\t<span class=\"c\">//delete what we don't need</span>","\t\t<span class=\"k\">delete</span> fsSend<span class=\"k\">.</span>marker<span class=\"k\">,</span> fsSend<span class=\"k\">.</span>user<span class=\"k\">;</span>","\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span>fs<span class=\"k\">);</span>","\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span>fsSend<span class=\"k\">);</span>","\t\tsock<span class=\"k\">.</span>emit<span class=\"k\">(</span><span class=\"s\">'addVote'</span><span class=\"k\">,</span> fsSend<span class=\"k\">);</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\t<span class=\"k\">return</span> Josh<span class=\"k\">.</span>Socket<span class=\"k\">;</span>","<span class=\"k\">}</span><span class=\"k\">)(</span>window<span class=\"k\">.</span>Josh <span class=\"k\">=</span> window<span class=\"k\">.</span>Josh <span class=\"k\">||</span> <span class=\"k\">{}</span><span class=\"k\">,</span>  window<span class=\"k\">.</span>jQuery<span class=\"k\">);</span>","","<span class=\"k\">(</span><span class=\"k\">function</span><span class=\"k\">(</span>Josh<span class=\"k\">,</span> $<span class=\"k\">)</span><span class=\"k\">{</span>","\t<span class=\"s\">\"use strict\"</span><span class=\"k\">;</span>","\tJosh<span class=\"k\">.</span>User <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>username<span class=\"k\">,</span> img<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>username <span class=\"k\">=</span> username<span class=\"k\">;</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>img <span class=\"k\">=</span> img<span class=\"k\">;</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>imgHTML <span class=\"k\">=</span> <span class=\"s\">'&lt;img src=\"'</span> <span class=\"k\">+</span> img <span class=\"k\">+</span> <span class=\"s\">'\" class=\"userimg\" title=\"'</span> <span class=\"k\">+</span> username <span class=\"k\">+</span> <span class=\"s\">'\"&gt;'</span><span class=\"k\">;</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","<span class=\"k\">}</span><span class=\"k\">)(</span>window<span class=\"k\">.</span>Josh <span class=\"k\">=</span> window<span class=\"k\">.</span>Josh <span class=\"k\">||</span> <span class=\"k\">{}</span><span class=\"k\">,</span>  window<span class=\"k\">.</span>jQuery<span class=\"k\">);</span>","","<span class=\"k\">(</span><span class=\"k\">function</span><span class=\"k\">(</span>Josh<span class=\"k\">,</span> $<span class=\"k\">)</span><span class=\"k\">{</span>","\t<span class=\"s\">\"use strict\"</span><span class=\"k\">;</span>","\t<span class=\"k\">var</span> id<span class=\"k\">;</span>","\t<span class=\"k\">var</span> osm<span class=\"k\">;</span>","\t<span class=\"k\">var</span> RestIcon<span class=\"k\">;</span>","\t<span class=\"k\">var</span> markerDiv<span class=\"k\">;</span>","\t<span class=\"k\">var</span> votesUl<span class=\"k\">;</span>","\t<span class=\"k\">var</span> actsUl<span class=\"k\">;</span>","\t<span class=\"k\">var</span> loginDiv<span class=\"k\">;</span>","\t<span class=\"k\">var</span> search<span class=\"k\">;</span>","\t<span class=\"k\">var</span> searchText<span class=\"k\">;</span>","\t<span class=\"k\">var</span> clearButt<span class=\"k\">;</span>","\t<span class=\"k\">var</span> titleh<span class=\"k\">;</span>","\t<span class=\"k\">var</span> area<span class=\"k\">;</span>","\t<span class=\"k\">var</span> socket<span class=\"k\">;</span>","\t<span class=\"k\">var</span> alertDiv<span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Map <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>id<span class=\"k\">)</span><span class=\"k\">{</span>","\t\tid <span class=\"k\">=</span> id<span class=\"k\">;</span>","\t\tsocket <span class=\"k\">=</span> <span class=\"k\">new</span> Josh<span class=\"k\">.</span>Socket<span class=\"k\">(</span><span class=\"s\">'http://ejosh.co:8080/users'</span><span class=\"k\">);</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>map <span class=\"k\">=</span> <span class=\"k\">new</span> L<span class=\"k\">.</span>Map<span class=\"k\">(</span>id<span class=\"k\">);</span>","\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>map<span class=\"k\">);</span>","\t\t<span class=\"k\">var</span> osmUrl<span class=\"k\">=</span><span class=\"s\">'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'</span><span class=\"k\">;</span>","\t\t<span class=\"k\">var</span> osmAttrib<span class=\"k\">=</span><span class=\"s\">'Map data &#169; openstreetmap contributors'</span><span class=\"k\">;</span>","\t\t<span class=\"k\">var</span> osm <span class=\"k\">=</span> <span class=\"k\">new</span> L<span class=\"k\">.</span>TileLayer<span class=\"k\">(</span>osmUrl<span class=\"k\">,</span><span class=\"k\">{</span>minZoom<span class=\"k\">:</span><span class=\"s\">8</span><span class=\"k\">,</span>maxZoom<span class=\"k\">:</span><span class=\"s\">18</span><span class=\"k\">,</span>attribution<span class=\"k\">:</span>osmAttrib<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>map<span class=\"k\">.</span>addLayer<span class=\"k\">(</span>osm<span class=\"k\">);</span>","\t\t","\t\tRestIcon <span class=\"k\">=</span> L<span class=\"k\">.</span>Icon<span class=\"k\">.</span>extend<span class=\"k\">(</span><span class=\"k\">{</span>","\t\t\tshadowUrl<span class=\"k\">:</span> <span class=\"k\">null</span><span class=\"k\">,</span>","\t\t\ticonSize<span class=\"k\">:</span> <span class=\"k\">new</span> L<span class=\"k\">.</span>Point<span class=\"k\">(</span><span class=\"s\">32</span><span class=\"k\">,</span> <span class=\"s\">32</span><span class=\"k\">)</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t","\t\tmarkerDiv <span class=\"k\">=</span> document<span class=\"k\">.</span>getElementById<span class=\"k\">(</span><span class=\"s\">'fsRest'</span><span class=\"k\">);</span>","\t\tactsUl <span class=\"k\">=</span> document<span class=\"k\">.</span>getElementById<span class=\"k\">(</span><span class=\"s\">'acts'</span><span class=\"k\">);</span>","\t\tvotesUl <span class=\"k\">=</span> document<span class=\"k\">.</span>getElementById<span class=\"k\">(</span><span class=\"s\">'votes'</span><span class=\"k\">);</span>","\t\tloginDiv <span class=\"k\">=</span> document<span class=\"k\">.</span>getElementById<span class=\"k\">(</span><span class=\"s\">'loginArea'</span><span class=\"k\">);</span>","\t\tsearch <span class=\"k\">=</span> document<span class=\"k\">.</span>getElementById<span class=\"k\">(</span><span class=\"s\">'search'</span><span class=\"k\">);</span>","\t\tsearchText <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'#searchText'</span><span class=\"k\">);</span>","\t\tclearButt <span class=\"k\">=</span> document<span class=\"k\">.</span>getElementById<span class=\"k\">(</span><span class=\"s\">'clear'</span><span class=\"k\">);</span>","\t\ttitleh <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'#title'</span><span class=\"k\">);</span>","\t\talertDiv <span class=\"k\">=</span> $<span class=\"k\">(</span><span class=\"s\">'#alert'</span><span class=\"k\">);</span>","\t\t","\t\t<span class=\"k\">var</span> This <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">;</span>","\t\t","\t\tnavigator<span class=\"k\">.</span>geolocation<span class=\"k\">.</span>getCurrentPosition<span class=\"k\">(</span><span class=\"k\">function</span><span class=\"k\">(</span>location<span class=\"k\">)</span><span class=\"k\">{</span>This<span class=\"k\">.</span>centerLoc<span class=\"k\">(</span>location<span class=\"k\">);</span><span class=\"k\">}</span><span class=\"k\">,</span>locError<span class=\"k\">,</span><span class=\"k\">{</span>timeout<span class=\"k\">:</span><span class=\"s\">10000</span><span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span>markerDiv<span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'click'</span><span class=\"k\">,</span> <span class=\"s\">'button'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">var</span> target <span class=\"k\">=</span> $<span class=\"k\">(</span>e<span class=\"k\">.</span>target<span class=\"k\">);</span>","\t\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>This<span class=\"k\">.</span>currentUser <span class=\"k\">!==</span> <span class=\"k\">null</span><span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">var</span> fsid <span class=\"k\">=</span> target<span class=\"k\">.</span>attr<span class=\"k\">(</span><span class=\"s\">'data-fsid'</span><span class=\"k\">);</span>","\t\t\t\t<span class=\"k\">var</span> fs <span class=\"k\">=</span> This<span class=\"k\">.</span>findFs<span class=\"k\">(</span>fsid<span class=\"k\">);</span>","\t\t\t\tsocket<span class=\"k\">.</span>addVote<span class=\"k\">(</span>fs<span class=\"k\">);</span>","\t\t\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span>This<span class=\"k\">.</span>findFs<span class=\"k\">(</span>fsid<span class=\"k\">));</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\tThis<span class=\"k\">.</span>addAlert<span class=\"k\">(</span><span class=\"s\">'You must be logged in!'</span><span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span>votesUl<span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'click'</span><span class=\"k\">,</span> <span class=\"s\">'li a'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\te<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","\t\t\tThis<span class=\"k\">.</span>showRest<span class=\"k\">(</span>$<span class=\"k\">(</span>e<span class=\"k\">.</span>target<span class=\"k\">).</span>attr<span class=\"k\">(</span><span class=\"s\">'data-fsid'</span><span class=\"k\">));</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span>actsUl<span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'click'</span><span class=\"k\">,</span> <span class=\"s\">'li a'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\te<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","\t\t\tThis<span class=\"k\">.</span>showRest<span class=\"k\">(</span>$<span class=\"k\">(</span>e<span class=\"k\">.</span>target<span class=\"k\">).</span>attr<span class=\"k\">(</span><span class=\"s\">'data-fsid'</span><span class=\"k\">));</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span>loginDiv<span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'focusout'</span><span class=\"k\">,</span> <span class=\"s\">'input'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">var</span> username <span class=\"k\">=</span> $<span class=\"k\">(</span>e<span class=\"k\">.</span>target<span class=\"k\">).</span>val<span class=\"k\">();</span>","\t\t\tThis<span class=\"k\">.</span>addUser<span class=\"k\">(</span>username<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span>loginDiv<span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'click'</span><span class=\"k\">,</span> <span class=\"s\">'a'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\te<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","\t\t\tThis<span class=\"k\">.</span>removeUser<span class=\"k\">();</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span>search<span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'click'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\tThis<span class=\"k\">.</span>addAlert<span class=\"k\">(</span><span class=\"s\">'Searching for Restaurants'</span><span class=\"k\">);</span>","\t\t\te<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","\t\t\tThis<span class=\"k\">.</span>findRests<span class=\"k\">(</span>searchText<span class=\"k\">.</span>val<span class=\"k\">());</span>","\t\t\tThis<span class=\"k\">.</span>removeAlert<span class=\"k\">();</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span>clearButt<span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'click'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\te<span class=\"k\">.</span>preventDefault<span class=\"k\">();</span>","\t\t\t<span class=\"c\">//add a blank search layer</span>","\t\t\tsearchText<span class=\"k\">.</span>val<span class=\"k\">(</span><span class=\"s\">''</span><span class=\"k\">);</span>","\t\t\tThis<span class=\"k\">.</span>addSearchLayer<span class=\"k\">(</span><span class=\"k\">{}</span><span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\talertDiv<span class=\"k\">.</span>on<span class=\"k\">(</span><span class=\"s\">'click'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\tThis<span class=\"k\">.</span>removeAlert<span class=\"k\">();</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>searchFs <span class=\"k\">=</span> <span class=\"k\">{}</span><span class=\"k\">;</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>voteFs <span class=\"k\">=</span> <span class=\"k\">new</span> Josh<span class=\"k\">.</span>Votes<span class=\"k\">();</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>currentUser <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>searchLayer <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>location <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","\t\t","\t\tsocket<span class=\"k\">.</span>addEvent<span class=\"k\">(</span><span class=\"s\">'vote'</span><span class=\"k\">,</span> <span class=\"k\">this</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'vote'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">,</span> d<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t","\t\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">);</span>","\t\t\t<span class=\"c\">//first check to see if it exists in the vote db</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>votes<span class=\"k\">[</span>d<span class=\"k\">.</span>fs<span class=\"k\">.</span>id<span class=\"k\">]</span> <span class=\"k\">===</span> undefined<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">var</span> marker <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">.</span>addMarker<span class=\"k\">(</span>d<span class=\"k\">.</span>fs<span class=\"k\">);</span>","\t\t\t\td<span class=\"k\">.</span>fs<span class=\"k\">.</span>marker <span class=\"k\">=</span> marker<span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\td<span class=\"k\">.</span>fs<span class=\"k\">.</span>user <span class=\"k\">=</span> <span class=\"k\">[</span><span class=\"k\">new</span> Josh<span class=\"k\">.</span>User<span class=\"k\">(</span>d<span class=\"k\">.</span>username<span class=\"k\">,</span> d<span class=\"k\">.</span>img<span class=\"k\">)];</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>addActivity<span class=\"k\">(</span>d<span class=\"k\">.</span>fs<span class=\"k\">.</span>user<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">],</span> d<span class=\"k\">.</span>fs<span class=\"k\">.</span>name<span class=\"k\">,</span> d<span class=\"k\">.</span>fs<span class=\"k\">.</span>id<span class=\"k\">);</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>addVote<span class=\"k\">(</span>d<span class=\"k\">.</span>fs<span class=\"k\">);</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>showVotes<span class=\"k\">();</span>","\t\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span>d<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t$<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">).</span>on<span class=\"k\">(</span><span class=\"s\">'removeLayer'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">,</span>d<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\tThis<span class=\"k\">.</span>removeLayer<span class=\"k\">(</span>d<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t","\t\t<span class=\"c\">//listen for a hash change</span>","\t\twindow<span class=\"k\">.</span>addEventListener<span class=\"k\">(</span><span class=\"s\">\"hashchange\"</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">()</span><span class=\"k\">{</span>window<span class=\"k\">.</span>location<span class=\"k\">.</span>reload<span class=\"k\">();</span><span class=\"k\">}</span><span class=\"k\">);</span>","\t\t<span class=\"c\">//see if we have a hash area</span>","\t\t<span class=\"k\">if</span><span class=\"k\">(</span>window<span class=\"k\">.</span>location<span class=\"k\">.</span>hash<span class=\"k\">)</span> <span class=\"k\">{</span>","\t\t\tarea <span class=\"k\">=</span> String<span class=\"k\">(</span>window<span class=\"k\">.</span>location<span class=\"k\">.</span>hash<span class=\"k\">).</span>slice<span class=\"k\">(</span><span class=\"s\">1</span><span class=\"k\">);</span>","\t\t\ttitleh<span class=\"k\">.</span>html<span class=\"k\">(</span>area<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","\t\t\t<span class=\"c\">//set to default</span>","\t\t\tarea <span class=\"k\">=</span> <span class=\"s\">'default'</span><span class=\"k\">;</span>","\t\t<span class=\"k\">}</span>","\t\t","\t\t<span class=\"c\">//check the cookies for a current user</span>","\t\t<span class=\"k\">var</span> myusername <span class=\"k\">=</span> Josh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>readCookie<span class=\"k\">(</span><span class=\"s\">'username'</span><span class=\"k\">);</span>","\t\t<span class=\"k\">if</span><span class=\"k\">(</span>myusername <span class=\"k\">!==</span> <span class=\"k\">null</span><span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>addUser<span class=\"k\">(</span>myusername<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span>","\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">);</span>","\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>map <span class=\"k\">instanceof</span> L<span class=\"k\">.</span>Map<span class=\"k\">);</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Map<span class=\"k\">.</span>prototype <span class=\"k\">=</span> <span class=\"k\">{</span>","\t\tcenterLoc<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>loc<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>location <span class=\"k\">=</span> loc<span class=\"k\">;</span>","\t\t\t<span class=\"k\">var</span> hull <span class=\"k\">=</span> <span class=\"k\">new</span> L<span class=\"k\">.</span>LatLng<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>location<span class=\"k\">.</span>coords<span class=\"k\">.</span>latitude<span class=\"k\">,</span> <span class=\"k\">this</span><span class=\"k\">.</span>location<span class=\"k\">.</span>coords<span class=\"k\">.</span>longitude<span class=\"k\">);</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>map<span class=\"k\">.</span>setView<span class=\"k\">(</span>hull<span class=\"k\">,</span> <span class=\"s\">11</span><span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\taddMarker<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>fs<span class=\"k\">,</span> layeradd<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\tlayeradd <span class=\"k\">=</span> <span class=\"k\">typeof</span> layeradd <span class=\"k\">!==</span> <span class=\"s\">'undefined'</span> <span class=\"k\">?</span> layeradd <span class=\"k\">:</span> <span class=\"k\">true</span><span class=\"k\">;</span>","\t\t\t","\t\t\t<span class=\"k\">var</span> icon<span class=\"k\">;</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>fs<span class=\"k\">.</span>categories<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> <span class=\"s\">0</span><span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\ticon <span class=\"k\">=</span> <span class=\"k\">new</span> RestIcon<span class=\"k\">(</span> fs<span class=\"k\">.</span>categories<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">].</span>icon<span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\ticon <span class=\"k\">=</span> <span class=\"k\">new</span> L<span class=\"k\">.</span>Icon<span class=\"k\">(</span><span class=\"s\">'images/marker.png'</span><span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"k\">var</span> markerLocation <span class=\"k\">=</span> <span class=\"k\">new</span> L<span class=\"k\">.</span>LatLng<span class=\"k\">(</span>fs<span class=\"k\">.</span>location<span class=\"k\">.</span>lat<span class=\"k\">,</span> fs<span class=\"k\">.</span>location<span class=\"k\">.</span>lng<span class=\"k\">);</span>","\t\t\t<span class=\"k\">var</span> marker <span class=\"k\">=</span> <span class=\"k\">new</span> L<span class=\"k\">.</span>Marker<span class=\"k\">(</span>markerLocation<span class=\"k\">,</span> <span class=\"k\">{</span>icon<span class=\"k\">:</span> icon<span class=\"k\">,</span> title<span class=\"k\">:</span> fs<span class=\"k\">.</span>name<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t\tmarker<span class=\"k\">.</span>fsid <span class=\"k\">=</span> fs<span class=\"k\">.</span>id<span class=\"k\">;</span>","\t\t\tmarker<span class=\"k\">.</span>img <span class=\"k\">=</span> icon<span class=\"k\">.</span>iconUrl<span class=\"k\">;</span>","\t\t\t<span class=\"k\">var</span> This <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">;</span>","\t\t\tmarker<span class=\"k\">.</span>on<span class=\"k\">(</span><span class=\"s\">'click'</span><span class=\"k\">,</span> <span class=\"k\">function</span><span class=\"k\">(</span>e<span class=\"k\">)</span><span class=\"k\">{</span> This<span class=\"k\">.</span>showRest<span class=\"k\">(</span>e<span class=\"k\">.</span>target<span class=\"k\">.</span>fsid<span class=\"k\">);</span><span class=\"k\">}</span><span class=\"k\">);</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>layeradd<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>map<span class=\"k\">.</span>addLayer<span class=\"k\">(</span>marker<span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"k\">return</span> marker<span class=\"k\">;</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tremoveLayer<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>arg<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>map<span class=\"k\">.</span>removeLayer<span class=\"k\">(</span>arg<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\taddSearchLayer<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>rests<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>searchLayer <span class=\"k\">!==</span> <span class=\"k\">null</span><span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"c\">//remove all the current restaurants</span>","\t\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>map<span class=\"k\">.</span>removeLayer<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>searchLayer<span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>searchLayer <span class=\"k\">=</span> <span class=\"k\">new</span> L<span class=\"k\">.</span>LayerGroup<span class=\"k\">();</span>","\t\t\t","\t\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> id <span class=\"k\">in</span> rests<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>addSearchFs<span class=\"k\">(</span>rests<span class=\"k\">[</span>id<span class=\"k\">]);</span>","\t\t\t\t<span class=\"k\">var</span> marker <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">.</span>addMarker<span class=\"k\">(</span>rests<span class=\"k\">[</span>id<span class=\"k\">],</span> <span class=\"k\">false</span><span class=\"k\">);</span>","\t\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>searchLayer<span class=\"k\">.</span>addLayer<span class=\"k\">(</span>marker<span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>map<span class=\"k\">.</span>addLayer<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>searchLayer<span class=\"k\">);</span>","\t\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">);</span>","\t\t\t","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tshowRest<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>fsid<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">var</span> fs <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">.</span>findFs<span class=\"k\">(</span>fsid<span class=\"k\">);</span>","\t\t\t","\t\t\t<span class=\"k\">var</span> img<span class=\"k\">;</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>fs<span class=\"k\">.</span>categories<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> <span class=\"s\">0</span><span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\timg <span class=\"k\">=</span> fs<span class=\"k\">.</span>categories<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">].</span>icon<span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\timg <span class=\"k\">=</span> <span class=\"s\">'images/marker.png'</span><span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"k\">var</span> htmld <span class=\"k\">=</span> <span class=\"s\">'&lt;h3&gt;&lt;img src=\"'</span> <span class=\"k\">+</span> img <span class=\"k\">+</span> <span class=\"s\">'\"&gt;'</span> <span class=\"k\">+</span> fs<span class=\"k\">.</span>name <span class=\"k\">+</span> <span class=\"s\">'&lt;/h3&gt;'</span><span class=\"k\">;</span>","\t\t\t","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>fs<span class=\"k\">.</span>phone <span class=\"k\">!==</span> undefined<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\thtmld <span class=\"k\">+=</span> <span class=\"s\">'&lt;div&gt;Phone: '</span> <span class=\"k\">+</span> fs<span class=\"k\">.</span>phone <span class=\"k\">+</span> <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>fs<span class=\"k\">.</span>menu <span class=\"k\">!==</span> undefined<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\thtmld <span class=\"k\">+=</span> <span class=\"s\">'&lt;div&gt;&lt;a href=\"'</span> <span class=\"k\">+</span> fs<span class=\"k\">.</span>menu<span class=\"k\">.</span>url <span class=\"k\">+</span> <span class=\"s\">'\" target=\"_blank\"&gt;Menu&lt;/a&gt;&lt;/div&gt;'</span><span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"c\">//htmld += '&lt;div&gt;Distance: ' + fs.distance + '&lt;/div&gt;';</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>fs<span class=\"k\">.</span>user <span class=\"k\">!==</span> undefined<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\thtmld <span class=\"k\">+=</span> <span class=\"s\">'&lt;div&gt;Votes: '</span> <span class=\"k\">+</span> fs<span class=\"k\">.</span>user<span class=\"k\">.</span>length <span class=\"k\">+</span> <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">;</span>","\t\t\t\thtmld <span class=\"k\">+=</span> <span class=\"s\">'&lt;div&gt;'</span><span class=\"k\">;</span>","\t\t\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> i <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span> i <span class=\"k\">&lt;</span> fs<span class=\"k\">.</span>user<span class=\"k\">.</span>length<span class=\"k\">;</span> i<span class=\"k\">++)</span><span class=\"k\">{</span>","\t\t\t\t\thtmld <span class=\"k\">+=</span> fs<span class=\"k\">.</span>user<span class=\"k\">[</span>i<span class=\"k\">].</span>imgHTML<span class=\"k\">;</span>","\t\t\t\t<span class=\"k\">}</span> ","\t\t\t\thtmld <span class=\"k\">+=</span> <span class=\"s\">'&lt;/div&gt;'</span><span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\thtmld <span class=\"k\">+=</span> <span class=\"s\">'&lt;button class=\"btn\" data-fsid=\"'</span> <span class=\"k\">+</span> fs<span class=\"k\">.</span>id <span class=\"k\">+</span> <span class=\"s\">'\"&gt;Vote for Me&lt;/button&gt;'</span><span class=\"k\">;</span>","\t\t\t$<span class=\"k\">(</span>markerDiv<span class=\"k\">).</span>html<span class=\"k\">(</span>htmld<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\taddSearchFs<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>fs<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>searchFs<span class=\"k\">[</span>fs<span class=\"k\">.</span>id<span class=\"k\">]</span> <span class=\"k\">=</span> fs<span class=\"k\">;</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tremoveSearchFs<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>fs<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"c\">//this is removed as a group</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>searchFs <span class=\"k\">=</span> <span class=\"k\">{}</span><span class=\"k\">;</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tfindFs<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>fsid<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>votes<span class=\"k\">[</span>fsid<span class=\"k\">])</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">return</span> <span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>votes<span class=\"k\">[</span>fsid<span class=\"k\">];</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">return</span> <span class=\"k\">this</span><span class=\"k\">.</span>searchFs<span class=\"k\">[</span>fsid<span class=\"k\">];</span>","\t\t\t<span class=\"k\">}</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\taddUser<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>username<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>username <span class=\"k\">===</span> <span class=\"s\">''</span><span class=\"k\">)</span>","\t\t\t\t<span class=\"k\">return</span><span class=\"k\">;</span>","\t\t\t","\t\t\t<span class=\"k\">var</span> re <span class=\"k\">=</span> <span class=\"k\">new</span> RegExp<span class=\"k\">(</span><span class=\"s\">\"^(fb:)?\"</span><span class=\"k\">);</span>","\t\t\t<span class=\"k\">var</span> usersplit <span class=\"k\">=</span> username<span class=\"k\">.</span>split<span class=\"k\">(</span>re<span class=\"k\">);</span>","\t\t\t<span class=\"k\">var</span> type<span class=\"k\">;</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>usersplit<span class=\"k\">.</span>length <span class=\"k\">&gt;</span> <span class=\"s\">1</span><span class=\"k\">)</span>","\t\t\t<span class=\"k\">{</span>","\t\t\t\t<span class=\"c\">//we have a match</span>","\t\t\t\t<span class=\"c\">//grab the end piece</span>","\t\t\t\ttype <span class=\"k\">=</span> usersplit<span class=\"k\">[</span>usersplit<span class=\"k\">.</span>length<span class=\"k\">-</span><span class=\"s\">2</span><span class=\"k\">];</span>","\t\t\t\tusername <span class=\"k\">=</span> usersplit<span class=\"k\">[</span>usersplit<span class=\"k\">.</span>length<span class=\"k\">-</span><span class=\"s\">1</span><span class=\"k\">];</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\ttype <span class=\"k\">=</span> <span class=\"s\">'gravatar'</span><span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"k\">var</span> img<span class=\"k\">;</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>type <span class=\"k\">&amp;&amp;</span> type <span class=\"k\">===</span> <span class=\"s\">'fb:'</span><span class=\"k\">)</span>","\t\t\t<span class=\"k\">{</span>","\t\t\t\timg <span class=\"k\">=</span> document<span class=\"k\">.</span>createElement<span class=\"k\">(</span><span class=\"s\">'img'</span><span class=\"k\">);</span>","\t\t\t\timg<span class=\"k\">.</span>setAttribute<span class=\"k\">(</span><span class=\"s\">'src'</span><span class=\"k\">,</span> <span class=\"s\">'https://graph.facebook.com/'</span> <span class=\"k\">+</span> username <span class=\"k\">+</span> <span class=\"s\">'/picture?type=square'</span><span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span> <span class=\"k\">if</span><span class=\"k\">(</span>Josh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>readCookie<span class=\"k\">(</span><span class=\"s\">'img'</span><span class=\"k\">)</span> <span class=\"k\">!==</span> <span class=\"k\">null</span><span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\timg <span class=\"k\">=</span> document<span class=\"k\">.</span>createElement<span class=\"k\">(</span><span class=\"s\">'img'</span><span class=\"k\">);</span>","\t\t\t\timg<span class=\"k\">.</span>setAttribute<span class=\"k\">(</span><span class=\"s\">'src'</span><span class=\"k\">,</span> Josh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>readCookie<span class=\"k\">(</span><span class=\"s\">'img'</span><span class=\"k\">));</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">var</span> emailhash <span class=\"k\">=</span> md5<span class=\"k\">(</span>username<span class=\"k\">.</span>toLowerCase<span class=\"k\">());</span>","\t\t\t\timg <span class=\"k\">=</span> document<span class=\"k\">.</span>createElement<span class=\"k\">(</span><span class=\"s\">'img'</span><span class=\"k\">);</span>","\t\t\t\timg<span class=\"k\">.</span>setAttribute<span class=\"k\">(</span><span class=\"s\">'src'</span><span class=\"k\">,</span> <span class=\"s\">'http://www.gravatar.com/avatar/'</span> <span class=\"k\">+</span> emailhash <span class=\"k\">+</span> <span class=\"s\">'?d=retro&amp;s=18'</span><span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>currentUser <span class=\"k\">=</span> <span class=\"k\">new</span> Josh<span class=\"k\">.</span>User<span class=\"k\">(</span>username<span class=\"k\">,</span> img<span class=\"k\">.</span>src<span class=\"k\">);</span>","\t\t\tsocket<span class=\"k\">.</span>addUser<span class=\"k\">(</span>String<span class=\"k\">(</span>username<span class=\"k\">),</span> String<span class=\"k\">(</span>img<span class=\"k\">.</span>src<span class=\"k\">),</span> area<span class=\"k\">);</span>","\t\t\t","\t\t\t<span class=\"k\">var</span> userhtml <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">.</span>currentUser<span class=\"k\">.</span>imgHTML <span class=\"k\">+</span> username <span class=\"k\">+</span> <span class=\"s\">' : &lt;a href=\"#\"&gt;Sign out&lt;/a&gt;'</span><span class=\"k\">;</span>","\t\t\t$<span class=\"k\">(</span>loginDiv<span class=\"k\">).</span>html<span class=\"k\">(</span>userhtml<span class=\"k\">);</span>","\t\t\t","\t\t\t<span class=\"c\">//add cookie for use</span>","\t\t\tJosh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>createCookie<span class=\"k\">(</span><span class=\"s\">'username'</span><span class=\"k\">,</span> username<span class=\"k\">);</span>","\t\t\tJosh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>createCookie<span class=\"k\">(</span><span class=\"s\">'img'</span><span class=\"k\">,</span> img<span class=\"k\">.</span>src<span class=\"k\">);</span>","\t\t\tsocket<span class=\"k\">.</span>getVotes<span class=\"k\">();</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tremoveUser<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">()</span><span class=\"k\">{</span>","\t\t\tJosh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>eraseCookie<span class=\"k\">(</span><span class=\"s\">'username'</span><span class=\"k\">);</span>","\t\t\tJosh<span class=\"k\">.</span>Cookie<span class=\"k\">.</span>eraseCookie<span class=\"k\">(</span><span class=\"s\">'img'</span><span class=\"k\">);</span>","\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>currentUser <span class=\"k\">=</span> <span class=\"k\">null</span><span class=\"k\">;</span>","\t\t\t<span class=\"c\">//send message to server?</span>","\t\t\t$<span class=\"k\">(</span>loginDiv<span class=\"k\">).</span>html<span class=\"k\">(</span><span class=\"s\">'&lt;input id=\"login\" type=\"text\" placeholder=\"email\"&gt;'</span><span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\taddActivity<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>user<span class=\"k\">,</span> fsName<span class=\"k\">,</span> fsid<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">var</span> lihtml <span class=\"k\">=</span> <span class=\"s\">'&lt;li&gt;'</span> <span class=\"k\">+</span> user<span class=\"k\">.</span>imgHTML <span class=\"k\">+</span> user<span class=\"k\">.</span>username <span class=\"k\">+</span> <span class=\"s\">' voted for &lt;a href=\"#\" data-fsid=\"'</span> <span class=\"k\">+</span> fsid <span class=\"k\">+</span> <span class=\"s\">'\"&gt;'</span> <span class=\"k\">+</span> fsName <span class=\"k\">+</span> <span class=\"s\">'&lt;/li&gt;&lt;hr/&gt;'</span><span class=\"k\">;</span>","\t\t\t","\t\t\t$<span class=\"k\">(</span>actsUl<span class=\"k\">).</span>append<span class=\"k\">(</span>lihtml<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tshowVotes<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">()</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">var</span> voteArray <span class=\"k\">=</span> <span class=\"k\">[];</span>","\t\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> r <span class=\"k\">in</span> <span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>votes<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\tvoteArray<span class=\"k\">.</span>push<span class=\"k\">([</span><span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>votes<span class=\"k\">[</span>r<span class=\"k\">].</span>name<span class=\"k\">,</span> <span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>votes<span class=\"k\">[</span>r<span class=\"k\">].</span>user<span class=\"k\">.</span>length<span class=\"k\">,</span> <span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>votes<span class=\"k\">[</span>r<span class=\"k\">].</span>id<span class=\"k\">,</span> <span class=\"k\">this</span><span class=\"k\">.</span>voteFs<span class=\"k\">.</span>votes<span class=\"k\">[</span>r<span class=\"k\">].</span>user<span class=\"k\">]);</span>","\t\t\t<span class=\"k\">}</span>","\t\t\tvoteArray<span class=\"k\">.</span>sort<span class=\"k\">(</span><span class=\"k\">function</span><span class=\"k\">(</span>a<span class=\"k\">,</span> b<span class=\"k\">)</span><span class=\"k\">{</span><span class=\"k\">return</span> b<span class=\"k\">[</span><span class=\"s\">1</span><span class=\"k\">]</span> <span class=\"k\">-</span> a<span class=\"k\">[</span><span class=\"s\">1</span><span class=\"k\">];</span><span class=\"k\">}</span><span class=\"k\">);</span>","\t\t\t<span class=\"k\">var</span> lihtml <span class=\"k\">=</span> <span class=\"s\">''</span><span class=\"k\">;</span>","\t\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> i <span class=\"k\">=</span><span class=\"s\">0</span><span class=\"k\">;</span> i <span class=\"k\">&lt;</span> voteArray<span class=\"k\">.</span>length<span class=\"k\">;</span> i<span class=\"k\">++)</span><span class=\"k\">{</span>","\t\t\t\tlihtml <span class=\"k\">+=</span> <span class=\"s\">'&lt;li&gt;'</span> <span class=\"k\">+</span> voteArray<span class=\"k\">[</span>i<span class=\"k\">][</span><span class=\"s\">1</span><span class=\"k\">]</span> <span class=\"k\">+</span> <span class=\"s\">' for &lt;a href=\"#\" data-fsid=\"'</span> <span class=\"k\">+</span> voteArray<span class=\"k\">[</span>i<span class=\"k\">][</span><span class=\"s\">2</span><span class=\"k\">]</span> <span class=\"k\">+</span> <span class=\"s\">'\"&gt;'</span> <span class=\"k\">+</span> voteArray<span class=\"k\">[</span>i<span class=\"k\">][</span><span class=\"s\">0</span><span class=\"k\">]</span> <span class=\"k\">+</span> <span class=\"s\">'&lt;/a&gt;&lt;/li&gt;'</span><span class=\"k\">;</span>","\t\t\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> u<span class=\"k\">=</span><span class=\"s\">0</span><span class=\"k\">;</span> u <span class=\"k\">&lt;</span> voteArray<span class=\"k\">[</span>i<span class=\"k\">][</span><span class=\"s\">3</span><span class=\"k\">].</span>length<span class=\"k\">;</span> u<span class=\"k\">++)</span><span class=\"k\">{</span>","\t\t\t\t\tlihtml <span class=\"k\">+=</span> voteArray<span class=\"k\">[</span>i<span class=\"k\">][</span><span class=\"s\">3</span><span class=\"k\">][</span>u<span class=\"k\">].</span>imgHTML<span class=\"k\">;</span>","\t\t\t\t<span class=\"k\">}</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t$<span class=\"k\">(</span>votesUl<span class=\"k\">).</span>html<span class=\"k\">(</span>lihtml<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tfindRests<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>query<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>location<span class=\"k\">);</span>","\t\t\t<span class=\"c\">//var url = 'http://localhost:85/test/fs.php?&amp;ll=' + location.coords.latitude + ',' + location.coords.longitude;</span>","\t\t\t<span class=\"k\">var</span> url <span class=\"k\">=</span> <span class=\"s\">'https://api.foursquare.com/v2/venues/search?ll='</span> <span class=\"k\">+</span> <span class=\"k\">this</span><span class=\"k\">.</span>location<span class=\"k\">.</span>coords<span class=\"k\">.</span>latitude <span class=\"k\">+</span> <span class=\"s\">','</span> <span class=\"k\">+</span> <span class=\"k\">this</span><span class=\"k\">.</span>location<span class=\"k\">.</span>coords<span class=\"k\">.</span>longitude <span class=\"k\">+</span> <span class=\"s\">'&amp;client_id=NQNF2JL2VKJHXETAOND5TPJ23A2SWGZC4TXJEMLGJBXYMIJM&amp;client_secret=TF1CC0HZVBJ0TM50CRNJNTWSOWZMIKQ30V4DEB4GC2UWZ3KM'</span><span class=\"k\">;</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>query <span class=\"k\">!==</span> <span class=\"s\">''</span><span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\turl <span class=\"k\">+=</span> <span class=\"s\">'&amp;query='</span> <span class=\"k\">+</span> encodeURI<span class=\"k\">(</span>query<span class=\"k\">)</span> <span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\turl <span class=\"k\">+=</span> <span class=\"s\">'&amp;query='</span> <span class=\"k\">+</span> encodeURI<span class=\"k\">(</span><span class=\"s\">'restaurant'</span><span class=\"k\">)</span> <span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t<span class=\"k\">var</span> This <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">;</span>","\t\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span>url<span class=\"k\">);</span>","\t\t\t$<span class=\"k\">.</span>getJSON<span class=\"k\">(</span> url <span class=\"k\">,</span> ","\t\t\t<span class=\"k\">function</span><span class=\"k\">(</span>data<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\tconsole<span class=\"k\">.</span>log<span class=\"k\">(</span>data<span class=\"k\">);</span>","\t\t\t\t<span class=\"k\">var</span> rests <span class=\"k\">=</span> data<span class=\"k\">.</span>response<span class=\"k\">.</span>groups<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">].</span>items<span class=\"k\">;</span>","\t\t\t\tThis<span class=\"k\">.</span>addSearchLayer<span class=\"k\">(</span>rests<span class=\"k\">);</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\taddAlert<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>message<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\talertDiv<span class=\"k\">.</span>removeClass<span class=\"k\">(</span><span class=\"s\">'none'</span><span class=\"k\">);</span>","\t\t\talertDiv<span class=\"k\">.</span>html<span class=\"k\">(</span>message<span class=\"k\">);</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tremoveAlert<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">()</span><span class=\"k\">{</span>","\t\t\talertDiv<span class=\"k\">.</span>addClass<span class=\"k\">(</span><span class=\"s\">'none'</span><span class=\"k\">);</span>","\t\t<span class=\"k\">}</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","<span class=\"k\">}</span><span class=\"k\">)(</span>window<span class=\"k\">.</span>Josh <span class=\"k\">=</span> window<span class=\"k\">.</span>Josh <span class=\"k\">||</span> <span class=\"k\">{}</span><span class=\"k\">,</span>  window<span class=\"k\">.</span>jQuery<span class=\"k\">);</span>","","","<span class=\"k\">(</span><span class=\"k\">function</span><span class=\"k\">(</span>Josh<span class=\"k\">,</span> $<span class=\"k\">)</span><span class=\"k\">{</span>","\t<span class=\"s\">\"use strict\"</span><span class=\"k\">;</span>","\tJosh<span class=\"k\">.</span>Votes <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">()</span><span class=\"k\">{</span>","\t\t<span class=\"k\">this</span><span class=\"k\">.</span>votes <span class=\"k\">=</span> <span class=\"k\">{}</span><span class=\"k\">;</span>","\t<span class=\"k\">}</span><span class=\"k\">;</span>","\t","\tJosh<span class=\"k\">.</span>Votes<span class=\"k\">.</span>prototype <span class=\"k\">=</span> <span class=\"k\">{</span>","\t\taddVote<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>vote<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"c\">//first check to see if this person has voted already</span>","\t\t\t<span class=\"k\">var</span> userVote <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">.</span>findByUser<span class=\"k\">(</span>vote<span class=\"k\">.</span>user<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">].</span>username<span class=\"k\">);</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>userVote <span class=\"k\">!==</span> undefined<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"c\">//this person voted, now check to see if this is the only vote</span>","\t\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>userVote<span class=\"k\">.</span>user<span class=\"k\">.</span>length <span class=\"k\">===</span> <span class=\"s\">1</span><span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t\t<span class=\"c\">//only this person voted for this restaurant delete it</span>","\t\t\t\t\t<span class=\"c\">//but first take the marker off the map</span>","\t\t\t\t\t<span class=\"c\">//after checking to see if the new vote has a marker</span>","\t\t\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>vote<span class=\"k\">.</span>marker <span class=\"k\">===</span> undefined<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t\t\t<span class=\"c\">//it doesn't so pass the marker</span>","\t\t\t\t\t\tvote<span class=\"k\">.</span>marker <span class=\"k\">=</span> userVote<span class=\"k\">.</span>marker<span class=\"k\">;</span>","\t\t\t\t\t<span class=\"k\">}</span>","\t\t\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>vote<span class=\"k\">.</span>id <span class=\"k\">!==</span> userVote<span class=\"k\">.</span>id<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t\t\t<span class=\"c\">//delete the marker only if the two rests are not the same</span>","\t\t\t\t\t\t$<span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">).</span>trigger<span class=\"k\">(</span><span class=\"s\">'removeLayer'</span><span class=\"k\">,</span> userVote<span class=\"k\">.</span>marker<span class=\"k\">);</span>","\t\t\t\t\t<span class=\"k\">}</span>","\t\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\t\t<span class=\"c\">//multiple people voted for it, just remove their vote</span>","\t\t\t\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> i<span class=\"k\">=</span><span class=\"s\">0</span><span class=\"k\">;</span> i <span class=\"k\">&lt;</span> userVote<span class=\"k\">.</span>user<span class=\"k\">.</span>length<span class=\"k\">;</span> i<span class=\"k\">++)</span><span class=\"k\">{</span>","\t\t\t\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>userVote<span class=\"k\">.</span>user<span class=\"k\">[</span>i<span class=\"k\">].</span>username <span class=\"k\">===</span> vote<span class=\"k\">.</span>user<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">].</span>username<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t\t\t\t<span class=\"c\">//we found it! Remove only this user</span>","\t\t\t\t\t\t\t<span class=\"k\">var</span> prevVote <span class=\"k\">=</span> userVote<span class=\"k\">.</span>user<span class=\"k\">.</span>splice<span class=\"k\">(</span>i<span class=\"k\">,</span> <span class=\"s\">1</span><span class=\"k\">);</span>","\t\t\t\t\t\t\t<span class=\"c\">//delete prevVote;</span>","\t\t\t\t\t\t\t<span class=\"c\">//put the vote back in</span>","\t\t\t\t\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>userVote<span class=\"k\">.</span>id<span class=\"k\">]</span> <span class=\"k\">=</span> userVote<span class=\"k\">;</span>","\t\t\t\t\t\t<span class=\"k\">}</span>","\t\t\t\t\t<span class=\"k\">}</span>","\t\t\t\t<span class=\"k\">}</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t\t<span class=\"c\">//now check to see if the restaurant exists</span>","\t\t\t<span class=\"k\">var</span> restVote <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">.</span>findByFs<span class=\"k\">(</span>vote<span class=\"k\">.</span>id<span class=\"k\">);</span>","\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span>restVote <span class=\"k\">!==</span> undefined<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"c\">//add the user to the user list</span>","\t\t\t\trestVote<span class=\"k\">.</span>user<span class=\"k\">.</span>push<span class=\"k\">(</span>vote<span class=\"k\">.</span>user<span class=\"k\">[</span><span class=\"s\">0</span><span class=\"k\">]);</span>","\t\t\t\t<span class=\"c\">//put the vote back in</span>","\t\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>restVote<span class=\"k\">.</span>id<span class=\"k\">]</span> <span class=\"k\">=</span> restVote<span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span><span class=\"k\">else</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"c\">//nothing else is true</span>","\t\t\t\t<span class=\"c\">//add it to the object</span>","\t\t\t\t<span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>vote<span class=\"k\">.</span>id<span class=\"k\">]</span> <span class=\"k\">=</span> vote<span class=\"k\">;</span>","\t\t\t<span class=\"k\">}</span>","\t\t\t","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tfindByUser<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>username<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> i <span class=\"k\">in</span> <span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t<span class=\"k\">for</span><span class=\"k\">(</span><span class=\"k\">var</span> u<span class=\"k\">=</span><span class=\"s\">0</span><span class=\"k\">;</span> u <span class=\"k\">&lt;</span> <span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>i<span class=\"k\">].</span>user<span class=\"k\">.</span>length<span class=\"k\">;</span> u<span class=\"k\">++)</span><span class=\"k\">{</span>","\t\t\t\t\t<span class=\"k\">if</span><span class=\"k\">(</span><span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>i<span class=\"k\">].</span>user<span class=\"k\">[</span>u<span class=\"k\">].</span>username <span class=\"k\">===</span> username<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t\t\t\t<span class=\"k\">var</span> retEl <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>i<span class=\"k\">];</span>","\t\t\t\t\t\t<span class=\"k\">delete</span> <span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>i<span class=\"k\">];</span>","\t\t\t\t\t\t<span class=\"k\">return</span> retEl<span class=\"k\">;</span>","\t\t\t\t\t<span class=\"k\">}</span>","\t\t\t\t<span class=\"k\">}</span>","\t\t\t<span class=\"k\">}</span>","\t\t<span class=\"k\">}</span><span class=\"k\">,</span>","\t\t","\t\tfindByFs<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>fsid<span class=\"k\">)</span><span class=\"k\">{</span>","\t\t\t<span class=\"k\">var</span> retEl <span class=\"k\">=</span> <span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>fsid<span class=\"k\">];</span>","\t\t\t<span class=\"k\">delete</span> <span class=\"k\">this</span><span class=\"k\">.</span>votes<span class=\"k\">[</span>fsid<span class=\"k\">];</span>","\t\t\t<span class=\"k\">return</span> retEl<span class=\"k\">;</span>","\t\t<span class=\"k\">}</span>","","\t<span class=\"k\">}</span><span class=\"k\">;</span>","<span class=\"k\">}</span><span class=\"k\">)(</span>window<span class=\"k\">.</span>Josh <span class=\"k\">=</span> window<span class=\"k\">.</span>Josh <span class=\"k\">||</span> <span class=\"k\">{}</span><span class=\"k\">,</span>  window<span class=\"k\">.</span>jQuery<span class=\"k\">);</span>","","<span class=\"k\">var</span> locError <span class=\"k\">=</span> <span class=\"k\">function</span><span class=\"k\">(</span>error<span class=\"k\">)</span><span class=\"k\">{}</span><span class=\"k\">;</span>"];
 _$jscoverage['joshNS.js'][6]++;
 (function (Josh) {
   _$jscoverage['joshNS.js'][7]++;
@@ -419,6 +430,8 @@ _$jscoverage['joshNS.js'][38]++;
   Josh.Socket.prototype.addVote = (function (fs) {
   _$jscoverage['joshNS.js'][74]++;
   var fsSend = $.extend(true, {}, fs);
+  _$jscoverage['joshNS.js'][76]++;
+  ((delete fsSend.marker), fsSend.user);
   _$jscoverage['joshNS.js'][77]++;
   console.log(fs);
   _$jscoverage['joshNS.js'][78]++;
@@ -426,53 +439,55 @@ _$jscoverage['joshNS.js'][38]++;
   _$jscoverage['joshNS.js'][79]++;
   sock.emit("addVote", fsSend);
 });
-  _$jscoverage['joshNS.js'][83]++;
+  _$jscoverage['joshNS.js'][82]++;
   return Josh.Socket;
 })((window.Josh = (window.Josh || {})), window.jQuery);
-_$jscoverage['joshNS.js'][86]++;
+_$jscoverage['joshNS.js'][85]++;
 (function (Josh, $) {
-  _$jscoverage['joshNS.js'][87]++;
+  _$jscoverage['joshNS.js'][86]++;
   "use strict";
-  _$jscoverage['joshNS.js'][88]++;
+  _$jscoverage['joshNS.js'][87]++;
   Josh.User = (function (username, img) {
-  _$jscoverage['joshNS.js'][89]++;
+  _$jscoverage['joshNS.js'][88]++;
   this.username = username;
-  _$jscoverage['joshNS.js'][90]++;
+  _$jscoverage['joshNS.js'][89]++;
   this.img = img;
-  _$jscoverage['joshNS.js'][91]++;
+  _$jscoverage['joshNS.js'][90]++;
   this.imgHTML = ("<img src=\"" + img + "\" class=\"userimg\" title=\"" + username + "\">");
 });
 })((window.Josh = (window.Josh || {})), window.jQuery);
-_$jscoverage['joshNS.js'][95]++;
+_$jscoverage['joshNS.js'][94]++;
 (function (Josh, $) {
-  _$jscoverage['joshNS.js'][96]++;
+  _$jscoverage['joshNS.js'][95]++;
   "use strict";
-  _$jscoverage['joshNS.js'][97]++;
+  _$jscoverage['joshNS.js'][96]++;
   var id;
-  _$jscoverage['joshNS.js'][98]++;
+  _$jscoverage['joshNS.js'][97]++;
   var osm;
-  _$jscoverage['joshNS.js'][99]++;
+  _$jscoverage['joshNS.js'][98]++;
   var RestIcon;
-  _$jscoverage['joshNS.js'][100]++;
+  _$jscoverage['joshNS.js'][99]++;
   var markerDiv;
-  _$jscoverage['joshNS.js'][101]++;
+  _$jscoverage['joshNS.js'][100]++;
   var votesUl;
-  _$jscoverage['joshNS.js'][102]++;
+  _$jscoverage['joshNS.js'][101]++;
   var actsUl;
-  _$jscoverage['joshNS.js'][103]++;
+  _$jscoverage['joshNS.js'][102]++;
   var loginDiv;
-  _$jscoverage['joshNS.js'][104]++;
+  _$jscoverage['joshNS.js'][103]++;
   var search;
-  _$jscoverage['joshNS.js'][105]++;
+  _$jscoverage['joshNS.js'][104]++;
   var searchText;
-  _$jscoverage['joshNS.js'][106]++;
+  _$jscoverage['joshNS.js'][105]++;
   var clearButt;
-  _$jscoverage['joshNS.js'][107]++;
+  _$jscoverage['joshNS.js'][106]++;
   var titleh;
-  _$jscoverage['joshNS.js'][108]++;
+  _$jscoverage['joshNS.js'][107]++;
   var area;
-  _$jscoverage['joshNS.js'][109]++;
+  _$jscoverage['joshNS.js'][108]++;
   var socket;
+  _$jscoverage['joshNS.js'][109]++;
+  var alertDiv;
   _$jscoverage['joshNS.js'][111]++;
   Josh.Map = (function (id) {
   _$jscoverage['joshNS.js'][112]++;
@@ -509,483 +524,503 @@ _$jscoverage['joshNS.js'][95]++;
   clearButt = document.getElementById("clear");
   _$jscoverage['joshNS.js'][136]++;
   titleh = $("#title");
-  _$jscoverage['joshNS.js'][138]++;
+  _$jscoverage['joshNS.js'][137]++;
+  alertDiv = $("#alert");
+  _$jscoverage['joshNS.js'][139]++;
   var This = this;
-  _$jscoverage['joshNS.js'][140]++;
+  _$jscoverage['joshNS.js'][141]++;
   navigator.geolocation.getCurrentPosition((function (location) {
-  _$jscoverage['joshNS.js'][140]++;
+  _$jscoverage['joshNS.js'][141]++;
   This.centerLoc(location);
 }), locError, {timeout: 10000});
-  _$jscoverage['joshNS.js'][142]++;
-  $(markerDiv).on("click", "button", (function (e) {
   _$jscoverage['joshNS.js'][143]++;
-  var target = $(e.target);
+  $(markerDiv).on("click", "button", (function (e) {
   _$jscoverage['joshNS.js'][144]++;
+  var target = $(e.target);
+  _$jscoverage['joshNS.js'][145]++;
   if ((This.currentUser !== null)) {
-    _$jscoverage['joshNS.js'][145]++;
-    var fsid = target.attr("data-fsid");
     _$jscoverage['joshNS.js'][146]++;
-    var fs = This.findFs(fsid);
+    var fsid = target.attr("data-fsid");
     _$jscoverage['joshNS.js'][147]++;
-    socket.addVote(fs);
+    var fs = This.findFs(fsid);
     _$jscoverage['joshNS.js'][148]++;
+    socket.addVote(fs);
+    _$jscoverage['joshNS.js'][149]++;
     console.log(This.findFs(fsid));
   }
   else {
-    _$jscoverage['joshNS.js'][150]++;
-    alert("you must be logged in!");
+    _$jscoverage['joshNS.js'][151]++;
+    This.addAlert("You must be logged in!");
   }
 }));
-  _$jscoverage['joshNS.js'][154]++;
-  $(votesUl).on("click", "li a", (function (e) {
   _$jscoverage['joshNS.js'][155]++;
-  e.preventDefault();
+  $(votesUl).on("click", "li a", (function (e) {
   _$jscoverage['joshNS.js'][156]++;
-  This.showRest($(e.target).attr("data-fsid"));
-}));
-  _$jscoverage['joshNS.js'][159]++;
-  $(actsUl).on("click", "li a", (function (e) {
-  _$jscoverage['joshNS.js'][160]++;
   e.preventDefault();
-  _$jscoverage['joshNS.js'][161]++;
+  _$jscoverage['joshNS.js'][157]++;
   This.showRest($(e.target).attr("data-fsid"));
 }));
-  _$jscoverage['joshNS.js'][164]++;
-  $(loginDiv).on("focusout", "input", (function (e) {
+  _$jscoverage['joshNS.js'][160]++;
+  $(actsUl).on("click", "li a", (function (e) {
+  _$jscoverage['joshNS.js'][161]++;
+  e.preventDefault();
+  _$jscoverage['joshNS.js'][162]++;
+  This.showRest($(e.target).attr("data-fsid"));
+}));
   _$jscoverage['joshNS.js'][165]++;
-  var username = $(e.target).val();
+  $(loginDiv).on("focusout", "input", (function (e) {
   _$jscoverage['joshNS.js'][166]++;
+  var username = $(e.target).val();
+  _$jscoverage['joshNS.js'][167]++;
   This.addUser(username);
 }));
-  _$jscoverage['joshNS.js'][169]++;
-  $(loginDiv).on("click", "a", (function (e) {
   _$jscoverage['joshNS.js'][170]++;
-  e.preventDefault();
+  $(loginDiv).on("click", "a", (function (e) {
   _$jscoverage['joshNS.js'][171]++;
+  e.preventDefault();
+  _$jscoverage['joshNS.js'][172]++;
   This.removeUser();
 }));
-  _$jscoverage['joshNS.js'][174]++;
-  $(search).on("click", (function (e) {
   _$jscoverage['joshNS.js'][175]++;
-  e.preventDefault();
+  $(search).on("click", (function (e) {
   _$jscoverage['joshNS.js'][176]++;
-  This.findRests(searchText.val());
-}));
-  _$jscoverage['joshNS.js'][179]++;
-  $(clearButt).on("click", (function (e) {
-  _$jscoverage['joshNS.js'][180]++;
+  This.addAlert("Searching for Restaurants");
+  _$jscoverage['joshNS.js'][177]++;
   e.preventDefault();
+  _$jscoverage['joshNS.js'][178]++;
+  This.findRests(searchText.val());
+  _$jscoverage['joshNS.js'][179]++;
+  This.removeAlert();
+}));
   _$jscoverage['joshNS.js'][182]++;
-  searchText.val("");
+  $(clearButt).on("click", (function (e) {
   _$jscoverage['joshNS.js'][183]++;
+  e.preventDefault();
+  _$jscoverage['joshNS.js'][185]++;
+  searchText.val("");
+  _$jscoverage['joshNS.js'][186]++;
   This.addSearchLayer({});
 }));
-  _$jscoverage['joshNS.js'][186]++;
-  this.searchFs = {};
-  _$jscoverage['joshNS.js'][187]++;
-  this.voteFs = new (Josh.Votes)();
-  _$jscoverage['joshNS.js'][188]++;
-  this.currentUser = null;
   _$jscoverage['joshNS.js'][189]++;
-  this.searchLayer = null;
+  alertDiv.on("click", (function (e) {
   _$jscoverage['joshNS.js'][190]++;
-  this.location = null;
-  _$jscoverage['joshNS.js'][192]++;
-  socket.addEvent("vote", this);
+  This.removeAlert();
+}));
   _$jscoverage['joshNS.js'][194]++;
-  $(this).on("vote", (function (e, d) {
+  this.searchFs = {};
+  _$jscoverage['joshNS.js'][195]++;
+  this.voteFs = new (Josh.Votes)();
   _$jscoverage['joshNS.js'][196]++;
-  console.log(this);
+  this.currentUser = null;
+  _$jscoverage['joshNS.js'][197]++;
+  this.searchLayer = null;
   _$jscoverage['joshNS.js'][198]++;
+  this.location = null;
+  _$jscoverage['joshNS.js'][200]++;
+  socket.addEvent("vote", this);
+  _$jscoverage['joshNS.js'][202]++;
+  $(this).on("vote", (function (e, d) {
+  _$jscoverage['joshNS.js'][204]++;
+  console.log(this);
+  _$jscoverage['joshNS.js'][206]++;
   if ((this.voteFs.votes[d.fs.id] === undefined)) {
-    _$jscoverage['joshNS.js'][199]++;
+    _$jscoverage['joshNS.js'][207]++;
     var marker = this.addMarker(d.fs);
-    _$jscoverage['joshNS.js'][200]++;
+    _$jscoverage['joshNS.js'][208]++;
     d.fs.marker = marker;
   }
-  _$jscoverage['joshNS.js'][203]++;
+  _$jscoverage['joshNS.js'][211]++;
   d.fs.user = [new (Josh.User)(d.username, d.img)];
-  _$jscoverage['joshNS.js'][204]++;
+  _$jscoverage['joshNS.js'][212]++;
   this.addActivity(d.fs.user[0], d.fs.name, d.fs.id);
-  _$jscoverage['joshNS.js'][205]++;
+  _$jscoverage['joshNS.js'][213]++;
   this.voteFs.addVote(d.fs);
-  _$jscoverage['joshNS.js'][206]++;
+  _$jscoverage['joshNS.js'][214]++;
   this.showVotes();
-  _$jscoverage['joshNS.js'][207]++;
+  _$jscoverage['joshNS.js'][215]++;
   console.log(d);
 }));
-  _$jscoverage['joshNS.js'][210]++;
+  _$jscoverage['joshNS.js'][218]++;
   $(this.voteFs).on("removeLayer", (function (e, d) {
-  _$jscoverage['joshNS.js'][211]++;
+  _$jscoverage['joshNS.js'][219]++;
   This.removeLayer(d);
 }));
-  _$jscoverage['joshNS.js'][215]++;
+  _$jscoverage['joshNS.js'][223]++;
   window.addEventListener("hashchange", (function () {
-  _$jscoverage['joshNS.js'][215]++;
+  _$jscoverage['joshNS.js'][223]++;
   window.location.reload();
 }));
-  _$jscoverage['joshNS.js'][217]++;
+  _$jscoverage['joshNS.js'][225]++;
   if (window.location.hash) {
-    _$jscoverage['joshNS.js'][218]++;
+    _$jscoverage['joshNS.js'][226]++;
     area = String(window.location.hash).slice(1);
-    _$jscoverage['joshNS.js'][219]++;
+    _$jscoverage['joshNS.js'][227]++;
     titleh.html(area);
   }
   else {
-    _$jscoverage['joshNS.js'][222]++;
+    _$jscoverage['joshNS.js'][230]++;
     area = "default";
   }
-  _$jscoverage['joshNS.js'][226]++;
+  _$jscoverage['joshNS.js'][234]++;
   var myusername = Josh.Cookie.readCookie("username");
-  _$jscoverage['joshNS.js'][227]++;
+  _$jscoverage['joshNS.js'][235]++;
   if ((myusername !== null)) {
-    _$jscoverage['joshNS.js'][228]++;
+    _$jscoverage['joshNS.js'][236]++;
     this.addUser(myusername);
   }
-  _$jscoverage['joshNS.js'][230]++;
+  _$jscoverage['joshNS.js'][238]++;
   console.log(this);
-  _$jscoverage['joshNS.js'][231]++;
+  _$jscoverage['joshNS.js'][239]++;
   console.log((this.map instanceof L.Map));
 });
-  _$jscoverage['joshNS.js'][234]++;
+  _$jscoverage['joshNS.js'][242]++;
   Josh.Map.prototype = {centerLoc: (function (loc) {
-  _$jscoverage['joshNS.js'][236]++;
+  _$jscoverage['joshNS.js'][244]++;
   this.location = loc;
-  _$jscoverage['joshNS.js'][237]++;
+  _$jscoverage['joshNS.js'][245]++;
   var hull = new (L.LatLng)(this.location.coords.latitude, this.location.coords.longitude);
-  _$jscoverage['joshNS.js'][238]++;
+  _$jscoverage['joshNS.js'][246]++;
   this.map.setView(hull, 11);
 }), addMarker: (function (fs, layeradd) {
-  _$jscoverage['joshNS.js'][242]++;
+  _$jscoverage['joshNS.js'][250]++;
   layeradd = (((typeof layeradd) !== "undefined")? layeradd: true);
-  _$jscoverage['joshNS.js'][244]++;
+  _$jscoverage['joshNS.js'][252]++;
   var icon;
-  _$jscoverage['joshNS.js'][245]++;
+  _$jscoverage['joshNS.js'][253]++;
   if ((fs.categories.length > 0)) {
-    _$jscoverage['joshNS.js'][246]++;
+    _$jscoverage['joshNS.js'][254]++;
     icon = new RestIcon(fs.categories[0].icon);
   }
   else {
-    _$jscoverage['joshNS.js'][248]++;
+    _$jscoverage['joshNS.js'][256]++;
     icon = new (L.Icon)("images/marker.png");
   }
-  _$jscoverage['joshNS.js'][251]++;
+  _$jscoverage['joshNS.js'][259]++;
   var markerLocation = new (L.LatLng)(fs.location.lat, fs.location.lng);
-  _$jscoverage['joshNS.js'][252]++;
+  _$jscoverage['joshNS.js'][260]++;
   var marker = new (L.Marker)(markerLocation, {icon: icon, title: fs.name});
-  _$jscoverage['joshNS.js'][253]++;
+  _$jscoverage['joshNS.js'][261]++;
   marker.fsid = fs.id;
-  _$jscoverage['joshNS.js'][254]++;
+  _$jscoverage['joshNS.js'][262]++;
   marker.img = icon.iconUrl;
-  _$jscoverage['joshNS.js'][255]++;
+  _$jscoverage['joshNS.js'][263]++;
   var This = this;
-  _$jscoverage['joshNS.js'][256]++;
+  _$jscoverage['joshNS.js'][264]++;
   marker.on("click", (function (e) {
-  _$jscoverage['joshNS.js'][256]++;
+  _$jscoverage['joshNS.js'][264]++;
   This.showRest(e.target.fsid);
 }));
-  _$jscoverage['joshNS.js'][257]++;
+  _$jscoverage['joshNS.js'][265]++;
   if (layeradd) {
-    _$jscoverage['joshNS.js'][258]++;
+    _$jscoverage['joshNS.js'][266]++;
     this.map.addLayer(marker);
   }
-  _$jscoverage['joshNS.js'][261]++;
+  _$jscoverage['joshNS.js'][269]++;
   return marker;
 }), removeLayer: (function (arg) {
-  _$jscoverage['joshNS.js'][265]++;
+  _$jscoverage['joshNS.js'][273]++;
   this.map.removeLayer(arg);
 }), addSearchLayer: (function (rests) {
-  _$jscoverage['joshNS.js'][269]++;
+  _$jscoverage['joshNS.js'][277]++;
   if ((this.searchLayer !== null)) {
-    _$jscoverage['joshNS.js'][271]++;
+    _$jscoverage['joshNS.js'][279]++;
     this.map.removeLayer(this.searchLayer);
   }
-  _$jscoverage['joshNS.js'][273]++;
+  _$jscoverage['joshNS.js'][281]++;
   this.searchLayer = new (L.LayerGroup)();
-  _$jscoverage['joshNS.js'][275]++;
+  _$jscoverage['joshNS.js'][283]++;
   for (var id in rests) {
-    _$jscoverage['joshNS.js'][276]++;
+    _$jscoverage['joshNS.js'][284]++;
     this.addSearchFs(rests[id]);
-    _$jscoverage['joshNS.js'][277]++;
+    _$jscoverage['joshNS.js'][285]++;
     var marker = this.addMarker(rests[id], false);
-    _$jscoverage['joshNS.js'][278]++;
+    _$jscoverage['joshNS.js'][286]++;
     this.searchLayer.addLayer(marker);
 }
-  _$jscoverage['joshNS.js'][281]++;
+  _$jscoverage['joshNS.js'][289]++;
   this.map.addLayer(this.searchLayer);
-  _$jscoverage['joshNS.js'][282]++;
+  _$jscoverage['joshNS.js'][290]++;
   console.log(this);
 }), showRest: (function (fsid) {
-  _$jscoverage['joshNS.js'][287]++;
+  _$jscoverage['joshNS.js'][295]++;
   var fs = this.findFs(fsid);
-  _$jscoverage['joshNS.js'][289]++;
+  _$jscoverage['joshNS.js'][297]++;
   var img;
-  _$jscoverage['joshNS.js'][290]++;
+  _$jscoverage['joshNS.js'][298]++;
   if ((fs.categories.length > 0)) {
-    _$jscoverage['joshNS.js'][291]++;
+    _$jscoverage['joshNS.js'][299]++;
     img = fs.categories[0].icon;
   }
   else {
-    _$jscoverage['joshNS.js'][293]++;
+    _$jscoverage['joshNS.js'][301]++;
     img = "images/marker.png";
   }
-  _$jscoverage['joshNS.js'][296]++;
+  _$jscoverage['joshNS.js'][304]++;
   var htmld = ("<h3><img src=\"" + img + "\">" + fs.name + "</h3>");
-  _$jscoverage['joshNS.js'][298]++;
+  _$jscoverage['joshNS.js'][306]++;
   if ((fs.phone !== undefined)) {
-    _$jscoverage['joshNS.js'][299]++;
+    _$jscoverage['joshNS.js'][307]++;
     htmld += ("<div>Phone: " + fs.phone + "</div>");
   }
-  _$jscoverage['joshNS.js'][302]++;
+  _$jscoverage['joshNS.js'][310]++;
   if ((fs.menu !== undefined)) {
-    _$jscoverage['joshNS.js'][303]++;
+    _$jscoverage['joshNS.js'][311]++;
     htmld += ("<div><a href=\"" + fs.menu.url + "\" target=\"_blank\">Menu</a></div>");
   }
-  _$jscoverage['joshNS.js'][307]++;
+  _$jscoverage['joshNS.js'][315]++;
   if ((fs.user !== undefined)) {
-    _$jscoverage['joshNS.js'][308]++;
+    _$jscoverage['joshNS.js'][316]++;
     htmld += ("<div>Votes: " + fs.user.length + "</div>");
-    _$jscoverage['joshNS.js'][309]++;
+    _$jscoverage['joshNS.js'][317]++;
     htmld += "<div>";
-    _$jscoverage['joshNS.js'][310]++;
+    _$jscoverage['joshNS.js'][318]++;
     for (var i = 0; (i < fs.user.length); (i++)) {
-      _$jscoverage['joshNS.js'][311]++;
+      _$jscoverage['joshNS.js'][319]++;
       htmld += fs.user[i].imgHTML;
 }
-    _$jscoverage['joshNS.js'][313]++;
+    _$jscoverage['joshNS.js'][321]++;
     htmld += "</div>";
   }
-  _$jscoverage['joshNS.js'][315]++;
+  _$jscoverage['joshNS.js'][323]++;
   htmld += ("<button class=\"btn\" data-fsid=\"" + fs.id + "\">Vote for Me</button>");
-  _$jscoverage['joshNS.js'][316]++;
+  _$jscoverage['joshNS.js'][324]++;
   $(markerDiv).html(htmld);
 }), addSearchFs: (function (fs) {
-  _$jscoverage['joshNS.js'][320]++;
+  _$jscoverage['joshNS.js'][328]++;
   this.searchFs[fs.id] = fs;
 }), removeSearchFs: (function (fs) {
-  _$jscoverage['joshNS.js'][325]++;
+  _$jscoverage['joshNS.js'][333]++;
   this.searchFs = {};
 }), findFs: (function (fsid) {
-  _$jscoverage['joshNS.js'][329]++;
+  _$jscoverage['joshNS.js'][337]++;
   if (this.voteFs.votes[fsid]) {
-    _$jscoverage['joshNS.js'][330]++;
+    _$jscoverage['joshNS.js'][338]++;
     return this.voteFs.votes[fsid];
   }
   else {
-    _$jscoverage['joshNS.js'][332]++;
+    _$jscoverage['joshNS.js'][340]++;
     return this.searchFs[fsid];
   }
 }), addUser: (function (username) {
-  _$jscoverage['joshNS.js'][337]++;
+  _$jscoverage['joshNS.js'][345]++;
   if ((username === "")) {
-    _$jscoverage['joshNS.js'][338]++;
+    _$jscoverage['joshNS.js'][346]++;
     return;
   }
-  _$jscoverage['joshNS.js'][340]++;
+  _$jscoverage['joshNS.js'][348]++;
   var re = new RegExp("^(fb:)?");
-  _$jscoverage['joshNS.js'][341]++;
+  _$jscoverage['joshNS.js'][349]++;
   var usersplit = username.split(re);
-  _$jscoverage['joshNS.js'][342]++;
+  _$jscoverage['joshNS.js'][350]++;
   var type;
-  _$jscoverage['joshNS.js'][343]++;
+  _$jscoverage['joshNS.js'][351]++;
   if ((usersplit.length > 1)) {
-    _$jscoverage['joshNS.js'][347]++;
+    _$jscoverage['joshNS.js'][355]++;
     type = usersplit[(usersplit.length - 2)];
-    _$jscoverage['joshNS.js'][348]++;
+    _$jscoverage['joshNS.js'][356]++;
     username = usersplit[(usersplit.length - 1)];
   }
   else {
-    _$jscoverage['joshNS.js'][350]++;
+    _$jscoverage['joshNS.js'][358]++;
     type = "gravatar";
   }
-  _$jscoverage['joshNS.js'][353]++;
+  _$jscoverage['joshNS.js'][361]++;
   var img;
-  _$jscoverage['joshNS.js'][354]++;
+  _$jscoverage['joshNS.js'][362]++;
   if ((type && (type === "fb:"))) {
-    _$jscoverage['joshNS.js'][356]++;
+    _$jscoverage['joshNS.js'][364]++;
     img = document.createElement("img");
-    _$jscoverage['joshNS.js'][357]++;
+    _$jscoverage['joshNS.js'][365]++;
     img.setAttribute("src", ("https://graph.facebook.com/" + username + "/picture?type=square"));
   }
   else {
-    _$jscoverage['joshNS.js'][358]++;
+    _$jscoverage['joshNS.js'][366]++;
     if ((Josh.Cookie.readCookie("img") !== null)) {
-      _$jscoverage['joshNS.js'][359]++;
+      _$jscoverage['joshNS.js'][367]++;
       img = document.createElement("img");
-      _$jscoverage['joshNS.js'][360]++;
+      _$jscoverage['joshNS.js'][368]++;
       img.setAttribute("src", Josh.Cookie.readCookie("img"));
     }
     else {
-      _$jscoverage['joshNS.js'][362]++;
+      _$jscoverage['joshNS.js'][370]++;
       var emailhash = md5(username.toLowerCase());
-      _$jscoverage['joshNS.js'][363]++;
+      _$jscoverage['joshNS.js'][371]++;
       img = document.createElement("img");
-      _$jscoverage['joshNS.js'][364]++;
+      _$jscoverage['joshNS.js'][372]++;
       img.setAttribute("src", ("http://www.gravatar.com/avatar/" + emailhash + "?d=retro&s=18"));
     }
   }
-  _$jscoverage['joshNS.js'][367]++;
-  this.currentUser = new (Josh.User)(username, img.src);
-  _$jscoverage['joshNS.js'][368]++;
-  socket.addUser(String(username), String(img.src), area);
-  _$jscoverage['joshNS.js'][370]++;
-  var userhtml = (this.currentUser.imgHTML + username + " : <a href=\"#\">Sign out</a>");
-  _$jscoverage['joshNS.js'][371]++;
-  $(loginDiv).html(userhtml);
-  _$jscoverage['joshNS.js'][374]++;
-  Josh.Cookie.createCookie("username", username);
   _$jscoverage['joshNS.js'][375]++;
-  Josh.Cookie.createCookie("img", img.src);
+  this.currentUser = new (Josh.User)(username, img.src);
   _$jscoverage['joshNS.js'][376]++;
+  socket.addUser(String(username), String(img.src), area);
+  _$jscoverage['joshNS.js'][378]++;
+  var userhtml = (this.currentUser.imgHTML + username + " : <a href=\"#\">Sign out</a>");
+  _$jscoverage['joshNS.js'][379]++;
+  $(loginDiv).html(userhtml);
+  _$jscoverage['joshNS.js'][382]++;
+  Josh.Cookie.createCookie("username", username);
+  _$jscoverage['joshNS.js'][383]++;
+  Josh.Cookie.createCookie("img", img.src);
+  _$jscoverage['joshNS.js'][384]++;
   socket.getVotes();
 }), removeUser: (function () {
-  _$jscoverage['joshNS.js'][380]++;
+  _$jscoverage['joshNS.js'][388]++;
   Josh.Cookie.eraseCookie("username");
-  _$jscoverage['joshNS.js'][381]++;
+  _$jscoverage['joshNS.js'][389]++;
   Josh.Cookie.eraseCookie("img");
-  _$jscoverage['joshNS.js'][382]++;
+  _$jscoverage['joshNS.js'][390]++;
   this.currentUser = null;
-  _$jscoverage['joshNS.js'][384]++;
+  _$jscoverage['joshNS.js'][392]++;
   $(loginDiv).html("<input id=\"login\" type=\"text\" placeholder=\"email\">");
 }), addActivity: (function (user, fsName, fsid) {
-  _$jscoverage['joshNS.js'][388]++;
+  _$jscoverage['joshNS.js'][396]++;
   var lihtml = ("<li>" + user.imgHTML + user.username + " voted for <a href=\"#\" data-fsid=\"" + fsid + "\">" + fsName + "</li><hr/>");
-  _$jscoverage['joshNS.js'][390]++;
+  _$jscoverage['joshNS.js'][398]++;
   $(actsUl).append(lihtml);
 }), showVotes: (function () {
-  _$jscoverage['joshNS.js'][394]++;
+  _$jscoverage['joshNS.js'][402]++;
   var voteArray = [];
-  _$jscoverage['joshNS.js'][395]++;
+  _$jscoverage['joshNS.js'][403]++;
   for (var r in this.voteFs.votes) {
-    _$jscoverage['joshNS.js'][396]++;
+    _$jscoverage['joshNS.js'][404]++;
     voteArray.push([this.voteFs.votes[r].name, this.voteFs.votes[r].user.length, this.voteFs.votes[r].id, this.voteFs.votes[r].user]);
 }
-  _$jscoverage['joshNS.js'][398]++;
+  _$jscoverage['joshNS.js'][406]++;
   voteArray.sort((function (a, b) {
-  _$jscoverage['joshNS.js'][398]++;
+  _$jscoverage['joshNS.js'][406]++;
   return (b[1] - a[1]);
 }));
-  _$jscoverage['joshNS.js'][399]++;
+  _$jscoverage['joshNS.js'][407]++;
   var lihtml = "";
-  _$jscoverage['joshNS.js'][400]++;
+  _$jscoverage['joshNS.js'][408]++;
   for (var i = 0; (i < voteArray.length); (i++)) {
-    _$jscoverage['joshNS.js'][401]++;
+    _$jscoverage['joshNS.js'][409]++;
     lihtml += ("<li>" + voteArray[i][1] + " for <a href=\"#\" data-fsid=\"" + voteArray[i][2] + "\">" + voteArray[i][0] + "</a></li>");
-    _$jscoverage['joshNS.js'][402]++;
+    _$jscoverage['joshNS.js'][410]++;
     for (var u = 0; (u < voteArray[i][3].length); (u++)) {
-      _$jscoverage['joshNS.js'][403]++;
+      _$jscoverage['joshNS.js'][411]++;
       lihtml += voteArray[i][3][u].imgHTML;
 }
 }
-  _$jscoverage['joshNS.js'][407]++;
+  _$jscoverage['joshNS.js'][415]++;
   $(votesUl).html(lihtml);
 }), findRests: (function (query) {
-  _$jscoverage['joshNS.js'][411]++;
+  _$jscoverage['joshNS.js'][419]++;
   console.log(this.location);
-  _$jscoverage['joshNS.js'][413]++;
+  _$jscoverage['joshNS.js'][421]++;
   var url = ("https://api.foursquare.com/v2/venues/search?ll=" + this.location.coords.latitude + "," + this.location.coords.longitude + "&client_id=NQNF2JL2VKJHXETAOND5TPJ23A2SWGZC4TXJEMLGJBXYMIJM&client_secret=TF1CC0HZVBJ0TM50CRNJNTWSOWZMIKQ30V4DEB4GC2UWZ3KM");
-  _$jscoverage['joshNS.js'][414]++;
+  _$jscoverage['joshNS.js'][422]++;
   if ((query !== "")) {
-    _$jscoverage['joshNS.js'][415]++;
+    _$jscoverage['joshNS.js'][423]++;
     url += ("&query=" + encodeURI(query));
   }
   else {
-    _$jscoverage['joshNS.js'][417]++;
+    _$jscoverage['joshNS.js'][425]++;
     url += ("&query=" + encodeURI("restaurant"));
   }
-  _$jscoverage['joshNS.js'][419]++;
+  _$jscoverage['joshNS.js'][427]++;
   var This = this;
-  _$jscoverage['joshNS.js'][420]++;
+  _$jscoverage['joshNS.js'][428]++;
   console.log(url);
-  _$jscoverage['joshNS.js'][421]++;
+  _$jscoverage['joshNS.js'][429]++;
   $.getJSON(url, (function (data) {
-  _$jscoverage['joshNS.js'][423]++;
+  _$jscoverage['joshNS.js'][431]++;
   console.log(data);
-  _$jscoverage['joshNS.js'][424]++;
+  _$jscoverage['joshNS.js'][432]++;
   var rests = data.response.groups[0].items;
-  _$jscoverage['joshNS.js'][425]++;
+  _$jscoverage['joshNS.js'][433]++;
   This.addSearchLayer(rests);
 }));
+}), addAlert: (function (message) {
+  _$jscoverage['joshNS.js'][438]++;
+  alertDiv.removeClass("none");
+  _$jscoverage['joshNS.js'][439]++;
+  alertDiv.html(message);
+}), removeAlert: (function () {
+  _$jscoverage['joshNS.js'][443]++;
+  alertDiv.addClass("none");
 })};
 })((window.Josh = (window.Josh || {})), window.jQuery);
-_$jscoverage['joshNS.js'][433]++;
+_$jscoverage['joshNS.js'][450]++;
 (function (Josh, $) {
-  _$jscoverage['joshNS.js'][434]++;
+  _$jscoverage['joshNS.js'][451]++;
   "use strict";
-  _$jscoverage['joshNS.js'][435]++;
+  _$jscoverage['joshNS.js'][452]++;
   Josh.Votes = (function () {
-  _$jscoverage['joshNS.js'][436]++;
+  _$jscoverage['joshNS.js'][453]++;
   this.votes = {};
 });
-  _$jscoverage['joshNS.js'][439]++;
+  _$jscoverage['joshNS.js'][456]++;
   Josh.Votes.prototype = {addVote: (function (vote) {
-  _$jscoverage['joshNS.js'][442]++;
+  _$jscoverage['joshNS.js'][459]++;
   var userVote = this.findByUser(vote.user[0].username);
-  _$jscoverage['joshNS.js'][443]++;
+  _$jscoverage['joshNS.js'][460]++;
   if ((userVote !== undefined)) {
-    _$jscoverage['joshNS.js'][445]++;
+    _$jscoverage['joshNS.js'][462]++;
     if ((userVote.user.length === 1)) {
-      _$jscoverage['joshNS.js'][449]++;
-      if ((vote.marker !== undefined)) {
-        _$jscoverage['joshNS.js'][451]++;
-        $(this).trigger("removeLayer", userVote.marker);
-      }
-      else {
-        _$jscoverage['joshNS.js'][454]++;
+      _$jscoverage['joshNS.js'][466]++;
+      if ((vote.marker === undefined)) {
+        _$jscoverage['joshNS.js'][468]++;
         vote.marker = userVote.marker;
+      }
+      _$jscoverage['joshNS.js'][470]++;
+      if ((vote.id !== userVote.id)) {
+        _$jscoverage['joshNS.js'][472]++;
+        $(this).trigger("removeLayer", userVote.marker);
       }
     }
     else {
-      _$jscoverage['joshNS.js'][459]++;
+      _$jscoverage['joshNS.js'][476]++;
       for (var i = 0; (i < userVote.user.length); (i++)) {
-        _$jscoverage['joshNS.js'][460]++;
+        _$jscoverage['joshNS.js'][477]++;
         if ((userVote.user[i].username === vote.user[0].username)) {
-          _$jscoverage['joshNS.js'][462]++;
+          _$jscoverage['joshNS.js'][479]++;
           var prevVote = userVote.user.splice(i, 1);
-          _$jscoverage['joshNS.js'][465]++;
+          _$jscoverage['joshNS.js'][482]++;
           this.votes[userVote.id] = userVote;
         }
 }
     }
   }
-  _$jscoverage['joshNS.js'][472]++;
+  _$jscoverage['joshNS.js'][489]++;
   var restVote = this.findByFs(vote.id);
-  _$jscoverage['joshNS.js'][473]++;
+  _$jscoverage['joshNS.js'][490]++;
   if ((restVote !== undefined)) {
-    _$jscoverage['joshNS.js'][475]++;
+    _$jscoverage['joshNS.js'][492]++;
     restVote.user.push(vote.user[0]);
-    _$jscoverage['joshNS.js'][477]++;
+    _$jscoverage['joshNS.js'][494]++;
     this.votes[restVote.id] = restVote;
   }
   else {
-    _$jscoverage['joshNS.js'][481]++;
+    _$jscoverage['joshNS.js'][498]++;
     this.votes[vote.id] = vote;
   }
 }), findByUser: (function (username) {
-  _$jscoverage['joshNS.js'][487]++;
+  _$jscoverage['joshNS.js'][504]++;
   for (var i in this.votes) {
-    _$jscoverage['joshNS.js'][488]++;
+    _$jscoverage['joshNS.js'][505]++;
     for (var u = 0; (u < this.votes[i].user.length); (u++)) {
-      _$jscoverage['joshNS.js'][489]++;
+      _$jscoverage['joshNS.js'][506]++;
       if ((this.votes[i].user[u].username === username)) {
-        _$jscoverage['joshNS.js'][490]++;
+        _$jscoverage['joshNS.js'][507]++;
         var retEl = this.votes[i];
-        _$jscoverage['joshNS.js'][491]++;
+        _$jscoverage['joshNS.js'][508]++;
         (delete this.votes[i]);
-        _$jscoverage['joshNS.js'][492]++;
+        _$jscoverage['joshNS.js'][509]++;
         return retEl;
       }
 }
 }
 }), findByFs: (function (fsid) {
-  _$jscoverage['joshNS.js'][499]++;
+  _$jscoverage['joshNS.js'][516]++;
   var retEl = this.votes[fsid];
-  _$jscoverage['joshNS.js'][500]++;
+  _$jscoverage['joshNS.js'][517]++;
   (delete this.votes[fsid]);
-  _$jscoverage['joshNS.js'][501]++;
+  _$jscoverage['joshNS.js'][518]++;
   return retEl;
 })};
 })((window.Josh = (window.Josh || {})), window.jQuery);
-_$jscoverage['joshNS.js'][507]++;
+_$jscoverage['joshNS.js'][524]++;
 var locError = (function (error) {
 });
