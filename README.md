@@ -1,0 +1,1 @@
+# Where to EatThis is a simple application that I have used to try my hand at node.js and redis. The idea came from a co-worker who asked me if I could build an application to collect the votes of our other co-workers to determine where to eat. This is the result.
