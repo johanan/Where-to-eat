@@ -1,9 +1,9 @@
 
 var app = require('http').createServer(handler)
-  , io = require('socket.io').listen(app, {origins: '*:*'});
+  , io = require('socket.io').listen(app, {origins: '*:*', log: false});
 
 var redis = require("redis");
-client = redis.createClient();
+var client = redis.createClient();
 
 app.listen(8080);
 
@@ -38,23 +38,18 @@ var users = io.of('/users').on('connection', function (socket) {
 	var user;
 	
 	socket.on('add', function(username, img, area){
-	console.log('area: ' + area);
 	if(!usernameExists(area, username)){
 		setUser(username, img, area, 7200);
 	}
 		//var test = new User(username, img, area, socket.id);
 		socket.join(area);
-		//console.log(test);
 		user = new User(username, img, area, socket.id);
 		socket.set('user', user);
 		
-		console.log(socket.id + ' : ' + username);
-		console.log(io.of('/users').clients());
 		});
 	
 	socket.on('addVote', function(fs){
 		if(user !== null){
-				console.log(user.username + ' voted for : ' + JSON.stringify(fs));
 				setVote(user.username, user.area, fs, 7200);
 				io.of('/users').in(user.area).emit('vote', {username: user.username, img: user.img, fs: fs});
 				//socket.emit('vote', {username: user.username, img: user.img, fs: fs});
@@ -79,12 +74,10 @@ var users = io.of('/users').on('connection', function (socket) {
 	});
 	
 	socket.on('disconnect', function(client){
-		//console.log(socket.get('username', function(err, user){removeUser(user);}) + ' disconnected');
 		socket.get('user', function(err, suser){
 			if(suser !== null){
 				socket.leave(suser.area);
 				removeUser(suser.username, suser.area, function(){
-					console.log('user left:' + suser.username );
 				});
 			}
 		});
@@ -121,21 +114,19 @@ function removeUser(username, area, callback){
 	callback();
 };
 
-function checkExpires(){console.log('check expires');
+function checkExpires(){
 	//grab the expire set
 	client.smembers('expireKeys', function(err, keys){
 		if(keys != null){
 			keys.forEach(function(key){
-				console.log(key);
 				client.get(key+':timer', function(err, timer){
 					//grab the timer
 					if(timer != null){
 						//timer exists check the ttl on it
 						client.ttl(key+':timer', function(err, ttl){
-							//the ttl is two hours and if it is under an hour
-							//and a half we delete it
-							if(ttl < 5400){
-								console.log(ttl);
+							//the ttl is two hours and if it is under
+							//a half hour we delete it
+							if(ttl < 1800){
 								client.del(key);
 								client.srem('expireKeys', key);
 							}
