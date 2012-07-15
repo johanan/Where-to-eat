@@ -86,26 +86,26 @@ var users = io.of('/users').on('connection', function (socket) {
 });
 
 function setVote(username, area, fs, expire){
-	client.set(area+':users:' + username + ':vote', JSON.stringify(fs), redis.print);
-	client.sadd(area+':votes', area+':users:' + username, redis.print);
+	client.set(area+':users:' + username + ':vote', JSON.stringify(fs));
+	client.sadd(area+':votes', area+':users:' + username);
 	//add the set to the expire set
-	client.sadd('expireKeys', area+':votes', redis.print);
+	client.sadd('expireKeys', area+':votes');
 	//set a timer
-	client.set(area+':votes:timer', expire, redis.print);
-	client.expire(area+':votes:timer', expire, redis.print);
+	client.set(area+':votes:timer', expire);
+	client.expire(area+':votes:timer', expire);
 };
 
 function setUser(username, img, area, expire){
-	client.set(area+':users:' + username, username, redis.print);
-	client.expire(area+':users:' + username, expire, redis.print);
-	client.set(area+':users:' + username + ':img', img, redis.print);
-	client.expire(area+':users:' + username + ':img', expire, redis.print);
+	client.set(area+':users:' + username, username);
+	client.expire(area+':users:' + username, expire);
+	client.set(area+':users:' + username + ':img', img);
+	client.expire(area+':users:' + username + ':img', expire);
 	//set a timer
-	client.set(area+':users:timer', expire, redis.print);
-	client.expire(area+':users:timer', expire, redis.print);
-	client.sadd(area+':users', area+':users:' + username, redis.print);
+	client.set(area+':users:timer', expire);
+	client.expire(area+':users:timer', expire);
+	client.sadd(area+':users', area+':users:' + username);
 	//add the set to the expire set
-	client.sadd('expireKeys', area+':users', redis.print);
+	client.sadd('expireKeys', area+':users');
 };
 
 function removeUser(username, area, callback){
