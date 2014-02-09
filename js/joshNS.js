@@ -38,7 +38,6 @@
 (function(Josh, $){
 	"use strict";
 	var sock;
-	var url;
 	
 	Josh.Socket = function(url){
 		init(url);
@@ -72,26 +71,25 @@
 		//built client side
 		var fsSend = $.extend(true, {}, fs);
 		//delete what we don't need
-		delete fsSend.marker, fsSend.user;
+		delete fsSend.marker;
+        delete fsSend.user;
 		sock.emit('addVote', fsSend);
 	};
 	
 	return Josh.Socket;
 })(window.Josh = window.Josh || {},  window.jQuery);
 
-(function(Josh, $){
+(function(Josh){
 	"use strict";
 	Josh.User = function(username, img){
 		this.username = username;
 		this.img = img;
 		this.imgHTML = '<img src="' + img + '" class="userimg" title="' + username + '">';
 	};
-})(window.Josh = window.Josh || {},  window.jQuery);
+})(window.Josh = window.Josh || {});
 
 (function(Josh, $){
 	"use strict";
-	var id;
-	var osm;
 	var RestIcon;
 	var markerDiv;
 	var votesUl;
@@ -104,21 +102,19 @@
 	var area;
 	var socket;
 	var alertDiv;
+    var locError = function(){};
 	
 	Josh.Map = function(id){
-		id = id;
 		socket = new Josh.Socket('http://ejosh.co:8080/users');
-		this.map = new L.Map(id);
-		var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-		var osmAttrib='Map data © openstreetmap contributors';
-		var osm = new L.TileLayer(osmUrl,{minZoom:8,maxZoom:18,attribution:osmAttrib});
-		
-		
-		this.map.addLayer(osm);
+		this.map = new L.Map(id, {zoomAnimation: true});
+        var stamen = new L.StamenTileLayer("toner-lite");
+        this.map.addLayer(stamen);
 		
 		RestIcon = L.Icon.extend({
-			shadowUrl: null,
-			iconSize: new L.Point(32, 32)
+            options: {
+                shadowUrl: null,
+                iconSize: new L.Point(32, 32)
+            }
 		});
 		
 		
@@ -181,7 +177,7 @@
 			This.addSearchLayer({});
 		});
 		
-		alertDiv.on('click', function(e){
+		alertDiv.on('click', function(){
 			This.removeAlert();
 		});
 		
@@ -233,7 +229,7 @@
 		centerLoc: function(loc){
 			this.location = loc;
 			var hull = new L.LatLng(this.location.coords.latitude, this.location.coords.longitude);
-			this.map.setView(hull, 11);
+			this.map.setView(hull, 13);
 		},
 		
 		addMarker: function(fs, layeradd){
@@ -241,32 +237,41 @@
 			
 			var icon;
 			if(fs.categories.length > 0){
-				icon = new RestIcon( fs.categories[0].icon);
+				icon = new RestIcon( { iconUrl: fs.categories[0].icon.prefix + 'bg_32' + fs.categories[0].icon.suffix});
 			}else{
-				icon = new L.Icon('images/marker.png');
+				icon = new L.Icon( {iconUrl: 'images/marker.png'});
 			}
 			
 			var markerLocation = new L.LatLng(fs.location.lat, fs.location.lng);
 			var marker = new L.Marker(markerLocation, {icon: icon, title: fs.name});
 			marker.fsid = fs.id;
 			marker.img = icon.iconUrl;
-			var This = this;
-			marker.on('click', function(e){ This.showRest(e.target.fsid);});
+			marker.on('click', this.showRestProxy.bind(this));
 			if(layeradd){
 				this.map.addLayer(marker);
 			}
 			
 			return marker;
 		},
+
+        removeMarker: function removeMarker(marker) {
+            marker.clearAllEventListeners();
+        },
 		
 		removeLayer: function(arg){
+            if (arg.getLayers !== undefined){
+                var layers = arg.getLayers();
+                for(var i = 0; i < layers.length; i++){
+                    this.removeMarker(layers[i]);
+                }
+            }
 			this.map.removeLayer(arg);
 		},
 		
 		addSearchLayer: function(rests){
 			if(this.searchLayer !== null){
 				//remove all the current restaurants
-				this.map.removeLayer(this.searchLayer);
+				this.removeLayer(this.searchLayer);
 			}
 			this.searchLayer = new L.LayerGroup();
 			
@@ -275,17 +280,21 @@
 				var marker = this.addMarker(rests[id], false);
 				this.searchLayer.addLayer(marker);
 			}
-			
+
 			this.map.addLayer(this.searchLayer);
 			
 		},
+
+        showRestProxy: function showRestProxy(e){
+            this.showRest(e.target.fsid);
+        },
 		
 		showRest: function(fsid){
 			var fs = this.findFs(fsid);
 			
 			var img;
 			if(fs.categories.length > 0){
-				img = fs.categories[0].icon;
+				img = fs.categories[0].icon.prefix + 'bg_32' + fs.categories[0].icon.suffix;
 			}else{
 				img = 'images/marker.png';
 			}
@@ -317,7 +326,7 @@
 			this.searchFs[fs.id] = fs;
 		},
 		
-		removeSearchFs: function(fs){
+		removeSearchFs: function(){
 			//this is removed as a group
 			this.searchFs = {};
 		},
@@ -331,8 +340,9 @@
 		},
 		
 		addUser: function(username){
-			if(username === '')
+			if(username === ''){
 				return;
+            }
 			
 			var re = new RegExp("^(fb:)?");
 			var usersplit = username.split(re);
@@ -406,7 +416,7 @@
 		
 		findRests: function(query){
 			//var url = 'http://localhost:85/test/fs.php?&ll=' + location.coords.latitude + ',' + location.coords.longitude;
-			var url = 'https://api.foursquare.com/v2/venues/search?ll=' + this.location.coords.latitude + ',' + this.location.coords.longitude + '&client_id=NQNF2JL2VKJHXETAOND5TPJ23A2SWGZC4TXJEMLGJBXYMIJM&client_secret=TF1CC0HZVBJ0TM50CRNJNTWSOWZMIKQ30V4DEB4GC2UWZ3KM';
+			var url = 'https://api.foursquare.com/v2/venues/search?ll=' + this.location.coords.latitude + ',' + this.location.coords.longitude + '&client_id=NQNF2JL2VKJHXETAOND5TPJ23A2SWGZC4TXJEMLGJBXYMIJM&client_secret=TF1CC0HZVBJ0TM50CRNJNTWSOWZMIKQ30V4DEB4GC2UWZ3KM&v=20140128';
 			if(query !== ''){
 				url += '&query=' + encodeURI(query) ;
 			}else{
@@ -415,7 +425,7 @@
 			var This = this;
 			$.getJSON( url , 
 			function(data){
-				var rests = data.response.groups[0].items;
+				var rests = data.response.venues;
 				This.addSearchLayer(rests);
 			});
 		},
@@ -462,8 +472,6 @@
 					for(var i=0; i < userVote.user.length; i++){
 						if(userVote.user[i].username === vote.user[0].username){
 							//we found it! Remove only this user
-							var prevVote = userVote.user.splice(i, 1);
-							//delete prevVote;
 							//put the vote back in
 							this.votes[userVote.id] = userVote;
 						}
@@ -506,5 +514,3 @@
 
 	};
 })(window.Josh = window.Josh || {},  window.jQuery);
-
-var locError = function(error){};

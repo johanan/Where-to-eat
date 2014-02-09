@@ -5,14 +5,14 @@
   "main": "app.js",
   "dependencies": {
     "socket.io": "~0.9.16",
-    "redis": "~0.10.0",
+    "redis": "~0.10.0"
+  },
+  "devDependencies": {
     "grunt": "~0.4.2",
-    "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-uglify": "~0.3.2",
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-watch": "~0.5.3"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git://github.com/johanan/Where-to-eat.git"
