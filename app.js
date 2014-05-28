@@ -1,17 +1,24 @@
 
-var app = require('http').createServer(handler)
-  , io = require('socket.io').listen(app, {origins: '*:*', log: false});
+var express = require('express');
+var path = require('path');
+var app = express();
+
+app.use(express.static(__dirname, 'public'));
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function() {
+	console.log('Express server listening on port ' + server.address().port);
+});
+var io = require('socket.io').listen(server);
 
 var redis = require("redis");
 var client = redis.createClient();
 
-app.listen(8080);
-
 function handler (req, res) {
 	//I don't know if I need this
-    res.writeHead(200);
-    res.end("Hello Socket");
-  
+	res.writeHead(200);
+	res.end("Hello Socket");
+
 }
 
 usernameExists = function(area, username){
@@ -36,43 +43,43 @@ var User = function(username, img, area, socketid){
 
 var users = io.of('/users').on('connection', function (socket) {
 	var user;
-	
+
 	socket.on('add', function(username, img, area){
-	if(!usernameExists(area, username)){
-		setUser(username, img, area, 7200);
-	}
+		if(!usernameExists(area, username)){
+			setUser(username, img, area, 7200);
+		}
 		//var test = new User(username, img, area, socket.id);
 		socket.join(area);
 		user = new User(username, img, area, socket.id);
 		socket.set('user', user);
-		
-		});
-	
+
+	});
+
 	socket.on('addVote', function(fs){
 		if(user !== null){
-				setVote(user.username, user.area, fs, 7200);
-				io.of('/users').in(user.area).emit('vote', {username: user.username, img: user.img, fs: fs});
-				//socket.emit('vote', {username: user.username, img: user.img, fs: fs});
+			setVote(user.username, user.area, fs, 7200);
+			io.of('/users').in(user.area).emit('vote', {username: user.username, img: user.img, fs: fs});
+			//socket.emit('vote', {username: user.username, img: user.img, fs: fs});
 		}
 	});
-	
+
 	socket.on('getVotes', function(){
 		var area = user.area;
-			client.smembers(area+':votes', function(err, votes){
-				if(votes != null){
-					votes.forEach(function(key){
-						client.get(key, function(err, username){
-							client.get(key + ':vote', function(err, vote){
-								client.get(key + ':img', function(err, img){
-									socket.emit('vote', {username: username, img: img, fs: JSON.parse(vote)});
-								});
+		client.smembers(area+':votes', function(err, votes){
+			if(votes != null){
+				votes.forEach(function(key){
+					client.get(key, function(err, username){
+						client.get(key + ':vote', function(err, vote){
+							client.get(key + ':img', function(err, img){
+								socket.emit('vote', {username: username, img: img, fs: JSON.parse(vote)});
 							});
 						});
 					});
-				}
-			});
+				});
+			}
+		});
 	});
-	
+
 	socket.on('disconnect', function(client){
 		socket.get('user', function(err, suser){
 			if(suser !== null){
@@ -82,7 +89,7 @@ var users = io.of('/users').on('connection', function (socket) {
 			}
 		});
 	});
-	
+
 });
 
 function setVote(username, area, fs, expire){
