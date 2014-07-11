@@ -1,24 +1,25 @@
 {
-  "name": "Where-to-eat",
-  "version": "0.1.0",
-  "description": "Where to Eat",
-  "main": "app.js",
-  "dependencies": {
-    "socket.io": "~0.9.16",
-    "redis": "~0.10.0"
-  },
-  "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-uglify": "~0.3.2",
-    "grunt-contrib-jshint": "~0.8.0",
-    "grunt-contrib-watch": "~0.5.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/johanan/Where-to-eat.git"
-  },
-  "author": "Joshua Johanan",
-  "license": "BSD",
-  "readmeFilename": "README.md",
-  "gitHead": "67d489d7797abdd49fb8b2bb75fe069a808f0146"
+	"name": "Where-to-eat",
+	"version": "0.1.0",
+	"description": "Where to Eat",
+	"main": "app.js",
+	"dependencies": {
+		"express": "~4.2.0",
+		"socket.io": "~0.9.16",
+		"redis": "~0.10.0"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.2",
+		"grunt-contrib-uglify": "~0.3.2",
+		"grunt-contrib-jshint": "~0.8.0",
+		"grunt-contrib-watch": "~0.5.3"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/johanan/Where-to-eat.git"
+	},
+	"author": "Joshua Johanan",
+	"license": "BSD",
+	"readmeFilename": "README.md",
+	"gitHead": "67d489d7797abdd49fb8b2bb75fe069a808f0146"
 }
