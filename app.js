@@ -1,25 +1,21 @@
 
-var express = require('express');
-var path = require('path');
+var express = require('express'),
+		path = require('path'),
+		config = require('./config');
+
 var app = express();
 
-app.use(express.static(__dirname, 'public'));
-app.set('port', process.env.PORT || 3000);
+app.use(express.static(__dirname + '/static'));
+app.set('port', config.PORT);
 
 var server = app.listen(app.get('port'), function() {
 	console.log('Express server listening on port ' + server.address().port);
 });
+
 var io = require('socket.io').listen(server);
 
 var redis = require("redis");
-var client = redis.createClient();
-
-function handler (req, res) {
-	//I don't know if I need this
-	res.writeHead(200);
-	res.end("Hello Socket");
-
-}
+var client = redis.createClient(config.REDISPORT, config.REDISHOST);
 
 usernameExists = function(area, username){
 	client.get(area+':users:'+username, function(err, data){
