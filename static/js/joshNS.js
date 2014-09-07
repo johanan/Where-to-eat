@@ -18,7 +18,7 @@
 			}
 			document.cookie = name+"="+value+expires+"; path=/";
 		};
-	
+
 	Josh.Cookie.readCookie = function(name) {
 		var nameEQ = name + "=";
 		var ca = document.cookie.split(';');
@@ -29,7 +29,7 @@
 		}
 		return null;
 	};
-	
+
 	Josh.Cookie.eraseCookie = function(name) {
 		Josh.Cookie.createCookie(name,"",-1);
 	};
@@ -38,33 +38,33 @@
 (function(Josh, $){
 	"use strict";
 	var sock;
-	
+
 	Josh.Socket = function(url){
 		init(url);
 	};
-	
+
 	var init = function(url){
 		sock = io.connect(url);
 	};
-	
+
 	Josh.Socket.prototype.addEvent = function(name, obj){
-		sock.on(name, function(d){ 
+		sock.on(name, function(d){
 			$(obj).trigger(name, d);
 			});
 	};
-	
+
 	Josh.Socket.prototype.getVotes = function(){
 		sock.emit('getVotes');
 	};
-	
+
 	Josh.Socket.prototype.getUsers = function(){
 		sock.emit('get');
 	};
-	
-	Josh.Socket.prototype.addUser = function(username, img, area){
-		sock.emit('add', username, img, area);
+
+	Josh.Socket.prototype.addUser = function(username, img, area, cb){
+		sock.emit('add', username, img, area, function(){cb()});
 	};
-	
+
 	Josh.Socket.prototype.addVote = function(fs){
 		//make a copy of the object to send to the server
 		//we only need basic info as the rest will be
@@ -75,7 +75,7 @@
         delete fsSend.user;
 		sock.emit('addVote', fsSend);
 	};
-	
+
 	return Josh.Socket;
 })(window.Josh = window.Josh || {},  window.jQuery);
 
@@ -103,21 +103,22 @@
 	var socket;
 	var alertDiv;
     var locError = function(){};
-	
+
 	Josh.Map = function(id){
-		socket = new Josh.Socket('http://ejosh.co:8080/users');
+		console.log('http://' + location.host + '/users');
+		socket = new Josh.Socket('http://' + location.host + '/users');
 		this.map = new L.Map(id, {zoomAnimation: true});
         var stamen = new L.StamenTileLayer("toner-lite");
         this.map.addLayer(stamen);
-		
+
 		RestIcon = L.Icon.extend({
             options: {
                 shadowUrl: null,
                 iconSize: new L.Point(32, 32)
             }
 		});
-		
-		
+
+
 		markerDiv = document.getElementById('fsRest');
 		actsUl = document.getElementById('acts');
 		votesUl = document.getElementById('votes');
@@ -127,11 +128,11 @@
 		clearButt = document.getElementById('clear');
 		titleh = $('#title');
 		alertDiv = $('#alert');
-		
+
 		var This = this;
-		
+
 		navigator.geolocation.getCurrentPosition(function(location){This.centerLoc(location);},locError,{timeout:10000});
-		
+
 		$(markerDiv).on('click', 'button', function(e){
 			var target = $(e.target);
 				if(This.currentUser !== null){
@@ -142,71 +143,77 @@
 				This.addAlert('You must be logged in!');
 			}
 		});
-		
+
 		$(votesUl).on('click', 'li a', function(e){
 			e.preventDefault();
 			This.showRest($(e.target).attr('data-fsid'));
 		});
-		
+
 		$(actsUl).on('click', 'li a', function(e){
 			e.preventDefault();
 			This.showRest($(e.target).attr('data-fsid'));
 		});
-		
+
 		$(loginDiv).on('focusout', 'input', function(e){
 			var username = $(e.target).val();
 			This.addUser(username);
 		});
-		
+
 		$(loginDiv).on('click', 'a', function(e){
 			e.preventDefault();
 			This.removeUser();
 		});
-		
+
 		$(search).on('click', function(e){
 			This.addAlert('Searching for Restaurants');
 			e.preventDefault();
 			This.findRests(searchText.val());
 			This.removeAlert();
 		});
-		
+
 		$(clearButt).on('click', function(e){
 			e.preventDefault();
 			//add a blank search layer
 			searchText.val('');
 			This.addSearchLayer({});
 		});
-		
+
 		alertDiv.on('click', function(){
 			This.removeAlert();
 		});
-		
-		
+
+
 		this.searchFs = {};
 		this.voteFs = new Josh.Votes();
 		this.currentUser = null;
 		this.searchLayer = null;
 		this.location = null;
-		
+
 		socket.addEvent('vote', this);
-		
+
 		$(this).on('vote', function(e, d){
 			//first check to see if it exists in the vote db
 			if(this.voteFs.votes[d.fs.id] === undefined){
 				var marker = this.addMarker(d.fs);
 				d.fs.marker = marker;
 			}
-			
+
 			d.fs.user = [new Josh.User(d.username, d.img)];
 			this.addActivity(d.fs.user[0], d.fs.name, d.fs.id);
 			this.voteFs.addVote(d.fs);
 			this.showVotes();
 		});
-		
+
+		socket.addEvent('serverError', this);
+
+		$(this).on('serverError', function(e, d){
+			this.addAlert(d.message);
+		});
+
 		$(this.voteFs).on('removeLayer', function(e,d){
 			This.removeLayer(d);
 		});
-		
+
 		//listen for a hash change
 		window.addEventListener("hashchange", function(){window.location.reload();});
 		//see if we have a hash area
@@ -217,31 +224,31 @@
 			//set to default
 			area = 'default';
 		}
-		
+
 		//check the cookies for a current user
 		var myusername = Josh.Cookie.readCookie('username');
 		if(myusername !== null){
 			this.addUser(myusername);
 		}
 	};
-	
+
 	Josh.Map.prototype = {
 		centerLoc: function(loc){
 			this.location = loc;
 			var hull = new L.LatLng(this.location.coords.latitude, this.location.coords.longitude);
 			this.map.setView(hull, 13);
 		},
-		
+
 		addMarker: function(fs, layeradd){
 			layeradd = typeof layeradd !== 'undefined' ? layeradd : true;
-			
+
 			var icon;
 			if(fs.categories.length > 0){
 				icon = new RestIcon( { iconUrl: fs.categories[0].icon.prefix + 'bg_32' + fs.categories[0].icon.suffix});
 			}else{
 				icon = new L.Icon( {iconUrl: 'images/marker.png'});
 			}
-			
+
 			var markerLocation = new L.LatLng(fs.location.lat, fs.location.lng);
 			var marker = new L.Marker(markerLocation, {icon: icon, title: fs.name});
 			marker.fsid = fs.id;
@@ -250,14 +257,14 @@
 			if(layeradd){
 				this.map.addLayer(marker);
 			}
-			
+
 			return marker;
 		},
 
         removeMarker: function removeMarker(marker) {
             marker.clearAllEventListeners();
         },
-		
+
 		removeLayer: function(arg){
             if (arg.getLayers !== undefined){
                 var layers = arg.getLayers();
@@ -267,14 +274,14 @@
             }
 			this.map.removeLayer(arg);
 		},
-		
+
 		addSearchLayer: function(rests){
 			if(this.searchLayer !== null){
 				//remove all the current restaurants
 				this.removeLayer(this.searchLayer);
 			}
 			this.searchLayer = new L.LayerGroup();
-			
+
 			for(var id in rests){
 				this.addSearchFs(rests[id]);
 				var marker = this.addMarker(rests[id], false);
@@ -282,55 +289,55 @@
 			}
 
 			this.map.addLayer(this.searchLayer);
-			
+
 		},
 
         showRestProxy: function showRestProxy(e){
             this.showRest(e.target.fsid);
         },
-		
+
 		showRest: function(fsid){
 			var fs = this.findFs(fsid);
-			
+
 			var img;
 			if(fs.categories.length > 0){
 				img = fs.categories[0].icon.prefix + 'bg_32' + fs.categories[0].icon.suffix;
 			}else{
 				img = 'images/marker.png';
 			}
-			
+
 			var htmld = '<h3><img src="' + img + '">' + fs.name + '</h3>';
-			
+
 			if(fs.phone !== undefined){
 				htmld += '<div>Phone: ' + fs.phone + '</div>';
 			}
-			
+
 			if(fs.menu !== undefined){
 				htmld += '<div><a href="' + fs.menu.url + '" target="_blank">Menu</a></div>';
 			}
-			
+
 			//htmld += '<div>Distance: ' + fs.distance + '</div>';
 			if(fs.user !== undefined){
 				htmld += '<div>Votes: ' + fs.user.length + '</div>';
 				htmld += '<div>';
 				for(var i = 0; i < fs.user.length; i++){
 					htmld += fs.user[i].imgHTML;
-				} 
+				}
 				htmld += '</div>';
 			}
 			htmld += '<button class="btn" data-fsid="' + fs.id + '">Vote for Me</button>';
 			$(markerDiv).html(htmld);
 		},
-		
+
 		addSearchFs: function(fs){
 			this.searchFs[fs.id] = fs;
 		},
-		
+
 		removeSearchFs: function(){
 			//this is removed as a group
 			this.searchFs = {};
 		},
-		
+
 		findFs: function(fsid){
 			if(this.voteFs.votes[fsid]){
 				return this.voteFs.votes[fsid];
@@ -338,12 +345,12 @@
 				return this.searchFs[fsid];
 			}
 		},
-		
+
 		addUser: function(username){
 			if(username === ''){
 				return;
             }
-			
+
 			var re = new RegExp("^(fb:)?");
 			var usersplit = username.split(re);
 			var type;
@@ -356,7 +363,7 @@
 			}else{
 				type = 'gravatar';
 			}
-			
+
 			var img;
 			if(type && type === 'fb:')
 			{
@@ -370,19 +377,21 @@
 				img = document.createElement('img');
 				img.setAttribute('src', 'http://www.gravatar.com/avatar/' + emailhash + '?d=retro&s=18');
 			}
-			
+
 			this.currentUser = new Josh.User(username, img.src);
-			socket.addUser(String(username), String(img.src), area);
-			
+
 			var userhtml = this.currentUser.imgHTML + username + ' : <a href="#">Sign out</a>';
 			$(loginDiv).html(userhtml);
-			
+
 			//add cookie for use
 			Josh.Cookie.createCookie('username', username);
 			Josh.Cookie.createCookie('img', img.src);
-			socket.getVotes();
+
+			socket.addUser(String(username), String(img.src), area, function(){
+				socket.getVotes();
+			});
 		},
-		
+
 		removeUser: function(){
 			Josh.Cookie.eraseCookie('username');
 			Josh.Cookie.eraseCookie('img');
@@ -390,13 +399,13 @@
 			//send message to server?
 			$(loginDiv).html('<input id="login" type="text" placeholder="email">');
 		},
-		
+
 		addActivity: function(user, fsName, fsid){
 			var lihtml = '<li>' + user.imgHTML + user.username + ' voted for <a href="#" data-fsid="' + fsid + '">' + fsName + '</li><hr/>';
-			
+
 			$(actsUl).append(lihtml);
 		},
-		
+
 		showVotes: function(){
 			var voteArray = [];
 			for(var r in this.voteFs.votes){
@@ -410,10 +419,10 @@
 					lihtml += voteArray[i][3][u].imgHTML;
 				}
 			}
-			
+
 			$(votesUl).html(lihtml);
 		},
-		
+
 		findRests: function(query){
 			//var url = 'http://localhost:85/test/fs.php?&ll=' + location.coords.latitude + ',' + location.coords.longitude;
 			var url = 'https://api.foursquare.com/v2/venues/search?ll=' + this.location.coords.latitude + ',' + this.location.coords.longitude + '&client_id=NQNF2JL2VKJHXETAOND5TPJ23A2SWGZC4TXJEMLGJBXYMIJM&client_secret=TF1CC0HZVBJ0TM50CRNJNTWSOWZMIKQ30V4DEB4GC2UWZ3KM&v=20140128';
@@ -423,23 +432,23 @@
 				url += '&query=' + encodeURI('restaurant') ;
 			}
 			var This = this;
-			$.getJSON( url , 
+			$.getJSON( url ,
 			function(data){
 				var rests = data.response.venues;
 				This.addSearchLayer(rests);
 			});
 		},
-		
+
 		addAlert: function(message){
 			alertDiv.removeClass('none');
 			alertDiv.html(message);
 		},
-		
+
 		removeAlert: function(){
 			alertDiv.addClass('none');
 		}
 	};
-	
+
 })(window.Josh = window.Josh || {},  window.jQuery);
 
 
@@ -448,7 +457,7 @@
 	Josh.Votes = function(){
 		this.votes = {};
 	};
-	
+
 	Josh.Votes.prototype = {
 		addVote: function(vote){
 			//first check to see if this person has voted already
@@ -478,7 +487,7 @@
 					}
 				}
 			}
-			
+
 			//now check to see if the restaurant exists
 			var restVote = this.findByFs(vote.id);
 			if(restVote !== undefined){
@@ -491,9 +500,9 @@
 				//add it to the object
 				this.votes[vote.id] = vote;
 			}
-			
+
 		},
-		
+
 		findByUser: function(username){
 			for(var i in this.votes){
 				for(var u=0; u < this.votes[i].user.length; u++){
@@ -505,7 +514,7 @@
 				}
 			}
 		},
-		
+
 		findByFs: function(fsid){
 			var retEl = this.votes[fsid];
 			delete this.votes[fsid];
