@@ -1,7 +1,9 @@
 
 var express = require('express'),
 		path = require('path'),
-		config = require('./config');
+		config = require('./config'),
+		client = require('./redis'),
+		repo = require('./data/repository');
 
 var app = express();
 
@@ -13,19 +15,6 @@ var server = app.listen(app.get('port'), function() {
 });
 
 var io = require('socket.io').listen(server);
-
-var redis = require("redis");
-var client = redis.createClient(config.REDISPORT, config.REDISHOST);
-
-usernameExists = function(area, username){
-	client.get(area+':users:'+username, function(err, data){
-		if(data == null){
-			return false;
-		}else{
-			return true;
-		}
-	});
-};
 
 setInterval(checkExpires, 600000  );//ten minute check
 checkExpires(); //run it once to clear everything out if it is restarting
@@ -40,82 +29,55 @@ var User = function(username, img, area, socketid){
 var users = io.of('/users').on('connection', function (socket) {
 	var user;
 
-	socket.on('add', function(username, img, area){
-		if(!usernameExists(area, username)){
-			setUser(username, img, area, 7200);
-		}
-		//var test = new User(username, img, area, socket.id);
-		socket.join(area);
-		user = new User(username, img, area, socket.id);
-		socket.set('user', user);
+	function serverError(err, message){
+		console.log(err);
+		socket.emit('serverError', {message: message});
+	};
 
+	socket.on('add', function(username, img, area, ack){
+		user = new User(username, img, area, socket.id);
+		repo.setUser(username, img, area, 7200, client)
+			.done(function(){
+				socket.join(area);
+				ack();
+			}, function(err){
+				serverError(err, 'Something went wrong when adding your user!');
+			});
 	});
 
 	socket.on('addVote', function(fs){
 		if(user !== null){
-			setVote(user.username, user.area, fs, 7200);
-			io.of('/users').in(user.area).emit('vote', {username: user.username, img: user.img, fs: fs});
-			//socket.emit('vote', {username: user.username, img: user.img, fs: fs});
+			repo.setVote(user.username, user.area, fs, 7200, client).done(function(){
+				io.of('/users').in(user.area).emit('vote', {username: user.username, img: user.img, fs: fs});
+			}, function(err){
+				serverError(err, 'Something went wrong when adding your vote!');
+			});
 		}
 	});
 
 	socket.on('getVotes', function(){
 		var area = user.area;
-		client.smembers(area+':votes', function(err, votes){
-			if(votes != null){
-				votes.forEach(function(key){
-					client.get(key, function(err, username){
-						client.get(key + ':vote', function(err, vote){
-							client.get(key + ':img', function(err, img){
-								socket.emit('vote', {username: username, img: img, fs: JSON.parse(vote)});
-							});
-						});
-					});
-				});
-			}
-		});
+		repo.getVotes(user.area, client).done(function(votes){
+			votes.forEach(function(vote){
+				socket.emit('vote', vote);
+			})
+		}, function(err){
+			serverError(err, 'Something went wrong when getting the votes!');
+		})
 	});
 
-	socket.on('disconnect', function(client){
-		socket.get('user', function(err, suser){
-			if(suser !== null){
-				socket.leave(suser.area);
-				removeUser(suser.username, suser.area, function(){
-				});
-			}
-		});
+	socket.on('disconnect', function(){
+		if(user !== undefined){
+			socket.leave(user.area);
+			repo.removeUser(user.username, user.area, client).done(null,
+			function(err){
+				serverError(err, 'Something went wrong when leaving!');
+			});
+		}
+		user = null;
 	});
 
 });
-
-function setVote(username, area, fs, expire){
-	client.set(area+':users:' + username + ':vote', JSON.stringify(fs));
-	client.sadd(area+':votes', area+':users:' + username);
-	//add the set to the expire set
-	client.sadd('expireKeys', area+':votes');
-	//set a timer
-	client.set(area+':votes:timer', expire);
-	client.expire(area+':votes:timer', expire);
-};
-
-function setUser(username, img, area, expire){
-	client.set(area+':users:' + username, username);
-	client.expire(area+':users:' + username, expire);
-	client.set(area+':users:' + username + ':img', img);
-	client.expire(area+':users:' + username + ':img', expire);
-	//set a timer
-	client.set(area+':users:timer', expire);
-	client.expire(area+':users:timer', expire);
-	client.sadd(area+':users', area+':users:' + username);
-	//add the set to the expire set
-	client.sadd('expireKeys', area+':users');
-};
-
-function removeUser(username, area, callback){
-	//this doesn't do anything right now
-	client.srem(area+':users', area+':users:' + username);
-	callback();
-};
 
 function checkExpires(){
 	//grab the expire set
