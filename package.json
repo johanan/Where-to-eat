@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Where to Eat",
   "main": "app.js",
+  "scripts": {
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/nodeunit -- tests/*.js"
+  },
   "dependencies": {
     "express": "4.2.0",
     "q": "1.0.1",
@@ -10,6 +13,7 @@
     "socket.io": "1.1.0"
   },
   "devDependencies": {
+    "fakeredis": "0.2.1",
     "grunt": "0.4.2",
     "grunt-contrib-jshint": "0.8.0",
     "grunt-contrib-uglify": "0.3.2",

@@ -1,7 +1,7 @@
-<!DOCTYPE html>  
-<html>  
-<head>  
-    <title>QUnit Test Suite</title>  
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QUnit Test Suite</title>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/qunit/1.14.0/qunit.css" type="text/css" media="screen">
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/qunit/1.14.0/qunit.js"></script>
     <!--<script src="//cdnjs.cloudflare.com/ajax/libs/blanket.js/1.1.4/blanket.min.js"></script>-->
@@ -24,7 +24,7 @@
  		strictEqual(this.testUser.img, 'testimg', 'img property is set');
  		strictEqual(this.testUser.imgHTML, '<img src="testimg" class="userimg" title="testname">', 'imgHTML is set correctly');
  	});
- 	
+
  	module('Josh.Cookie');
  	test('Cookie Creation', function(){
  		Josh.Cookie.createCookie('testCookie', 'test');
@@ -34,19 +34,19 @@
  		Josh.Cookie.eraseCookie('testCookie');
  		strictEqual(Josh.Cookie.readCookie('testCookie'), null, 'Cookie was deleted');
  	});
- 	
+
  	module('Josh.Map', {
  		setup: function(){
 	 		window.location.hash = '#qunitTesting';
  			Josh.Cookie.eraseCookie('username');
  			this.map = new Josh.Map('map');
  			this.location = {coords:{latitude:41.6, longitude: -86.2}};
- 			this.fsobjects = [{id:"4ba541f0f964a520a1f238e3", name:"Texas Roadhouse", 
- 							location:{lat:41.62753698363018, lng:-86.2516450881958}, 
+ 			this.fsobjects = [{id:"4ba541f0f964a520a1f238e3", name:"Texas Roadhouse",
+ 							location:{lat:41.62753698363018, lng:-86.2516450881958},
  							menu:{url:"https://foursquare.com/v/texas-roadhouse/4ba541f0f964a520a1f238e3/menu"},
  							categories:[{icon: {prefix: "https://ss1.4sqi.net/img/categories_v2/food/steakhouse_", suffix: ".png"}}]},
- 							{id:"4b9ef9daf964a520df0d37e3", name:"Jovi's", 
- 	 						location:{lat:41.62753698363018, lng:-86.2516450881958}, 
+ 							{id:"4b9ef9daf964a520df0d37e3", name:"Jovi's",
+ 	 						location:{lat:41.62753698363018, lng:-86.2516450881958},
  	 						categories:[]}];
  		}
  	});
@@ -58,19 +58,19 @@
  		equal(this.map.location, null, 'Location should be null');
  		this.map.centerLoc(this.location);
  		notEqual(this.map.location, null, 'Location should not be null after centering');
- 		
+
  	});
  	test('Add a User', function(){
  		this.map.addUser('');
  		equal(this.map.currentUser, null, 'A blank username should not set the user');
  		equal($('#loginArea').children('input').length, 1, 'The input text box should still be present');
- 		
+
  		this.map.addUser('test');
  		equal(this.map.currentUser.img.substring(0, 12), 'http://www.g', 'Should return a gravatar URL' );
  		equal($('#loginArea').children('input').length, 0, 'The input text box should be gone');
  		equal(Josh.Cookie.readCookie('username'), 'test', 'A cookie should have been set with the correct username');
  		this.map.removeUser();
- 		
+
  		this.map.addUser('fb:test');
  		equal(this.map.currentUser.img.substring(0, 12), 'https://grap', 'Should return a Facebook URL' );
  		equal($('#loginArea').children('input').length, 0, 'The input text box should be gone');
@@ -90,16 +90,16 @@
  		loginDiv.find('input').first().trigger('focusout');
  		equal($('#loginArea').children('input').length, 0, 'The input text box should be gone');
  		equal(Josh.Cookie.readCookie('username'), 'test', 'A cookie should have been set with the correct username');
- 		
+
  		loginDiv.find('a').first().trigger('click');
  		equal(Josh.Cookie.readCookie('username'), null, 'Cookie was deleted');
  		equal($('#loginArea').children('input').length, 1, 'The input text box should be present');
- 		
+
  	});
  	test('Searching for Restaurants', function(){
  		this.map.centerLoc(this.location);
  		this.map.addSearchLayer(this.fsobjects);
- 		
+
  		notEqual(this.map.searchLayer, null, 'The search layer should not be null');
  		deepEqual(this.map.searchFs[this.fsobjects[0].id], this.fsobjects[0], 'The fsobject should be in the searchFs object');
  		equal(Object.keys(this.map.searchLayer._layers).length, 2, 'There should be two layers in the layer object of the searchLayer');
@@ -107,30 +107,30 @@
  		equal($('#fsRest').find('img').attr('src'), this.fsobjects[0].categories[0].icon.prefix + 'bg_32' + this.fsobjects[0].categories[0].icon.suffix, 'The img should be set to the icon of the category from FourSquare');
  		equal($('#fsRest').find('a').attr('href'), this.fsobjects[0].menu.url, 'The menu url should be the same as the one from FourSquare');
  		equal($('#fsRest').find('button').attr('data-fsid'), this.fsobjects[0].id, 'The data-fsid of the button should equal the FourSquare id');
- 		
+
  		this.map.showRest(this.fsobjects[1].id);
  		equal($('#fsRest').find('img').attr('src'), 'images/marker.png', 'The img should be set to the default icon');
  		equal($('#fsRest').find('a').length, 0, 'The menu anchor should not be present');
  		equal($('#fsRest').find('button').attr('data-fsid'), this.fsobjects[1].id, 'The data-fsid of the button should equal the FourSquare id');
- 		
+
  		deepEqual(this.map.findFs(this.fsobjects[1].id), this.fsobjects[1], 'The findFs method should return the object we gave it');
- 		
+
  		//fire the clear button
  		$('#clear').trigger('click');
  		equal(Object.keys(this.map.searchLayer._layers).length, 0, 'There should be no layers in the searchLayers object');
- 		
+
  		//fire the search button, this needs info from FourSquare
  		$('#search').trigger('click');
  		stop()
- 		
+
  		var This = this;
  		setTimeout(function(){
  			start();
- 			
+
  			notEqual(Object.keys(This.map.searchLayer._layers).length, 0, 'There should be quite a few layers here');
  			notEqual(Object.keys(This.map.searchFs).length, 0, 'There should a few objects in the searchFs object as well');
  		}, 2000);
- 		
+
  	});
  	test('Voting when not logged in', function(){
  		this.map.centerLoc(this.location);
@@ -138,14 +138,14 @@
  		this.map.showRest(this.fsobjects[0].id);
  		$('#fsRest').find('button').trigger('click');
  		equal(Object.keys(this.map.voteFs.votes).length, 0, 'You cannot vote if you are not logged in');
- 	}); 
+ 	});
  	test('Voting when logged in', function(){
  		this.map.addUser('test');
  		this.map.addSearchLayer(this.fsobjects);
  		this.map.showRest(this.fsobjects[0].id);
  		$('#fsRest').find('button').trigger('click');
  		stop();
- 		
+
  		var This = this;
  		setTimeout(function(){
  			start();
@@ -157,24 +157,24 @@
  			//click the link from the vote section
  			$('#votes').find('a').first().trigger('click');
  			equal($('#fsRest').find('img.userimg').length, 1, 'There should be a vote count and image for this vote');
- 			
+
  			$('#fsRest').html('');
  			$('#acts').find('a').first().trigger('click');
  			equal($('#fsRest').find('img.userimg').length, 1, 'You should be able to load this from the activity tab as well');
- 			
+
  			This.map.showRest(This.fsobjects[1].id);
  	 		$('#fsRest').find('button').trigger('click');
  	 		This.oldVote = This.map.voteFs.votes[This.fsobjects[0].id];
- 	 		
+
  			stop();
  			setTimeout(function(){
  				start();
- 				
+
  				notEqual(This.map.voteFs.votes[This.fsobjects[1].id].id, This.fsobjects[0].id, 'This vote should be a new vote');
  	 			equal(This.map.voteFs.votes[This.fsobjects[0].id], undefined, 'The old vote should be gone');
  	 			equal(This.map.voteFs.votes[This.fsobjects[1].id].user[0].username, 'test', 'The user that made the vote should be the one we set');
  	 			notEqual(This.map.voteFs.votes[This.fsobjects[1].id].marker, undefined, 'The marker should be set');
- 	 			
+
  	 			//fake a new vote
  	 			This.oldVote.user[0].username = 'newUser';
  	 			This.map.voteFs.addVote(This.oldVote);
@@ -183,20 +183,20 @@
  	 			equal(This.map.voteFs.votes[This.fsobjects[0].id].user[0].username, 'newUser', 'The new vote should have the newUser username');
  	 			notEqual(This.map.voteFs.votes[This.fsobjects[1].id].marker, undefined, 'The marker should be set for the new vote');
  	 			notEqual(This.map.voteFs.votes[This.fsobjects[0].id].marker, undefined, 'The marker should be set for the old vote');
- 	 			
- 			}, 500);
- 		}, 500);
+
+ 			}, 2000);
+ 		}, 2000);
  	});
     </script>
-</head>  
-<body>  
+</head>
+<body>
    <h1 id="qunit-header">Where to Eat Tests</h1>
   <h2 id="qunit-banner"></h2>
   <div id="qunit-testrunner-toolbar"></div>
   <h2 id="qunit-userAgent"></h2>
   <ol id="qunit-tests"></ol>
-  
-  <div id="qunit-fixture"> 
+
+  <div id="qunit-fixture">
   <!-- The HTML that is needed -->
   	<h1 id="title">Where do you want to eat?</h1>
 
@@ -227,10 +227,10 @@
 		      <ul id="acts"></ul>
 		    </div>
 		  </div>
-		
+
 	</div>
 </div>
   </div>
-     
-</body>  
-</html>  
+
+</body>
+</html>

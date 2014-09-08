@@ -11,7 +11,7 @@ function getVotes(area, client){
     client.smembers(area+':votes', function(err, votes){
       if(err)
         reject(err);
-      if(votes != null){
+      if(votes.length > 0){
         var length = votes.length;
         var returnVotes = [];
         votes.forEach(function(key){
@@ -24,6 +24,8 @@ function getVotes(area, client){
             reject(err);
           });
         });
+      }else{
+        resolve([]);
       }
     });
   });
@@ -34,12 +36,21 @@ function getVote(key, client){
     client.get(key, function(err, username){
       if(err)
         reject(err);
+      if(username === null)
+        reject('Username is null');
+
       client.get(key + ':vote', function(err, vote){
         if(err)
           reject(err);
+        if(vote === null)
+          reject('Vote is null');
+
         client.get(key + ':img', function(err, img){
           if(err)
             reject(err);
+          if(img === null)
+            reject('Img is null');
+
           resolve({username: username, img: img, fs: JSON.parse(vote)});
         });
       })
