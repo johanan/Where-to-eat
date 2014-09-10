@@ -11,13 +11,19 @@ module.exports = function(grunt) {
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
+    concat: {
+      dist: {
+        src: ['js_src/*.js'],
+        dest: 'static/js/<%= pkg.name %>.js'
+      }
+    },
     uglify: {
       options: {
         banner: '<%= banner %>'
       },
       dist: {
-        src: 'js/joshNS.js',
-        dest: 'js/<%= pkg.name %>.min.js'
+        src: 'static/js/<%= pkg.name %>.js',
+        dest: 'static/js/<%= pkg.name %>.min.js'
       }
     },
     jshint: {
@@ -39,10 +45,11 @@ module.exports = function(grunt) {
           document: true,
           md5: true,
           io: true,
-          navigator: true
+          navigator: true,
+          location: true
         }
       },
-      all: ['js/joshNS.js']
+      all: ['js_src/joshNS.js']
     },
     watch: {
       gruntfile: {
@@ -56,8 +63,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
 
 };

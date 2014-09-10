@@ -1,5 +1,5 @@
 var config = require('../config'),
-    redis = require("redis");
+    redis = require('redis');
 
 var client = redis.createClient(config.REDISPORT, config.REDISHOST);
 

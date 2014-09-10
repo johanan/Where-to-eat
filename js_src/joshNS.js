@@ -62,7 +62,7 @@
 	};
 
 	Josh.Socket.prototype.addUser = function(username, img, area, cb){
-		sock.emit('add', username, img, area, function(){cb()});
+		sock.emit('add', username, img, area, function(){cb();});
 	};
 
 	Josh.Socket.prototype.addVote = function(fs){
@@ -105,7 +105,6 @@
     var locError = function(){};
 
 	Josh.Map = function(id){
-		console.log('http://' + location.host + '/users');
 		socket = new Josh.Socket('http://' + location.host + '/users');
 		this.map = new L.Map(id, {zoomAnimation: true});
         var stamen = new L.StamenTileLayer("toner-lite");

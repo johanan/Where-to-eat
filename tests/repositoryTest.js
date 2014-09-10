@@ -48,7 +48,6 @@ exports.requireAuthTest = nodeunit.testCase({
 
     var oneVote = repo.getVotes('default', client);
     oneVote.done(function(votes){
-      console.log(votes);
       test.equal(votes.length, 1);
       var vote = votes[0];
       test.equal(vote.username, 'josh');

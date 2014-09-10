@@ -1,6 +1,6 @@
 {
   "name": "Where-to-eat",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "Where to Eat",
   "main": "app.js",
   "scripts": {
@@ -15,8 +15,9 @@
   "devDependencies": {
     "fakeredis": "0.2.1",
     "grunt": "0.4.2",
+    "grunt-contrib-concat": "0.5.0",
     "grunt-contrib-jshint": "0.8.0",
-    "grunt-contrib-uglify": "0.3.2",
+    "grunt-contrib-uglify": "0.5.1",
     "grunt-contrib-watch": "0.5.3",
     "istanbul": "0.3.2",
     "nodeunit": "0.9.0"
