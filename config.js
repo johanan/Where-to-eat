@@ -1,7 +1,9 @@
 var config = {
   REDISPORT: getEnv('REDISPORT'),
   REDISHOST: getEnv('REDISHOST'),
-  PORT: getEnv('PORT')
+  PORT: getEnv('PORT'),
+  FOURSQUAREID: getEnv('FOURSQUAREID'),
+  FOURSQUARESECRET: getEnv('FOURSQUARESECRET')
 };
 
 function getEnv(variable){

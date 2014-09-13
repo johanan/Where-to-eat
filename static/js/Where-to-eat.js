@@ -558,19 +558,18 @@
 		},
 
 		findRests: function(query){
-			//var url = 'http://localhost:85/test/fs.php?&ll=' + location.coords.latitude + ',' + location.coords.longitude;
-			var url = 'https://api.foursquare.com/v2/venues/search?ll=' + this.location.coords.latitude + ',' + this.location.coords.longitude + '&client_id=NQNF2JL2VKJHXETAOND5TPJ23A2SWGZC4TXJEMLGJBXYMIJM&client_secret=TF1CC0HZVBJ0TM50CRNJNTWSOWZMIKQ30V4DEB4GC2UWZ3KM&v=20140128';
 			if(query !== ''){
-				url += '&query=' + encodeURI(query) ;
+				query = encodeURI(query) ;
 			}else{
-				url += '&query=' + encodeURI('restaurant') ;
+				query = encodeURI('restaurant') ;
 			}
-			var This = this;
-			$.getJSON( url ,
-			function(data){
+
+			var foursquare = $.getJSON( '/foursquare?lat=' + this.location.coords.latitude + '&lon=' + this.location.coords.longitude + '&query=' + query);
+
+			foursquare.done(function(data){
 				var rests = data.response.venues;
-				This.addSearchLayer(rests);
-			});
+				this.addSearchLayer(rests);
+			}.bind(this));
 		},
 
 		addAlert: function(message){

@@ -1,5 +1,6 @@
 
-var express = require('express'),
+var https = require('https'),
+		express = require('express'),
 		path = require('path'),
 		config = require('./config'),
 		client = require('./redis'),
@@ -9,6 +10,23 @@ var app = express();
 
 app.use(express.static(__dirname + '/static'));
 app.set('port', config.PORT);
+
+app.get('/foursquare', function(req, res){
+	https.request({
+		host: 'api.foursquare.com',
+		path: '/v2/venues/search?ll=' + req.query.lat + ',' + req.query.lon + '&client_id=' + config.FOURSQUAREID + '&client_secret=' + config.FOURSQUARESECRET +'&v=20140128&query=' + req.query.query
+	}, function(httpResponse){
+		var responseStr = '';
+		httpResponse.on('data', function(chunk){
+			responseStr += chunk;
+		});
+
+		httpResponse.on('end', function(){
+			res.setHeader('content-type', 'application/json');
+			res.send(JSON.parse(responseStr));
+		});
+	}).end();
+});
 
 var server = app.listen(app.get('port'), function() {
 	console.log('Express server listening on port ' + server.address().port);
