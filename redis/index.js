@@ -1,7 +1,13 @@
 var config = require('../config'),
-    redis = require('redis');
+    redis = require('redis'),
+    url = require('url');
 
-var client = redis.createClient(config.REDISPORT, config.REDISHOST);
+var redisConfig = url.parse(config.REDISURL);
+console.log(redisConfig);
+var client = redis.createClient(redisConfig.port, redisConfig.hostname);
+
+if (redisConfig.auth !== null)
+  client.auth(redisConfig.auth.split(':')[1]);
 
 client.on('error', function(e){
   console.log(e);

@@ -4,13 +4,15 @@
   "description": "Where to Eat",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/nodeunit -- tests/*.js"
   },
   "dependencies": {
     "express": "4.2.0",
     "q": "1.0.1",
     "redis": "0.10.0",
-    "socket.io": "1.1.0"
+    "socket.io": "1.1.0",
+    "url": "0.10.1"
   },
   "devDependencies": {
     "fakeredis": "0.2.1",
