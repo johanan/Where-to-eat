@@ -3,7 +3,6 @@ var config = require('../config'),
     url = require('url');
 
 var redisConfig = url.parse(config.REDISURL);
-console.log(redisConfig);
 var client = redis.createClient(redisConfig.port, redisConfig.hostname);
 
 if (redisConfig.auth !== null)
