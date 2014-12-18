@@ -454,69 +454,57 @@
 	"use strict";
 	Josh.Votes = function(){
 		this.votes = {};
+		this.users = {};
 	};
 
 	Josh.Votes.prototype = {
 		addVote: function(vote){
-			//first check to see if this person has voted already
 			var userVote = this.findByUser(vote.user[0].username);
-			if(userVote !== undefined){
-				//this person voted, now check to see if this is the only vote
-				if(userVote.user.length === 1){
-					//only this person voted for this restaurant delete it
-					//but first take the marker off the map
-					//after checking to see if the new vote has a marker
-					if(vote.marker === undefined){
-						//it doesn't so pass the marker
-						vote.marker = userVote.marker;
-					}
-					if(vote.id !== userVote.id){
-						//delete the marker only if the two rests are not the same
-						$(this).trigger('removeLayer', userVote.marker);
-					}
-				}else{
-					//multiple people voted for it, just remove their vote
-					for(var i=0; i < userVote.user.length; i++){
-						if(userVote.user[i].username === vote.user[0].username){
-							//we found it! Remove only this user
-							//put the vote back in
-							this.votes[userVote.id] = userVote;
-						}
-					}
-				}
+
+			if(userVote !== undefined) {
+				var fsVote = this.findByFs(userVote);
+
+				fsVote.user = this.removeFromArray(vote.user[0].username, fsVote.user);
 			}
 
-			//now check to see if the restaurant exists
-			var restVote = this.findByFs(vote.id);
-			if(restVote !== undefined){
-				//add the user to the user list
-				restVote.user.push(vote.user[0]);
-				//put the vote back in
-				this.votes[restVote.id] = restVote;
-			}else{
-				//nothing else is true
-				//add it to the object
+			this.users[vote.user[0].username] = vote.id;
+
+			var newVote = this.findByFs(vote.id);
+			if(newVote === undefined){
 				this.votes[vote.id] = vote;
+				newVote = vote;
+			}else {
+				newVote.user.push(vote.user[0]);
 			}
 
+			this.cleanUpRestaurants();
 		},
 
 		findByUser: function(username){
-			for(var i in this.votes){
-				for(var u=0; u < this.votes[i].user.length; u++){
-					if(this.votes[i].user[u].username === username){
-						var retEl = this.votes[i];
-						delete this.votes[i];
-						return retEl;
-					}
+			return this.users[username];
+		},
+
+		removeFromArray: function(username, users){
+			var newArray = [];
+			for (var i=0; i<users.length; i++){
+				if (users[i].username !== username){
+					newArray.push(users[i]);
+				}
+			}
+			return newArray;
+		},
+
+		cleanUpRestaurants: function(){
+			for(var i in this.votes) {
+				if (this.votes[i].user.length === 0){
+					$(this).trigger('removeLayer', this.votes[i].marker);
+					delete this.votes[i];
 				}
 			}
 		},
 
 		findByFs: function(fsid){
-			var retEl = this.votes[fsid];
-			delete this.votes[fsid];
-			return retEl;
+			return this.votes[fsid];
 		}
 
 	};
