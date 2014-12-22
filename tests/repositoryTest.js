@@ -1,22 +1,21 @@
-var nodeunit = require('nodeunit'),
+var assert = require('assert'),
     client = require('fakeredis').createClient('test'),
     repo = require('../data/repository');
 
-exports.requireAuthTest = nodeunit.testCase({
-  setUp: function(callback){
-    client.flushdb();
-    callback();
-  },
-  tearDown: function(callback){
-    client.flushdb();
-    callback();
-  },
+describe('Repository Test', function(){
 
-  'test getVote': function(test){
-    //test branches
+  beforeEach(function(){
+    client.flushdb();
+  });
+
+  afterEach(function(){
+    client.flushdb();
+  });
+
+  it('should add votes for getVote', function(done){
     var noUsername = repo.getVote('default:users:josh', client);
     noUsername.done(null, function(err){
-      test.equal(err, 'Username is null');
+      assert.equal(err, 'Username is null');
     });
 
     //setup the data
@@ -27,17 +26,17 @@ exports.requireAuthTest = nodeunit.testCase({
     //make sure the function gets the correct keys
     var getVote = repo.getVote('default:users:josh', client);
     getVote.done(function(vote){
-      test.equal(vote.username, 'josh');
-      test.equal(vote.img, 'josh_image');
-      test.equal(vote.fs.test, 'test');
-      test.done();
+      assert.equal(vote.username, 'josh');
+      assert.equal(vote.img, 'josh_image');
+      assert.equal(vote.fs.test, 'test');
+      done();
     });
-  },
+  });
 
-  'test getVotes': function(test){
+  it('should return votes with getVotes', function(done){
     var empty = repo.getVotes('default', client);
     empty.done(function(votes){
-      test.equal(votes.length, 0);
+      assert.equal(votes.length, 0);
     });
 
     //set data
@@ -48,71 +47,71 @@ exports.requireAuthTest = nodeunit.testCase({
 
     var oneVote = repo.getVotes('default', client);
     oneVote.done(function(votes){
-      test.equal(votes.length, 1);
+      assert.equal(votes.length, 1);
       var vote = votes[0];
-      test.equal(vote.username, 'josh');
-      test.equal(vote.img, 'josh_image');
-      test.equal(vote.fs.test, 'test');
-      test.done();
+      assert.equal(vote.username, 'josh');
+      assert.equal(vote.img, 'josh_image');
+      assert.equal(vote.fs.test, 'test');
+      done();
     });
-  },
+  });
 
-  'test removeUser': function(test){
+  it('should remove the user with removeUser', function(done){
     client.sadd('default:users', 'default:users:josh');
 
     var rem = repo.removeUser('josh', 'default', client);
     rem.done(function(){
       client.smembers('default:users', function(err, users){
-        test.equal(users.length, 0);
-        test.done();
+        assert.equal(users.length, 0);
+        done();
       })
     });
-  },
+  });
 
-  'test setUser username': function(test){
+  it('setUser should set username', function(done){
     var user = repo.setUser('josh', 'josh_image', 'default', 7200, client);
     user.done(function(){
       client.get('default:users:josh', function(e, d){
-        test.equal(d, 'josh');
-        test.done();
+        assert.equal(d, 'josh');
+        done();
       });
     });
-  },
+  });
 
-  'test setUser img': function(test){
+  it('should set img', function(done){
     var user = repo.setUser('josh', 'josh_image', 'default', 7200, client);
     user.done(function(){
       client.get('default:users:josh:img', function(e, d){
-        test.equal(d, 'josh_image');
-        test.done();
+        assert.equal(d, 'josh_image');
+        done();
       });
     });
-  },
+  });
 
-  'test setUser user set': function(test){
+  it('should set a string in the set', function(done){
     var user = repo.setUser('josh', 'josh_image', 'default', 7200, client);
     user.done(function(){
       client.smembers('default:users', function(e, d){
-        test.equal(d.length, 1);
-        test.done();
+        assert.equal(d.length, 1);
+        done();
       });
     });
-  },
+  });
 
-  'test setUser expire set': function(test){
+  it('should expire the key', function(done){
     var user = repo.setUser('josh', 'josh_image', 'default', 7200, client);
     user.done(function(){
       client.smembers('expireKeys', function(e, d){
-        test.equal(d.length, 1);
-        test.done();
+        assert.equal(d.length, 1);
+        done();
       });
     });
-  },
+  });
 
-  'test setVote': function(test){
+  it('should set vote', function(done){
     var vote = repo.setVote('josh', 'default', {test: 'test'}, 7200, client);
     vote.done(function(){
-      test.done();
+      done();
     });
-  }
+  });
 });
