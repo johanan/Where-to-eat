@@ -15,6 +15,16 @@ module.exports = function(grunt) {
       dist: {
         src: ['js_src/*.js'],
         dest: 'static/js/<%= pkg.name %>.js'
+      },
+      frameworks: {
+        src:  ['bower_components/jquery/dist/jquery.js', 'bower_components/leaflet/dist/leaflet-src.js',
+        'bower_components/react/react.js'],
+        dest: 'static/js/frameworks.js'
+      },
+      css:{
+        //this is kind of cheating as I only need one file
+        src:  ['bower_components/leaflet/dist/leaflet.css'],
+        dest: 'static/css/leaflet.css'
       }
     },
     uglify: {
@@ -24,6 +34,10 @@ module.exports = function(grunt) {
       dist: {
         src: 'static/js/<%= pkg.name %>.js',
         dest: 'static/js/<%= pkg.name %>.min.js'
+      },
+      frameworks:{
+        src: 'static/js/frameworks.js',
+        dest: 'static/js/frameworks.min.js'
       }
     },
     jshint: {

@@ -1,0 +1,15 @@
+{
+  "name": "Where-to-eat",
+  "version": "0.8.0",
+  "homepage": "https://github.com/johanan/Where-to-eat",
+  "authors": [
+    "Joshua Johanan"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "react": "0.12.2",
+    "jquery": "~2.1.3",
+    "leaflet": "~0.7.3"
+  }
+}
