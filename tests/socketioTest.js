@@ -22,8 +22,8 @@ describe('Socket.io Test', function(){
     //all tests require a user created
     ioClient.on('connect', function(){
       ioClient2.on('connect', function(){
-        ioClient.emit('add', 'josh', 'img', 'area', function(){
-          ioClient2.emit('add', 'josh2', 'img', 'area', function(){
+        ioClient.emit('add', 'josh', 'area', function(){
+          ioClient2.emit('add', 'josh2', 'area', function(){
             done();
           });
         });
@@ -41,10 +41,8 @@ describe('Socket.io Test', function(){
     //the user was created in beforeEach
     client.multi()
       .get('area:users:josh')
-      .get('area:users:josh:img')
       .exec(function(err, results) {
         assert.strictEqual(results[0], 'josh');
-        assert.strictEqual(results[1], 'img');
         done();
       });
 
@@ -53,7 +51,6 @@ describe('Socket.io Test', function(){
   it('should add a vote', function(done){
     ioClient.on('vote', function(vote){
       assert.strictEqual(vote.username, 'josh');
-      assert.strictEqual(vote.img, 'img');
       assert.strictEqual(vote.fs, 'fs');
       done();
     });
@@ -66,7 +63,6 @@ describe('Socket.io Test', function(){
     setTimeout(function(){
       ioClient2.on('vote', function(vote){
         assert.strictEqual(vote.username, 'josh');
-        assert.strictEqual(vote.img, 'img');
         assert.strictEqual(vote.fs, 'fs');
         done();
       });
@@ -94,7 +90,7 @@ describe('Socket.io failure Test', function(){
 
   beforeEach(function(done){
     ioClient = io('http://localhost:4000/users', options);
-    ioClient.emit('add', 'josh', 'img', 'area', function(){ done();} );
+    ioClient.emit('add', 'josh', 'area', function(){ done();} );
   });
 
   it('should send an add user error', function(done){
@@ -105,7 +101,7 @@ describe('Socket.io failure Test', function(){
       done();
     });
 
-    ioClient.emit('add', 'josh', 'img', 'area', function(){} );
+    ioClient.emit('add', 'josh', 'area', function(){} );
   });
 
   it('should send a vote error', function(done){

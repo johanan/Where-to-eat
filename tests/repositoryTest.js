@@ -21,13 +21,11 @@ describe('Repository Test', function(){
     //setup the data
     client.set('default:users:josh', 'josh');
     client.set('default:users:josh:vote', JSON.stringify({test: 'test'}));
-    client.set('default:users:josh:img', 'josh_image');
 
     //make sure the function gets the correct keys
     var getVote = repo.getVote('default:users:josh', client);
     getVote.done(function(vote){
       assert.equal(vote.username, 'josh');
-      assert.equal(vote.img, 'josh_image');
       assert.equal(vote.fs.test, 'test');
       done();
     });
@@ -43,14 +41,12 @@ describe('Repository Test', function(){
     client.sadd('default:votes', 'default:users:josh');
     client.set('default:users:josh', 'josh');
     client.set('default:users:josh:vote', JSON.stringify({test: 'test'}));
-    client.set('default:users:josh:img', 'josh_image');
 
     var oneVote = repo.getVotes('default', client);
     oneVote.done(function(votes){
       assert.equal(votes.length, 1);
       var vote = votes[0];
       assert.equal(vote.username, 'josh');
-      assert.equal(vote.img, 'josh_image');
       assert.equal(vote.fs.test, 'test');
       done();
     });
@@ -69,7 +65,7 @@ describe('Repository Test', function(){
   });
 
   it('setUser should set username', function(done){
-    var user = repo.setUser('josh', 'josh_image', 'default', 7200, client);
+    var user = repo.setUser('josh', 'default', 7200, client);
     user.done(function(){
       client.get('default:users:josh', function(e, d){
         assert.equal(d, 'josh');
@@ -78,18 +74,8 @@ describe('Repository Test', function(){
     });
   });
 
-  it('should set img', function(done){
-    var user = repo.setUser('josh', 'josh_image', 'default', 7200, client);
-    user.done(function(){
-      client.get('default:users:josh:img', function(e, d){
-        assert.equal(d, 'josh_image');
-        done();
-      });
-    });
-  });
-
   it('should set a string in the set', function(done){
-    var user = repo.setUser('josh', 'josh_image', 'default', 7200, client);
+    var user = repo.setUser('josh', 'default', 7200, client);
     user.done(function(){
       client.smembers('default:users', function(e, d){
         assert.equal(d.length, 1);
@@ -99,7 +85,7 @@ describe('Repository Test', function(){
   });
 
   it('should expire the key', function(done){
-    var user = repo.setUser('josh', 'josh_image', 'default', 7200, client);
+    var user = repo.setUser('josh', 'default', 7200, client);
     user.done(function(){
       client.smembers('expireKeys', function(e, d){
         assert.equal(d.length, 1);

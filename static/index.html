@@ -4,6 +4,7 @@
 	<style>
 	body {height:100%;}
 	ul#votes li, ul#acts li {list-style: none;}
+	ul#votes li:hover, ul#acts li:hover {text-decoration: underline; cursor: pointer;}
 	#restaurant {height: 178px; overflow: auto;}
 	.activity {height: 320px; overflow: auto;}
 	.userimg {height: 18px; width: 18px;}
@@ -12,7 +13,6 @@
 	.none {display: none;}
 	#map {height: 620px;}
 	</style>
-	<!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.2/leaflet.css" />-->
 	<link rel="stylesheet" href="css/leaflet.css" />
 	<link rel="stylesheet" href="css/bootstrap.css" />
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -28,12 +28,9 @@
 		<div id="map"></div>
 	</div>
 	<div class="span4">
-		<div id="loginArea"><input id="login" type="text" placeholder="fb:username or gravatar"></div>
+		<div id="loginArea"></div>
 		<div id="restaurant" class="well">
-			<form class="form-search">
-	  			<input type="text"  class="input-medium search-query" placeholder="search or leave blank" id="searchText">
-	  			<button type="submit"  id="search" class="btn"><i class="icon-search"></i></button><button id="clear" class="btn"><i class="icon-remove"></i></button>
-			</form>
+			<div id="restSearch"></div>
 			<div id="fsRest"></div>
 		</div>
 		<div id="tabs" class="tabbable">
@@ -53,6 +50,7 @@
 		</div>
 	</div>
 </div>
+	<div id="react"></div>
 <footer>Designed and coded by <a href="http://ejosh.co/de" target="_blank">Joshua Johanan</a><br/>
 Makes use of and is possible by <a href="http://nodejs.org/">node.js</a>, <a href="http://socket.io">socket.io</a>, <a href="http://redis.io/">redis</a>, <a href="http://twitter.github.com/bootstrap/">bootstrap</a>, <a href="http://gravatar.com/">gravatar</a>, <a href="http://leaflet.cloudmade.com/">leaflet</a>, <a href="http://maps.stamen.com">Stamen Design</a>, and <a href="http://jquery.org/">jQuery</a>.
 
@@ -61,7 +59,8 @@ Makes use of and is possible by <a href="http://nodejs.org/">node.js</a>, <a hre
 <script type="text/javascript" src="js/frameworks.min.js"></script>
 <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
 <script src="socket.io/socket.io.js"></script>
-<script src="js/Where-to-eat.min.js"></script>
+<!--<script src="js/Where-to-eat.min.js"></script>-->
+	<script src="js/Where-to-eat.js"></script>
 <script>
 window.jQuery(document).ready(function() {
 	"use strict";

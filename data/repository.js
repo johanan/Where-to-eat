@@ -45,14 +45,7 @@ function getVote(key, client){
         if(vote === null)
           reject('Vote is null');
 
-        client.get(key + ':img', function(err, img){
-          if(err)
-            reject(err);
-          if(img === null)
-            reject('Img is null');
-
-          resolve({username: username, img: img, fs: JSON.parse(vote)});
-        });
+          resolve({username: username, fs: JSON.parse(vote)});
       })
     });
   });
@@ -69,13 +62,11 @@ function removeUser(username, area, client){
 
 };
 
-function setUser(username, img, area, expire, client){
+function setUser(username, area, expire, client){
   return q.Promise(function(resolve, reject, notify){
     client.multi()
       .set(area+':users:' + username, username)
       .expire(area+':users:' + username, expire)
-      .set(area+':users:' + username + ':img', img)
-      .expire(area+':users:' + username + ':img', expire)
       //set a timer
       .set(area+':users:timer', expire)
       .expire(area+':users:timer', expire)

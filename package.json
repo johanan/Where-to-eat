@@ -5,9 +5,11 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/nodeunit -- tests/*.js"
+    "test": "./node_modules/.bin/mocha tests",
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- tests/*.js"
   },
   "dependencies": {
+    "bower": "1.3.12",
     "express": "4.2.0",
     "q": "1.0.1",
     "redis": "0.10.0",
@@ -15,7 +17,6 @@
     "url": "0.10.1"
   },
   "devDependencies": {
-    "bower": "1.3.12",
     "fakeredis": "0.2.1",
     "grunt": "0.4.2",
     "grunt-contrib-concat": "0.5.0",

@@ -13,13 +13,17 @@ module.exports = function(grunt) {
     // Task configuration.
     concat: {
       dist: {
-        src: ['js_src/*.js'],
+        src: ['js_src/react_components.js', 'js_src/joshNS.js'],
         dest: 'static/js/<%= pkg.name %>.js'
       },
       frameworks: {
         src:  ['bower_components/jquery/dist/jquery.js', 'bower_components/leaflet/dist/leaflet-src.js',
-        'bower_components/react/react.js'],
+        'bower_components/react/react.js', 'js_utils/bootstrap-tab.js', 'js_utils/md5.js'],
         dest: 'static/js/frameworks.js'
+      },
+      reactAddons: {
+        src: ['bower_components/react/react-with-addons.js'],
+        dest: 'static/js/react-withaddons.js'
       },
       css:{
         //this is kind of cheating as I only need one file
@@ -46,7 +50,7 @@ module.exports = function(grunt) {
         eqeqeq: true,
         immed: true,
         latedef: true,
-        newcap: true,
+        newcap: false,
         noarg: true,
         sub: true,
         undef: true,
@@ -54,16 +58,18 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         globals: {
+          $: true,
           jQuery: true,
           window: true,
           document: true,
           md5: true,
           io: true,
           navigator: true,
-          location: true
+          location: true,
+          React: true
         }
       },
-      all: ['js_src/joshNS.js']
+      all: ['<%= concat.dist.dest %>']
     },
     watch: {
       gruntfile: {
@@ -80,6 +86,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+  grunt.registerTask('default', ['concat', 'jshint', 'uglify']);
 
 };

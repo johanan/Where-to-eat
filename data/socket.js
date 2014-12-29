@@ -15,9 +15,9 @@ function initSockets(server, client){
       socket.emit('serverError', {message: message});
     };
 
-    socket.on('add', function(username, img, area, ack){
-      user = new User(username, img, area, socket.id);
-      repo.setUser(username, img, area, 7200, client)
+    socket.on('add', function(username, area, ack){
+      user = new User(username, area, socket.id);
+      repo.setUser(username, area, 7200, client)
         .catch(function(err){
           console.log('add');
           serverError(err, 'Something went wrong when adding your user!');
@@ -38,7 +38,7 @@ function initSockets(server, client){
           serverError(err, 'Something went wrong when adding your vote!');
         })
         .done(function(){
-          io.of('/users').in(user.area).emit('vote', {username: user.username, img: user.img, fs: fs});
+          io.of('/users').in(user.area).emit('vote', {username: user.username, fs: fs});
         }, function(err){
           serverError(err, 'Something went wrong when adding your vote!');
         });
