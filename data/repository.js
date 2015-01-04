@@ -44,7 +44,6 @@ function getVote(key, client){
           reject(err);
         if(vote === null)
           reject('Vote is null');
-
           resolve({username: username, fs: JSON.parse(vote)});
       })
     });
@@ -59,20 +58,14 @@ function removeUser(username, area, client){
       resolve();
     });
   });
-
 };
 
 function setUser(username, area, expire, client){
   return q.Promise(function(resolve, reject, notify){
     client.multi()
-      .set(area+':users:' + username, username)
-      .expire(area+':users:' + username, expire)
-      //set a timer
-      .set(area+':users:timer', expire)
-      .expire(area+':users:timer', expire)
+      .setex(area+':users:' + username, expire, username)
       .sadd(area+':users', area+':users:' + username)
-      //add the set to the expire set
-      .sadd('expireKeys', area+':users')
+      .expire(area+':users', expire)
       .exec(function(err){
         if(err === null){
           resolve();
@@ -86,13 +79,9 @@ function setUser(username, area, expire, client){
 function setVote(username, area, fs, expire, client){
   return q.Promise(function(resolve, reject, notify){
     client.multi()
-      .set(area+':users:' + username + ':vote', JSON.stringify(fs))
+      .setex(area+':users:' + username + ':vote', expire, JSON.stringify(fs))
       .sadd(area+':votes', area+':users:' + username)
-      //add the set to the expire set
-      .sadd('expireKeys', area+':votes')
-      //set a timer
-      .set(area+':votes:timer', expire)
-      .expire(area+':votes:timer', expire)
+      .expire(area+':votes', expire)
       .exec(function(err){
         if(err === null){
           resolve();

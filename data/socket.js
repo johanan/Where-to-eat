@@ -1,6 +1,7 @@
 var socketio = require('socket.io'),
     repo = require('./repository'),
-    User = require('./User');
+    User = require('./User'),
+    expire = 7200;
 
 module.exports = initSockets;
 
@@ -17,11 +18,7 @@ function initSockets(server, client){
 
     socket.on('add', function(username, area, ack){
       user = new User(username, area, socket.id);
-      repo.setUser(username, area, 7200, client)
-        .catch(function(err){
-          console.log('add');
-          serverError(err, 'Something went wrong when adding your user!');
-        })
+      repo.setUser(username, area, expire * 2, client)
         .done(function(){
           socket.join(area);
           ack();
@@ -32,28 +29,30 @@ function initSockets(server, client){
 
     socket.on('addVote', function(fs){
       if(user !== undefined){
-        repo.setVote(user.username, user.area, fs, 7200, client)
-        .catch(function(err){
-          console.log('set');
-          serverError(err, 'Something went wrong when adding your vote!');
-        })
+        repo.setVote(user.username, user.area, fs, expire, client)
         .done(function(){
           io.of('/users').in(user.area).emit('vote', {username: user.username, fs: fs});
         }, function(err){
           serverError(err, 'Something went wrong when adding your vote!');
         });
+      }else{
+        serverError('User is not logged in', 'Something went wrong when adding your vote!');
       }
     });
 
     socket.on('getVotes', function(){
-      var area = user.area;
-      repo.getVotes(user.area, client).done(function(votes){
-        votes.forEach(function(vote){
-          socket.emit('vote', vote);
+      if(user !== undefined) {
+        var area = user.area;
+        repo.getVotes(user.area, client).done(function (votes) {
+          votes.forEach(function (vote) {
+            socket.emit('vote', vote);
+          })
+        }, function (err) {
+          serverError(err, 'Something went wrong when getting the votes!');
         })
-      }, function(err){
-        serverError(err, 'Something went wrong when getting the votes!');
-      })
+      }else{
+        serverError('User is not logged in', 'Something went wrong when getting the votes!');
+      }
     });
 
     socket.on('disconnect', function(){

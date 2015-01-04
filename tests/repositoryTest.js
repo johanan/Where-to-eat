@@ -84,12 +84,27 @@ describe('Repository Test', function(){
     });
   });
 
-  it('should expire the key', function(done){
+  it('should set ttl on the key', function(done){
     var user = repo.setUser('josh', 'default', 7200, client);
     user.done(function(){
-      client.smembers('expireKeys', function(e, d){
-        assert.equal(d.length, 1);
+      client.ttl('default:users:josh', function(e, d){
+        //make sure a ttl is set
+        assert.equal(d <= 7200, true);
+        assert.equal(d > 1, true);
         done();
+      });
+    });
+  });
+
+  it('should expire the user key', function(done){
+    var user = repo.setUser('josh', 'default', 0, client);
+    user.done(function(){
+      client.get('default:users:josh', function(e, d){
+        assert.equal(d, null);
+        client.scard('default:users', function(e, d){
+          assert.equal(d, '0');
+          done();
+        });
       });
     });
   });
@@ -97,7 +112,26 @@ describe('Repository Test', function(){
   it('should set vote', function(done){
     var vote = repo.setVote('josh', 'default', {test: 'test'}, 7200, client);
     vote.done(function(){
-      done();
+      client.get('default:users:josh:vote', function(e, d){
+        assert.equal(JSON.parse(d).test, 'test');
+        client.scard('default:votes', function(e, d){
+          assert.equal(d, '1');
+          done();
+        });
+      });
+    });
+  });
+
+  it('should expire the vote key', function(done){
+    var user = repo.setVote('josh', 'default', {test: 'test'}, 0, client);
+    user.done(function(){
+      client.get('default:users:josh:vote', function(e, d){
+        assert.equal(d, null);
+        client.scard('default:votes', function(e, d){
+          assert.equal(d, '0');
+          done();
+        });
+      });
     });
   });
 });

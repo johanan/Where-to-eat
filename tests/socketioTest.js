@@ -1,11 +1,8 @@
 var assert = require('assert'),
-    client = require('fakeredis').createClient('test'),
-    server = require('http').createServer().listen(3000),
-    server2 = require('http').createServer().listen(4000),
+    fakeRedis = require('fakeredis'),
+    http = require('http'),
     socketio = require('../data/socket'),
     io = require('socket.io-client');
-
-socketio(server, client);
 
 var options ={
   transports: ['websocket'],
@@ -14,11 +11,15 @@ var options ={
 
 describe('Socket.io Test', function(){
   var ioClient,
-      ioClient2;
+      ioClient2,
+      client = fakeRedis.createClient('test'),
+      server = http.createServer().listen(0);
+
+  socketio(server, client);
 
   beforeEach(function(done){
-    ioClient = io('http://localhost:3000/users', options);
-    ioClient2 = io('http://localhost:3000/users', options);
+    ioClient = io('http://localhost:' + server.address().port + '/users', options);
+    ioClient2 = io('http://localhost:' + server.address().port + '/users', options);
     //all tests require a user created
     ioClient.on('connect', function(){
       ioClient2.on('connect', function(){
@@ -45,7 +46,6 @@ describe('Socket.io Test', function(){
         assert.strictEqual(results[0], 'josh');
         done();
       });
-
   });
 
   it('should add a vote', function(done){
@@ -83,19 +83,30 @@ describe('Socket.io Test', function(){
 });
 
 describe('Socket.io failure Test', function(){
-  var client = client;
-  socketio(server2, client);
-
-
+  var ioClient,
+      ioClient2,
+      client,
+      server;
 
   beforeEach(function(done){
-    ioClient = io('http://localhost:4000/users', options);
-    ioClient.emit('add', 'josh', 'area', function(){ done();} );
+    client = fakeRedis.createClient();
+    server = http.createServer().listen(0);
+
+    socketio(server, client);
+    ioClient2 = io('http://localhost:' + server.address().port + '/users', options);
+    ioClient = io('http://localhost:' + server.address().port + '/users', options);
+    ioClient.emit('add', 'josh', 'area', function(){
+      client.quit();
+      done();
+    });
+  });
+
+  afterEach(function(){
+    ioClient.disconnect()
+    ioClient2.disconnect();
   });
 
   it('should send an add user error', function(done){
-    client = null;
-    console.log(client);
     ioClient.on('serverError', function(m){
       assert.strictEqual(m.message, 'Something went wrong when adding your user!');
       done();
@@ -120,5 +131,23 @@ describe('Socket.io failure Test', function(){
     });
 
     ioClient.emit('addVote', 'fs' );
+  });
+
+  it('should send a vote error when voting without logging in', function(done){
+    ioClient2.on('serverError', function(m){
+      assert.strictEqual(m.message, 'Something went wrong when adding your vote!');
+      done();
+    });
+
+    ioClient2.emit('addVote', 'fs' );
+  });
+
+  it('should send a vote error when getting votes without logging in', function(done){
+    ioClient2.on('serverError', function(m){
+      assert.strictEqual(m.message, 'Something went wrong when getting the votes!');
+      done();
+    });
+
+    ioClient2.emit('getVotes');
   });
 });
