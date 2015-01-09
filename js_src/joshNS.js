@@ -168,6 +168,10 @@
     this.searchLayer = null;
     this.voteFs = new Josh.Votes();
 
+    //get loc
+    navigator.geolocation.getCurrentPosition(function (location) {
+      This.centerLoc(location);
+    }, locError, {timeout: 10000});
 
     //wire events
     $(window).on('Vote.Map', function (e, fs) {
@@ -255,9 +259,6 @@
     //render React and get location
     React.render(React.createElement(RestaurantWell, null), restaurantDiv);
     React.render(React.createElement(ActivityDisplay, null), tab2);
-    navigator.geolocation.getCurrentPosition(function (location) {
-      This.centerLoc(location);
-    }, locError, {timeout: 10000});
   };
 
   Josh.Map.prototype = {

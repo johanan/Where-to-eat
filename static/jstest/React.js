@@ -167,14 +167,14 @@ test('RestaurantDisplay html', function () {
   var r = React.render(React.createElement(RestaurantDisplay, {fs: this.fsTest}), this.react[0]);
   var $r = $(r.getDOMNode());
   equal($r.find('h3')[0].innerText, 'Test', 'the H3 should be the name');
-  equal($r.find('img')[0].src, 'http://localhost:3000/jstest/abg_32.png', 'the img should have the category source');
+  notEqual($r.find('img')[0].src.indexOf('abg_32.png'), -1, 'the img should have the category source');
   equal($r.find('div')[0].innerText, '123', 'this should be the phone number');
   notEqual($r.find('a')[0].href, undefined, 'this be the link to the menu');
   equal($r.find('div')[2].innerText, 'Votes: 3', 'this should be the votes');
 
   r = React.render(React.createElement(RestaurantDisplay, {fs: this.fsTest2}), this.react[0]);
   $r = $(r.getDOMNode());
-  equal($r.find('img')[0].src, 'http://localhost:3000/jstest/images/marker.png', 'the img should have the category source');
+  notEqual($r.find('img')[0].src.indexOf('images/marker.png'), -1, 'the img should have the category source');
   equal($r.find('div').length, 2, 'there should be no more than two divs meaning no phone or menu');
   equal($r.find('div')[0].innerText, 'Votes: 0', 'first div is votes');
 });

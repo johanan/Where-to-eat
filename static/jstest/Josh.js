@@ -170,8 +170,8 @@ test('Voting when logged in', function () {
       notEqual(This.map.voteFs.votes[This.fsobjects[1].id].marker, undefined, 'The marker should be set for the new vote');
       notEqual(This.map.voteFs.votes[This.fsobjects[0].id].marker, undefined, 'The marker should be set for the old vote');
 
-    }, 75);
-  }, 75);
+    }, 375);
+  }, 375);
 });
 module('Josh.Socket', {
   setup: function () {
