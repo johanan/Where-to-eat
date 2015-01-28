@@ -73,6 +73,15 @@ var UserLogin = React.createClass({
 });
 
 var LoginForm = React.createClass({
+  componentWillMount: function(){
+    this.boundNewUser = this.newUser.bind(this);
+    $(window).on('NewUser.React', this.boundNewUser);
+  },
+  getInitialState: function(){
+    return {
+      user: this.props.user
+    };
+  },
   processUser: function (user) {
     var loggedIn = (user !== undefined && user !== null),
       newUser = null;
@@ -86,9 +95,15 @@ var LoginForm = React.createClass({
       user: newUser
     };
   },
+  newUser: function(e, user){
+    this.setState({user: user});
+  },
+  componentWillUnmount: function () {
+    $(window).off('NewUser.React', this.boundNewUser);
+  },
   render: function () {
-    var processProps = this.processUser(this.props.user);
-    var userComponent = processProps.loggedIn ? React.createElement(UserDisplay, {username: this.props.user.username})
+    var processState = this.processUser(this.state.user);
+    var userComponent = processState.loggedIn ? React.createElement(UserDisplay, {username: this.state.user.username})
       : React.createElement(UserLogin, null);
     return React.DOM.div(null,
       [userComponent]);
@@ -251,6 +266,7 @@ var ActivityDisplay = React.createClass({
       ));
   }
 });
+
 //for jsLint these are defined in other files
 //except Josh that is here in the self executing functions
 
@@ -501,12 +517,13 @@ var ActivityDisplay = React.createClass({
       area = 'default';
     }
 
+    //render user login
+    React.render(React.createElement(LoginForm, null), $(loginDiv)[0]);
+
     //check the cookies for a current user
     var myusername = Josh.Cookie.readCookie('username');
     if (myusername !== null) {
       this.addUser(myusername);
-    } else {
-      React.render(React.createElement(LoginForm, null), $(loginDiv)[0]);
     }
 
     //render React and get location
@@ -568,11 +585,11 @@ var ActivityDisplay = React.createClass({
         return;
       }
 
-      React.render(React.createElement(LoginForm, {user: {username: username}}), $(loginDiv)[0]);
-
       //add cookie for user
       Josh.Cookie.createCookie('username', username);
       this.currentUser = new Josh.User(username);
+
+      $(window).trigger('NewUser', this.currentUser);
 
       socket.addUser(username, area, function () {
         socket.getVotes();
@@ -631,7 +648,7 @@ var ActivityDisplay = React.createClass({
       Josh.Cookie.eraseCookie('username');
       Josh.Cookie.eraseCookie('img');
       this.currentUser = null;
-      React.render(React.createElement(LoginForm, null), $(loginDiv)[0]);
+      $(window).trigger('NewUser', this.currentUser);
     },
 
     showRest: function (fsid) {

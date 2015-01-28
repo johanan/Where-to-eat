@@ -248,12 +248,13 @@
       area = 'default';
     }
 
+    //render user login
+    React.render(React.createElement(LoginForm, null), $(loginDiv)[0]);
+
     //check the cookies for a current user
     var myusername = Josh.Cookie.readCookie('username');
     if (myusername !== null) {
       this.addUser(myusername);
-    } else {
-      React.render(React.createElement(LoginForm, null), $(loginDiv)[0]);
     }
 
     //render React and get location
@@ -315,11 +316,11 @@
         return;
       }
 
-      React.render(React.createElement(LoginForm, {user: {username: username}}), $(loginDiv)[0]);
-
       //add cookie for user
       Josh.Cookie.createCookie('username', username);
       this.currentUser = new Josh.User(username);
+
+      $(window).trigger('NewUser', this.currentUser);
 
       socket.addUser(username, area, function () {
         socket.getVotes();
@@ -378,7 +379,7 @@
       Josh.Cookie.eraseCookie('username');
       Josh.Cookie.eraseCookie('img');
       this.currentUser = null;
-      React.render(React.createElement(LoginForm, null), $(loginDiv)[0]);
+      $(window).trigger('NewUser', this.currentUser);
     },
 
     showRest: function (fsid) {

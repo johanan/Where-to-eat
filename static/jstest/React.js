@@ -94,15 +94,25 @@ test('UserLogin blank username', function () {
 
   }, 750);
 });
-test('LoginForm', function () {
+test('LoginForm Basic Render', function () {
   React.render(React.createElement(LoginForm, {user: {username: 'josh'}}), this.react[0]);
   equal(this.react.find('img').length, 1, 'This should render UserDisplay with an image');
+  React.unmountComponentAtNode(this.react[0]);
   React.render(React.createElement(LoginForm, {user: null}), this.react[0]);
   equal(this.react.find('input').length, 1, 'This should render an input with a null user');
+  React.unmountComponentAtNode(this.react[0]);
   var r = React.render(React.createElement(LoginForm, {user: undefined}), this.react[0]);
   equal(this.react.find('input').length, 1, 'This should render an input with an undefined user');
+  React.unmountComponentAtNode(this.react[0]);
   React.render(React.createElement(LoginForm, {user: {username: 'a'}}), this.react[0]);
   equal(this.react.find('img').length, 1, 'This should add a user with an image');
+});
+test('LoginForm Transitive State test', function(){
+  React.render(React.createElement(LoginForm, {user: null}), this.react[0]);
+  $(window).trigger('NewUser', {username: 'josh'});
+  equal(this.react.find('img').length, 1, 'The state should change so that there is a user and image');
+  $(window).trigger('NewUser', null);
+  equal(this.react.find('input').length, 1, 'This state should be the user login');
 });
 test('RestaurantWell', function () {
   expect(1);

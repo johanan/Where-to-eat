@@ -73,6 +73,15 @@ var UserLogin = React.createClass({
 });
 
 var LoginForm = React.createClass({
+  componentWillMount: function(){
+    this.boundNewUser = this.newUser.bind(this);
+    $(window).on('NewUser.React', this.boundNewUser);
+  },
+  getInitialState: function(){
+    return {
+      user: this.props.user
+    };
+  },
   processUser: function (user) {
     var loggedIn = (user !== undefined && user !== null),
       newUser = null;
@@ -86,9 +95,15 @@ var LoginForm = React.createClass({
       user: newUser
     };
   },
+  newUser: function(e, user){
+    this.setState({user: user});
+  },
+  componentWillUnmount: function () {
+    $(window).off('NewUser.React', this.boundNewUser);
+  },
   render: function () {
-    var processProps = this.processUser(this.props.user);
-    var userComponent = processProps.loggedIn ? React.createElement(UserDisplay, {username: this.props.user.username})
+    var processState = this.processUser(this.state.user);
+    var userComponent = processState.loggedIn ? React.createElement(UserDisplay, {username: this.state.user.username})
       : React.createElement(UserLogin, null);
     return React.DOM.div(null,
       [userComponent]);
