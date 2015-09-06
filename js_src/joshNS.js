@@ -141,7 +141,7 @@
     loginDiv = document.getElementById('loginArea');
     search = document.getElementById('search');
     searchText = $('#searchText');
-    socket = new Josh.Socket(io.connect('http://' + location.host + '/users'));//new Josh.Socket('http://' + location.host + '/users');
+    socket = new Josh.Socket(io.connect('//' + location.host + '/users'));//new Josh.Socket('http://' + location.host + '/users');
     stamen = new L.StamenTileLayer("toner-lite");
     clearButt = document.getElementById('clear');
     titleh = $('#title');

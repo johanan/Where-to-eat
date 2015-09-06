@@ -1,6 +1,6 @@
 {
   "name": "Where-to-eat",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Where to Eat",
   "main": "app.js",
   "scripts": {

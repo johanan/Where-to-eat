@@ -31,7 +31,7 @@ var UserImage = React.createClass({
     var imgOutput = this.usernameToImg(this.props.username);
     var name = this.props.useName ? imgOutput.username + ': ' : null;
     return React.DOM.span(null,
-      [React.DOM.img({src: imgOutput.src, className: 'userimg', title: imgOutput.username, ref: 'userImage'}, null),
+      [React.DOM.img({src: imgOutput.src, className: 'userimg', title: imgOutput.username }, null),
         name]);
   }
 });
@@ -410,7 +410,7 @@ var ActivityDisplay = React.createClass({
     loginDiv = document.getElementById('loginArea');
     search = document.getElementById('search');
     searchText = $('#searchText');
-    socket = new Josh.Socket(io.connect('http://' + location.host + '/users'));//new Josh.Socket('http://' + location.host + '/users');
+    socket = new Josh.Socket(io.connect('//' + location.host + '/users'));//new Josh.Socket('http://' + location.host + '/users');
     stamen = new L.StamenTileLayer("toner-lite");
     clearButt = document.getElementById('clear');
     titleh = $('#title');

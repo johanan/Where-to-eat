@@ -31,7 +31,7 @@ var UserImage = React.createClass({
     var imgOutput = this.usernameToImg(this.props.username);
     var name = this.props.useName ? imgOutput.username + ': ' : null;
     return React.DOM.span(null,
-      [React.DOM.img({src: imgOutput.src, className: 'userimg', title: imgOutput.username, ref: 'userImage'}, null),
+      [React.DOM.img({src: imgOutput.src, className: 'userimg', title: imgOutput.username }, null),
         name]);
   }
 });
