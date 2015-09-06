@@ -18,7 +18,7 @@ module.exports = function(grunt) {
       },
       frameworks: {
         src:  ['bower_components/jquery/dist/jquery.js', 'bower_components/leaflet/dist/leaflet-src.js',
-        'bower_components/react/react.js', 'js_utils/bootstrap-tab.js', 'js_utils/md5.js'],
+        'bower_components/react/react.js', 'js_utils/bootstrap-tab.js', 'js_utils/md5.js', 'js_src/tile.stamen.js'],
         dest: 'static/js/frameworks.js'
       },
       reactAddons: {
