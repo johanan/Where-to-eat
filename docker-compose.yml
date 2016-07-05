@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  redis:
+    image: redis:3
+
+  wte:
+    build: .
+    ports:
+      - 3000
+    links:
+      - redis
+    environment:
+      REDISURL: redis://redis:6379
+      PORT: 3000
+      FOURSQUAREID: xxx
+      FOURSQUARESECRET: xxx
+
+  lb:
+    image: dockercloud/haproxy
+    links:
+      - wte
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 80:80
